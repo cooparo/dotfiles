@@ -1,0 +1,29 @@
+name: Build NixOS Configuration
+
+on:
+  push:
+    branches:
+      - main  # Modify this if your default branch is different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Nix
+      uses: cachix/install-nix-action@v12
+      
+    - name: Build NixOS configuration
+      run: nixos-rebuild build
+
+    - name: Check build result
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "Build successful!"
+        else
+          echo "Build failed!"
+          exit 1
+        fi
