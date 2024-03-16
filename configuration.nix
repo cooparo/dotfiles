@@ -101,7 +101,6 @@
     neovim
     git
     brave
-    eza
     alacritty
     zsh
     oh-my-zsh
