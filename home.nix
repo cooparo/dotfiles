@@ -27,7 +27,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -67,15 +67,6 @@
     # EDITOR = "emacs";
   };
 
-  # programs.zsh = {
-  #   enable = true;
-  #   shellAliases = {
-  #     gs = "git status";
-  #     #ls = "";
-  #     #la = "";
-  #   };
-  # };
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -98,4 +89,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # NerdFont
+  fonts.fontconfig.enable = true;
 }
