@@ -9,22 +9,34 @@
 
     outputs = { self, nixpkgs, home-manager, ... }:
         let
-            lib = nixpkgs.lib;
+
+            # --- SYSTEM SETTINGS --- #
 	        system = "x86_64-linux";
 	        pkgs = nixpkgs.legacyPackages.${system};
+
+            # --- USER SETTINGS --- #
+            userSettings = {
+                username = "paro";
+                email = "cooparo@proton.me";
+                dotfilesDir = "~/dotfiles";
+            };
+
+            # Config lib
+            lib = nixpkgs.lib;
+
         in {
             nixosConfigurations = {
                 nixos = lib.nixosSystem {
-		        inherit system;
-                modules = [ ./configuration.nix ];
+		            inherit system;
+                    modules = [ ./configuration.nix ];
             };
         };
 
 	    homeConfigurations = {
                 paro = home-manager.lib.homeManagerConfiguration {
-		    inherit pkgs;
-                modules = [ ./home.nix ];
+		            inherit pkgs;
+                    modules = [ ./home.nix ];
+                };
             };
         };
-    };
 }
