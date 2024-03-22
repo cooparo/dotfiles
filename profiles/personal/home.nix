@@ -21,16 +21,12 @@
     alacritty
     brave
     eza
-    git
     neovim
     oh-my-zsh
     vscode
-    wget
-    zsh
 
     # Nerdfont
     (nerdfonts.override { fonts = userSettings.fonts; })
-
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
