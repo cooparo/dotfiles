@@ -18,7 +18,7 @@
                 username = "paro";
                 email = "cooparo@proton.me";
                 dotfilesDir = "~/dotfiles";
-                font = "FiraCode";
+                fonts = [ "FiraCode" ];
                 # theme = e.g. gruvbox 
             };
 
