@@ -30,18 +30,9 @@
 
 
         in {
-            nixosConfigurations = {
-                nixos = lib.nixosSystem {
+            nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
 		            system = systemSettings.system;
-                    modules = [ 
-                        #(./. + "/profiles" + ("/" + systemSettings.profile)
-                        # + "/configuration.nix")
-
-                        # Works only with --impure
-                        #/home/paro/dotfiles/profiles/personal/configuration.nix
-                        ./configuration.nix
-                    ];
-                };
+                modules = [ ./profiles/${systemSettings.profile}/configuration.nix ];
 
                 specialArgs = {
                         inherit userSettings;
@@ -49,22 +40,13 @@
                     };
             }; # END nixosConfigurations
 
-    	    homeConfigurations = {
-                paro = home-manager.lib.homeManagerConfiguration {
+    	    homeConfigurations.${userSettings.username} = home-manager.lib.homeManagerConfiguration {
 		            inherit pkgs;
-                    modules = [ 
-                        #(./. + "/profiles" + ("/" + systemSettings.profile)
-                        # + "/home.nix")
-                        
-                        # Works only with --impure
-                        #/home/paro/dotfiles/profiles/personal/home.nix
-                        ./home.nix
-                    ];
+                modules = [ ./profiles/${systemSettings.profile}/home.nix ];
 
                     extraSpecialArgs = {
                         inherit userSettings;
                         inherit systemSettings;
-                    };
                 };
             }; # END homeConfigurations
         };
