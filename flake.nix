@@ -28,25 +28,24 @@
             # Nixpkgs
 	        pkgs = nixpkgs.legacyPackages.${systemSettings.system};
 
-
         in {
             nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
-		            system = systemSettings.system;
+                system = systemSettings.system;
                 modules = [ ./profiles/${systemSettings.profile}/configuration.nix ];
 
                 specialArgs = {
-                        inherit userSettings;
-                        inherit systemSettings;
-                    };
+                    inherit userSettings;
+                    inherit systemSettings;
+                };
             }; # END nixosConfigurations
 
     	    homeConfigurations.${userSettings.username} = home-manager.lib.homeManagerConfiguration {
-		            inherit pkgs;
+                inherit pkgs;
                 modules = [ ./profiles/${systemSettings.profile}/home.nix ];
 
-                    extraSpecialArgs = {
-                        inherit userSettings;
-                        inherit systemSettings;
+                extraSpecialArgs = {
+                    inherit userSettings;
+                    inherit systemSettings;
                 };
             }; # END homeConfigurations
         };
