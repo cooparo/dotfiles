@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, systemSettings, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "paro";
-  home.homeDirectory = "/home/paro";
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/${userSettings.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -15,12 +15,21 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
+    alacritty
+    brave
     eza
+    git
+    neovim
+    oh-my-zsh
+    vscode
+    wget
     zsh
 
     # Nerdfont
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override { fonts = userSettings.fonts; })
 
   ];
 
@@ -54,24 +63,36 @@
     # EDITOR = "emacs";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      gs = "git status";
-      satoshi = "ssh paro@192.168.0.158";
-      ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
-      la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
+      shellAliases = {
+        gs = "git status";
+        satoshi = "ssh paro@192.168.0.158";
+        ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
+        la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
+      };
+
+      oh-my-zsh = { 
+        enable = true;
+        plugins = [ "git" ];
+        theme = "robbyrussell";
+      };  
     };
 
-    oh-my-zsh = { 
-    	enable = true;
-  	  plugins = [ "git" ];
-	    theme = "robbyrussell";
-    };  
+    git = {
+      enable = true;
+      userName = "cooparo";
+      userEmail = userSettings.email;
+      extraConfig = {
+        # core = {};
+        pull = { rebase = "false"; };
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
