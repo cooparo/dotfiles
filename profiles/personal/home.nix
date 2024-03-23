@@ -56,7 +56,7 @@
   #  /etc/profiles/per-user/paro/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "neovim";
   };
 
   programs = {
