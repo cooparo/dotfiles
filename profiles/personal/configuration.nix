@@ -5,7 +5,7 @@
       # Include the results of the hardware scan.
       #./../../system/hardware-configuration.nix
       /etc/nixos/hardware-configuration.nix
-      // TODO: setup a more modular way to get hardware-configuration.nix 
+      # TODO: setup a more modular way to get hardware-configuration.nix 
     ];
 
   # Bootloader.
