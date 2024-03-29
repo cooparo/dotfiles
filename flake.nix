@@ -1,9 +1,8 @@
 {
     description = "Paro's flake";
     
-    outputs = { self, nixpkgs, home-manager, ... }:
+    outputs = { self, nixpkgs, home-manager, ... } @ inputs:
         let
-
             # --- SYSTEM SETTINGS --- #
             systemSettings = {
                 system = "x86_64-linux";
@@ -11,6 +10,7 @@
                 profile = "personal"; # select a profile defined from my profiles directory
                 timezone = "Europe/Rome"; # select timezone
                 locale = "en_US.UTF-8"; # select locale
+                layout = "us";
             };
 
             # --- USER SETTINGS --- #
@@ -19,7 +19,10 @@
                 email = "cooparo@proton.me";
                 dotfilesDir = "~/dotfiles";
                 fonts = [ "FiraCode" ];
-                # theme = e.g. gruvbox 
+                term = "alacritty";
+                editor = "neovim";
+                browser = "brave";
+                theme = "nord"; 
             };
 
             # Config lib
@@ -36,6 +39,7 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
+                    inherit inputs;
                 };
             }; # END nixosConfigurations
 
@@ -46,6 +50,7 @@
                 extraSpecialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
+                    inherit inputs;
                 };
             }; # END homeConfigurations
         };
@@ -54,5 +59,8 @@
         nixpkgs.url = "nixpkgs/nixos-23.11";
 	    home-manager.url = "github:nix-community/home-manager/release-23.11";
 	    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+        # Theme
+        stylix.url = "github:danth/stylix";
     };
 }
