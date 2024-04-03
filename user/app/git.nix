@@ -8,9 +8,10 @@
       userName = "cooparo";
       userEmail = userSettings.email;
       extraConfig = {
-        # core = {};
-        pull = { rebase = "false"; };
+        core.editor = userSettings.term;
+        pull.rebase = "false";
         init.defaultBranch = "main";
+        rerere.enabled = true;
       };
     };
 }
