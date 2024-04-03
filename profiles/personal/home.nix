@@ -16,6 +16,7 @@
   imports = [
     ../../user/shell/sh.nix # Zsh config
     ../../user/app/git.nix # Git config
+    ../../user/wm/i3.nix # i3 config
   ];
 
   home.packages = with pkgs; [
