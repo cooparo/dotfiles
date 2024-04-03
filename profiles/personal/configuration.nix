@@ -8,6 +8,7 @@
       #./../../system/hardware-configuration.nix
       /etc/nixos/hardware-configuration.nix
       # TODO: setup a more modular way to get hardware-configuration.nix 
+      ./../../system/wm/x11.nix
     ];
 
   # Bootloader.
@@ -43,17 +44,9 @@
     LC_TIME = systemSettings.locale;
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = systemSettings.layout;
-  };
 
   # Configure console keymap
   console.keyMap = systemSettings.layout;
