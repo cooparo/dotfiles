@@ -11,7 +11,7 @@
             gaps.outer = 2;
 
             startup = [
-                { command = "feh --bg-fill ~/wallpaper.jpg"; always = true; notification = false; }
+                { command = "feh --bg-fill ${userSettings.dotfilesDir}/wallpaper.jpg"; always = true; notification = false; }
                 { command = "xrandr --output Virtual-1 --mode 1920x1080"; always=true; notification = false; }
             ];
         };
