@@ -19,6 +19,7 @@
                 email = "cooparo@proton.me";
                 dotfilesDir = "~/dotfiles";
                 fonts = [ "FiraCode" ];
+                fontSize = 12;
                 term = "alacritty";
                 editor = "neovim";
                 browser = "brave";
