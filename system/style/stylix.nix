@@ -11,7 +11,7 @@
         };
         
         polarity = "dark";
-        base16Scheme = ./themes/${userSettings.theme}/${userSettings.theme}.nix;
+        base16Scheme = ./themes/${userSettings.theme}/${userSettings.theme}.yaml;
     
         targets.console.enable = true;
     };
