@@ -5,6 +5,7 @@
 
         config = {
             modifier = "Mod4"; # Windows button
+            defaultWorkspace = "workspace number 1";
             terminal = userSettings.term;
             focus.followMouse = false;
 
