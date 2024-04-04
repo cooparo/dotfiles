@@ -11,3 +11,8 @@ To rebuild home-manager with new edits (enter in the dotfiles dir)
 home-manager switch --flake .
 ```
 
+To update flake.lock
+```
+nix flake update
+```
+
