@@ -15,6 +15,10 @@
 
   imports = [
     ../../user/shell/sh.nix # Zsh config
+    ../../user/wm/i3.nix # i3 config
+    #../../user/style/stylix.nix # Stylix theming // TODO: broken
+
+    # App
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
 
