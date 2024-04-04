@@ -40,7 +40,6 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
-                    inherit (inputs) stylix;
                 };
             }; # END nixosConfigurations
 
@@ -51,7 +50,6 @@
                 extraSpecialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
-                    inherit (inputs) stylix;
                 };
             }; # END homeConfigurations
         };
@@ -60,8 +58,5 @@
         nixpkgs.url = "nixpkgs/nixos-23.11";
 	    home-manager.url = "github:nix-community/home-manager/release-23.11";
 	    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-        # Theme
-        stylix.url = "github:danth/stylix";
     };
 }

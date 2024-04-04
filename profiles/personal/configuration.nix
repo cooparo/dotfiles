@@ -8,7 +8,6 @@
       /etc/nixos/hardware-configuration.nix # TODO: setup a more modular way to get hardware-configuration.nix 
       ../../system/wm/i3.nix
       ../../system/wm/x11.nix
-      # ../../system/style/stylix.nix # TODO: broken
     ];
 
   # Bootloader.
