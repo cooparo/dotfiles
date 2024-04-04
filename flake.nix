@@ -40,7 +40,7 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
-                    inherit inputs;
+                    inherit (inputs) stylix;
                 };
             }; # END nixosConfigurations
 
@@ -51,7 +51,7 @@
                 extraSpecialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
-                    inherit inputs;
+                    inherit (inputs) stylix;
                 };
             }; # END homeConfigurations
         };
