@@ -16,7 +16,7 @@
             # Start up services
             startup = [
                 # Wallpaper
-                { command = "feh --bg-fill ${userSettings.dotfilesDir}/wallpaper.jpg"; always = true; notification = false; }
+                # { command = "feh --bg-fill ${userSettings.dotfilesDir}/wallpaper.jpg"; always = true; notification = false; }
                 
                 # Reload
                 { command = "xrandr --output Virtual-1 --mode 1920x1080"; always=true; notification = false; }
