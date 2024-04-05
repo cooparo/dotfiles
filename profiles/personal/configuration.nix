@@ -79,7 +79,6 @@
     shell = pkgs.zsh;
     description = userSettings.username;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [

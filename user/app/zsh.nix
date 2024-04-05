@@ -1,10 +1,16 @@
 { pkgs, ... }:
 {
   #home.packages = [ pkgs.zsh ];
+  home.packages = with pkgs; [
+    zsh
+    git
+    eza
+    oh-my-zsh
+  ];
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
     shellAliases = {
@@ -20,11 +26,6 @@
         theme = "robbyrussell";
       };  
   };
-
-  home.packages = with pkgs; [
-    eza
-    oh-my-zsh
-  ];
 
   programs.direnv.enable = true;
   programs.direnv.enableZshIntegration = true;

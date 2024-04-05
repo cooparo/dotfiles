@@ -14,7 +14,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ../../user/shell/sh.nix # Zsh config
+    ../../user/app/zsh.nix # Zsh config
     ../../user/wm/i3.nix # i3 config
 
     # App
