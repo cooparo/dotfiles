@@ -2,8 +2,6 @@
 {
     services.xserver = {
         enable = true;
-        layout = systemSettings.layout;
-
-        #excludePackages = [ pkgs.xterm ];   
+        xkb.layout = systemSettings.layout;
     };
 }
