@@ -1,5 +1,7 @@
-{ userSettings, ...}: 
+{ pkgs, userSettings, ...}: 
 {
+    home.packages = [ pkgs.alacritty ];
+
     programs.alacritty = {
         enable = true;
         settings = {
