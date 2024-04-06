@@ -27,11 +27,27 @@
   ];
 
   home.packages = with pkgs; [
-    alacritty
+    
+    # Core
     brave
     neovim
     vscode
+    neofetch
+    git
     zsh
+    alacritty
+
+    # Desktop env
+    feh
+    picom
+
+    # building tools
+    cmake
+    ninja
+    meson
+
+    # Dev packages
+    pkg-config
     
     # Nerdfont
     (nerdfonts.override { fonts = userSettings.fonts; })
