@@ -6,8 +6,17 @@
   imports = [ 
       #./../../system/hardware-configuration.nix
       /etc/nixos/hardware-configuration.nix # TODO: setup a more modular way to get hardware-configuration.nix 
-      ../../system/wm/i3.nix
-      ../../system/wm/x11.nix
+
+      # Desktop env
+      ../../system/desktopEnv/i3.nix
+      ../../system/desktopEnv/x11.nix
+    ];
+
+  environment.systemPackages = with pkgs; [
+    home-manager
+    vim
+    wget
+    git
     ];
 
   # Bootloader.
@@ -80,11 +89,6 @@
     description = userSettings.username;
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-  ];
 
   # I use zsh btw
   environment.shells = [ pkgs.zsh ];
