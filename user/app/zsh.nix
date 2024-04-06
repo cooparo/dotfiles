@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  #home.packages = [ pkgs.zsh ];
   home.packages = with pkgs; [
     zsh
     git
