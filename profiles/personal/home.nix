@@ -37,11 +37,18 @@
     zsh
     alacritty
 
+    # Tools
+    htop 
+    nix-tree # See What Depends on What
+    nix-du # See What's Consuming Disk Space
+    nix-index # See Which Derivation Supplies a File
+    graphviz # Graph visualization 
+
     # Desktop env
     feh
     picom
 
-    # building tools
+    # Building tools
     cmake
     ninja
     meson
