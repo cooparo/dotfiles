@@ -20,7 +20,8 @@
     vim
     wget
     git
-    ];
+    xfce.thunar
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
