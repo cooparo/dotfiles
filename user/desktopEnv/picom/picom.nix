@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 {
-  # FIX: may use inputs to fix that
-  home.packages = [ pkgs.picom ];
+  services.picom.enable = true;
   nixpkgs.overlays = [
     (self: super:
       {
