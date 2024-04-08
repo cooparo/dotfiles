@@ -18,7 +18,7 @@
 
     # Desktop env
     ../../user/desktopEnv/i3.nix # i3 config
-    ../../user/desktopEnv/picom/picom.nix # picom config
+    # ../../user/desktopEnv/picom/picom.nix # picom config # FIX: doesn't works
 
     # App
     ../../user/app/git.nix # Git config

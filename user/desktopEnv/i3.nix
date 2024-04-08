@@ -21,7 +21,7 @@
                 # Reload
                 { command = "xrandr --output Virtual-1 --mode 1920x1080"; always=true; notification = false; }
                 # Picom
-                { command = "picom -b"; always=true; notification=false; }
+                # { command = "picom -b"; always=true; notification=false; }
 
 
             ];
