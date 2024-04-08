@@ -8,6 +8,7 @@
             defaultWorkspace = "workspace number 1";
             terminal = userSettings.term;
             focus.followMouse = false;
+            bars = [];
 
             window.titlebar = false;
 
@@ -18,12 +19,12 @@
             startup = [
                 # Wallpaper
                 { command = "feh --bg-fill ${userSettings.dotfilesDir}/wallpaper.jpg"; always = true; notification = false; }
-                # Reload
+                # Reload display definition
                 { command = "xrandr --output Virtual-1 --mode 1920x1080"; always=true; notification = false; }
                 # Picom
                 # { command = "picom -b"; always=true; notification=false; }
-
-
+                # Polybar
+                { command = "polybar"; always=true; notification=false; }
             ];
         };
     };

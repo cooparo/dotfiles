@@ -19,6 +19,7 @@
     # Desktop env
     ../../user/desktopEnv/i3.nix # i3 config
     # ../../user/desktopEnv/picom/picom.nix # picom config # FIX: doesn't works
+    ../../user/desktopEnv/polybar/polybar.nix # polybar config
 
     # App
     ../../user/app/git.nix # Git config
@@ -47,6 +48,8 @@
     # Desktop env
     feh
     picom
+    polybar
+    lxappearance
 
     # Building tools
     cmake
