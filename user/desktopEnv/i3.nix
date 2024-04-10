@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }: 
+{ userSettings, ... }: 
 {
     xsession.windowManager.i3 = {
         enable = true;
