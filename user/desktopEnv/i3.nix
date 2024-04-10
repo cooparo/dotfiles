@@ -1,4 +1,4 @@
-{ userSettings, ... }: 
+{ userSettings, systemSettings, ... }: 
 {
     xsession.windowManager.i3 = {
         enable = true;
@@ -20,7 +20,7 @@
                 # Set wallpaper # TODO: put wallpaper.jpg in home dir
                 { command = "feh --bg-fill ${userSettings.dotfilesDir}/wallpaper.jpg"; always = true; notification = false; }
                 # Reload display definition
-                { command = "xrandr --output Virtual-1 --mode 1920x1080"; always=true; notification = false; }
+                { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=true; notification = false; }
                 # Picom
                 # { command = "picom -b"; always=true; notification=false; }
                 # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
