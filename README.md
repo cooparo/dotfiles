@@ -12,7 +12,7 @@ Theme available:
 
 ## Misc
 
-For rebuilding system (enter in the dotfiles dir):
+For rebuilding system
 ```
 sudo nixos-rebuild build --flake .
 ```
@@ -22,7 +22,7 @@ nix flake update
 ```
 ### home-manager
 
-To rebuild home-manager with new edits (enter in the dotfiles dir)
+To rebuild home-manager with new edits
 ```
 home-manager switch --flake .
 ```
