@@ -23,6 +23,7 @@ Ricing and eye-bleeding stuff:
 - [ ] neovim - Setup and theming
 - [ ] alacritty - Theming
 - [ ] wallpaper - fetch online
+- [ ] polybar - Rice default config bar
 
 Fix:
 - [ ] picom - Doesn't works
