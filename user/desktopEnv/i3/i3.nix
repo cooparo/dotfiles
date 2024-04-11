@@ -36,6 +36,7 @@ in {
             keybindings = lib.mkOptionDefault {
                 "${mod}+t" = "exec thunar";
                 "Print" = "exec flameshot gui";
+                "${mod}+d" = "exec rofi -show drun -show-icons";
             };
         };
     };

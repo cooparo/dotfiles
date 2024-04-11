@@ -50,7 +50,7 @@
     feh
     picom
     polybar
-    lxappearance
+    rofi
 
     # Building tools
     cmake
