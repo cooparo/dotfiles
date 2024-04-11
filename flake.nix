@@ -25,6 +25,7 @@
                 editor = "neovim";
                 browser = "brave";
                 theme = "nord"; 
+                # theme = "gruvbox"; 
             };
 
             # Config lib

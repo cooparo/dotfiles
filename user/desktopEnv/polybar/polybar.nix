@@ -1,5 +1,6 @@
 { userSettings, ... }:
 {
+    # kill polybar: polybar-msg cmd quit
 
     services.polybar = {
         enable = true;

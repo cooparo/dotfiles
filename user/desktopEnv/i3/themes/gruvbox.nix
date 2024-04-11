@@ -27,7 +27,7 @@ in {
         unfocused = {
             border = unfocused;
             background = unfocused;
-            text = "BDAE93";
+            text = "bdae93";
             indicator = unfocused;
             childBorder = unfocused;
         };
