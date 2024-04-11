@@ -18,7 +18,7 @@ Add:
 - [ ] ssh/pgp secrets management
 
 Ricing and eye-bleeding stuff:
-- [ ] rofi - Add shortcut (mod+o) for windows switching 
+- [x] rofi - Add shortcut (mod+o) for windows switching 
 - [ ] rofi - Resize (width) drun window
 - [ ] neovim - Setup and theming
 - [ ] alacritty - Theming

@@ -39,6 +39,7 @@ in {
                 "Print" = "exec flameshot gui";
                 "${mod}+d" = "exec rofi -show drun -show-icons";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
+                "${mod}+o" = "exec rofi -show window";
             };
         };
     };
