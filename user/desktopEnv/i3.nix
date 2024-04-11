@@ -1,10 +1,12 @@
-{ userSettings, systemSettings, ... }: 
-{
+{ lib, userSettings, systemSettings, ... }: 
+let 
+    mod = "Mod4";
+in {
     xsession.windowManager.i3 = {
         enable = true;
 
         config = {
-            modifier = "Mod4"; # Windows button
+            modifier = mod; # Windows button
             defaultWorkspace = "workspace number 1";
             terminal = userSettings.term;
             focus.followMouse = false;
@@ -26,6 +28,11 @@
                 # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
                 { command = "polybar top-bar"; always=false; notification=false; }
             ];
+
+            keybindings = lib.mkOptionDefault {
+                "${mod}+t" = "exec thunar";
+                "Print" = "exec flameshot gui";
+            };
         };
     };
 }
