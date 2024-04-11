@@ -2,16 +2,16 @@
 
 let 
     text = "#FFFFFF";
-    focused = "#EBCB8B";
-    inactive = "#3B4252";
-    unfocused = "#2E3440";
-    urgent = "#BF616A";
+    focused = "#689D6A";
+    inactive = "#504945";
+    unfocused = "#282828";
+    urgent = "#FB4934";
 
 in {
     xsession.windowManager.i3.config.colors = {
         focused = {
             border = focused;
-            background = "#5E81AC";
+            background = focused;
             text = text;
             indicator = focused;
             childBorder = focused;
@@ -27,7 +27,7 @@ in {
         unfocused = {
             border = unfocused;
             background = unfocused;
-            text = "5E81AC";
+            text = "BDAE93";
             indicator = unfocused;
             childBorder = unfocused;
         };
