@@ -31,7 +31,7 @@ in {
                 # { command = "picom -b"; always=true; notification=false; }
                 # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
                 { command = "polybar top-bar"; always=false; notification=false; }
-                { command = "systemctl --user restart polybar.service"; always=true; notification=false; }
+                { command = "polybar-msg cmd quit && systemctl --user restart polybar.service"; always=true; notification=false; }
             ];
 
             keybindings = lib.mkOptionDefault {
