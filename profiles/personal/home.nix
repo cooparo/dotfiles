@@ -37,6 +37,7 @@
     git
     zsh
     alacritty
+    flameshot
 
     # Tools
     htop 
