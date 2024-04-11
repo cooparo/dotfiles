@@ -21,6 +21,7 @@
     # ../../user/desktopEnv/picom/picom.nix # picom config # FIX: doesn't works
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi/rofi.nix # rofi config
+    ../../user/desktopEnv/gtk.nix # gtk4 config
 
     # App
     ../../user/app/git.nix # Git config
@@ -53,6 +54,7 @@
     polybar
     rofi
     rofi-power-menu
+    gtk4
 
     # Building tools
     cmake
