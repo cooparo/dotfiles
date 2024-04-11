@@ -10,9 +10,26 @@ Theme available:
 - nord
 - gruvbox
 
+## Todo
+
+Add:
+- [ ] sddm
+- [ ] qt/gtk
+- [ ] ssh/pgp secrets management
+
+Ricing and eye-bleeding stuff:
+- [ ] rofi - Add shortcut (mod+o) for windows switching 
+- [ ] rofi - Resize (width) drun window
+- [ ] neovim - Setup and theming
+- [ ] alacritty - Theming
+- [ ] wallpaper - fetch online
+
+Fix:
+- [ ] picom - Doesn't works
+
 ## Misc
 
-For rebuilding system (enter in the dotfiles dir):
+For rebuilding system
 ```
 sudo nixos-rebuild build --flake .
 ```
@@ -22,7 +39,7 @@ nix flake update
 ```
 ### home-manager
 
-To rebuild home-manager with new edits (enter in the dotfiles dir)
+To rebuild home-manager with new edits
 ```
 home-manager switch --flake .
 ```
