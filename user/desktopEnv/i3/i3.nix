@@ -2,6 +2,10 @@
 let 
     mod = "Mod4";
 in {
+
+    # Colorscheme
+    imports = [ ./themes/${userSettings.theme}.nix ];
+
     xsession.windowManager.i3 = {
         enable = true;
 
