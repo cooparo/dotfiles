@@ -10,7 +10,7 @@
                 profile = "personal"; # select a profile defined from my profiles directory
                 timezone = "Europe/Rome"; # select timezone
                 locale = "en_US.UTF-8"; # select locale
-                layout = "it";
+                # layout = "it";
                 resolution = "1920x1200";
             };
 

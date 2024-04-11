@@ -2,6 +2,6 @@
 {
     services.xserver = {
         enable = true;
-        xkb.layout = systemSettings.layout;
+        # xkb.layout = systemSettings.layout;
     };
 }

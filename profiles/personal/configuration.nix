@@ -61,7 +61,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure console keymap
-  console.keyMap = systemSettings.layout;
+  # console.keyMap = systemSettings.layout;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
