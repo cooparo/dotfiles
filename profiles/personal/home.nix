@@ -52,6 +52,7 @@
     picom
     polybar
     rofi
+    rofi-power-menu
 
     # Building tools
     cmake

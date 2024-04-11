@@ -38,6 +38,7 @@ in {
                 "${mod}+t" = "exec thunar";
                 "Print" = "exec flameshot gui";
                 "${mod}+d" = "exec rofi -show drun -show-icons";
+                "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
             };
         };
     };
