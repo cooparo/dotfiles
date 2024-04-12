@@ -4,8 +4,7 @@
 
 {
   imports = [ 
-      #./../../system/hardware-configuration.nix
-      /etc/nixos/hardware-configuration.nix # TODO: setup a more modular way to get hardware-configuration.nix 
+      ../../system/hardware-configuration.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix
@@ -31,10 +30,6 @@
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -44,16 +39,16 @@
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale;
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = systemSettings.locale;
-    LC_IDENTIFICATION = systemSettings.locale;
-    LC_MEASUREMENT = systemSettings.locale;
-    LC_MONETARY = systemSettings.locale;
-    LC_NAME = systemSettings.locale;
-    LC_NUMERIC = systemSettings.locale;
-    LC_PAPER = systemSettings.locale;
-    LC_TELEPHONE = systemSettings.locale;
-    LC_TIME = systemSettings.locale;
+  i18n.extraLocaleSettings = with systemSettings; {
+    LC_ADDRESS = locale;
+    LC_IDENTIFICATION = locale;
+    LC_MEASUREMENT = locale;
+    LC_MONETARY = locale;
+    LC_NAME = locale;
+    LC_NUMERIC = locale;
+    LC_PAPER = locale;
+    LC_TELEPHONE = locale;
+    LC_TIME = locale;
   };
 
   # Enable the GNOME Desktop Environment.
