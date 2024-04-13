@@ -1,9 +1,19 @@
-{ lib, userSettings, systemSettings, ... }: 
+{ pkgs, lib, userSettings, systemSettings, ... }: 
 let 
     mod = "Mod4";
+
+    # wallpaperURL = builtins.readFile( ../../../../themes/${userSettings.theme}/wallpaper.txt );
+    # wallpaperSHA256 = builtins.readFile( ../../../themes/${userSettings.theme}/wallpapersha256.txt);
+    
 in {
 
-    # Colorscheme
+    # Wallpaper
+    # home.file."wallpaper.jpg".source = pkgs.fetchurl {
+    #     url = wallpaperURL;
+    #     sha256 = wallpaperSHA256;
+    # };
+
+    # i3 Colorscheme
     imports = [ ./themes/${userSettings.theme}.nix ];
 
     xsession.windowManager.i3 = {

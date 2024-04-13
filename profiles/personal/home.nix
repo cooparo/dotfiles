@@ -10,7 +10,6 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
 
-
   nixpkgs.config.allowUnfree = true;
 
   imports = [
@@ -22,6 +21,7 @@
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi/rofi.nix # rofi config
     ../../user/desktopEnv/gtk.nix # gtk4 config
+    ../../user/desktopEnv/nix-color.nix # Colorscheme config
 
     # App
     ../../user/app/git.nix # Git config
