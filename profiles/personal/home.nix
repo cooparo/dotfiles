@@ -16,7 +16,7 @@
     ../../user/app/zsh.nix # Zsh config
 
     # Desktop env
-    ../../user/desktopEnv/i3/i3.nix # i3 config
+    ../../user/desktopEnv/i3.nix # i3 config
     # ../../user/desktopEnv/picom/picom.nix # picom config # FIX: doesn't works
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi/rofi.nix # rofi config

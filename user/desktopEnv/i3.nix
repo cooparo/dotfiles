@@ -1,20 +1,17 @@
-{ pkgs, lib, userSettings, systemSettings, ... }: 
+{ lib, userSettings, systemSettings, config, ... }: 
 let 
     mod = "Mod4";
 
-    # wallpaperURL = builtins.readFile( ../../../../themes/${userSettings.theme}/wallpaper.txt );
-    # wallpaperSHA256 = builtins.readFile( ../../../themes/${userSettings.theme}/wallpapersha256.txt);
+    # Colorscheme
+    palette = config.colorScheme.palette;
+
+    text = "#${palette.base07}";
+    focused = "#${palette.base0C}";
+    inactive = "#${palette.base02}";
+    unfocused = "#${palette.base00}";
+    urgent = "#${palette.base08}";
     
 in {
-
-    # Wallpaper
-    # home.file."wallpaper.jpg".source = pkgs.fetchurl {
-    #     url = wallpaperURL;
-    #     sha256 = wallpaperSHA256;
-    # };
-
-    # i3 Colorscheme
-    imports = [ ./themes/${userSettings.theme}.nix ];
 
     xsession.windowManager.i3 = {
         enable = true;
@@ -51,6 +48,38 @@ in {
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
             };
-        };
+        
+            colors = {
+                focused = {
+                    border = focused;
+                    background = focused;
+                    text = text;
+                    indicator = focused;
+                    childBorder = focused;
+                };
+
+                focusedInactive = {
+                    border = inactive;
+                    background = inactive;
+                    text = text;
+                    indicator = inactive;
+                    childBorder = inactive;
+                };
+                unfocused = {
+                    border = unfocused;
+                    background = unfocused;
+                    text = inactive;
+                    indicator = unfocused;
+                    childBorder = unfocused;
+                };
+                urgent = {
+                    border = urgent;
+                    background = urgent;
+                    text = text;
+                    indicator = urgent;
+                    childBorder = urgent;
+                };
+            };
+        };  
     };
 }
