@@ -6,9 +6,7 @@ Desktop enviroment:
 - rofi
 - picom (work in progress...)
 
-Theme available:
-- nord
-- gruvbox
+Themes available: https://github.com/tinted-theming/schemes/tree/spec-0.11/base16
 
 ## Todo
 
@@ -21,7 +19,7 @@ Ricing and eye-bleeding stuff:
 - [x] rofi - Add shortcut (mod+o) for windows switching 
 - [ ] rofi - Resize (width) drun window
 - [ ] neovim - Setup and theming
-- [ ] alacritty - Theming
+- [x] alacritty - Theming
 - [ ] wallpaper - fetch online
 - [ ] polybar - Rice default config bar
 
