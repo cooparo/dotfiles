@@ -24,8 +24,8 @@
                 term = "alacritty";
                 editor = "neovim";
                 browser = "brave";
-                theme = "nord"; 
-                # theme = "gruvbox"; 
+                # theme = "nord"; 
+                theme = "gruvbox-dark-medium"; 
             };
 
             # Config lib

@@ -30,7 +30,7 @@ in {
 
             # Start up services
             startup = [
-                # Set wallpaper # TODO: put wallpaper.jpg in home dir
+                # Set wallpaper
                 { command = "feh --bg-fill ~/wallpaper.jpg"; always = true; notification = false; }
                 # Reload display definition
                 { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=true; notification = false; }
