@@ -24,7 +24,7 @@ Ricing and eye-bleeding stuff:
 - [ ] polybar - Rice default config bar
 
 Fix:
-- [ ] picom - Doesn't works
+- [x] picom - Doesn't works
 
 ## Misc
 

@@ -35,7 +35,7 @@ in {
                 # Reload display definition
                 { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=true; notification = false; }
                 # Picom
-                # { command = "picom -b"; always=true; notification=false; }
+                { command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf"; always=true; notification=false; } 
                 # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
                 { command = "polybar top-bar"; always=false; notification=false; }
                 { command = "polybar-msg cmd quit && systemctl --user restart polybar.service"; always=true; notification=false; }
