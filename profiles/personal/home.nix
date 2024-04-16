@@ -55,7 +55,8 @@
     polybar
     rofi
     rofi-power-menu
-    gtk4
+    # gtk4
+    gtk3
 
     # Building tools
     cmake

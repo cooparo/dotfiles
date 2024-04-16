@@ -3,20 +3,21 @@
     home.packages = with pkgs; [
         nordic
         qogir-icon-theme
-        vimix-cursors
+        quintom-cursor-theme
     ];
 
     gtk = with pkgs; {
         enable = true;
 
         iconTheme.name = "Qogir";
-        iconTheme.package = pkgs.qogir-icon-theme;
+        iconTheme.package = qogir-icon-theme;
 
         theme.name = "Nordic";
-        theme.package = pkgs.nordic;
+        theme.package = nordic;
 
-        cursorTheme.name = "Vimix-cursors";
-        cursorTheme.package = pkgs.vimix-cursors;
+        cursorTheme.name = "Quintom_Snow";
+        cursorTheme.package = quintom-cursor-theme;
+        cursorTheme.size = 36;
         
     };
 }
