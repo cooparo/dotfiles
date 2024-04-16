@@ -4,7 +4,7 @@
 		nixvim.homeManagerModules.nixvim
 		./keymaps.nix
 		./plugins.nix
-		./colorScheme.nix
+		./colorscheme.nix
 	];
 
   programs.nixvim = {
