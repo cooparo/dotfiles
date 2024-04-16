@@ -2,18 +2,21 @@
 {
     home.packages = with pkgs; [
         nordic
-        gruvbox-dark-gtk
+        qogir-icon-theme
+        vimix-cursors
     ];
 
     gtk = with pkgs; {
         enable = true;
 
-        # theme = {
-        #     package = if (userSettings.theme == "nord") then nordic else gruvbox-dark-gtk;
-        #     name = "Nord"; 
-        # };
         iconTheme.name = "Qogir";
+        iconTheme.package = pkgs.qogir-icon-theme;
+
         theme.name = "Nordic";
+        theme.package = pkgs.nordic;
+
+        cursorTheme.name = "Vimix-cursors";
+        cursorTheme.package = pkgs.vimix-cursors;
         
     };
 }
