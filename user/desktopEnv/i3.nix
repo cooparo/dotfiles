@@ -31,7 +31,7 @@ in {
             # Start up services
             startup = [
                 # Set wallpaper
-                { command = "feh --bg-fill ~/wallpaper.jpg"; always = true; notification = false; }
+                { command = "feh --bg-fill ~/.wallpaper.jpg"; always = true; notification = false; }
                 # Reload display definition
                 { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=true; notification = false; }
                 # Picom
@@ -47,6 +47,7 @@ in {
                 "${mod}+d" = "exec rofi -show drun -show-icons";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
+                "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
             };
         
             colors = {

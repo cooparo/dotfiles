@@ -26,6 +26,7 @@
     # App
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
+    ../../user/app/nixvim.nix # Neovim config
 
   ];
 
@@ -33,7 +34,7 @@
     
     # Core
     brave
-    neovim
+    # neovim
     vscode
     neofetch
     git
@@ -69,7 +70,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = userSettings.editor;
+    # EDITOR = userSettings.editor;
     TERM = userSettings.term;
     BROWSER = userSettings.browser;
   };
