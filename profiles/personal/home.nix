@@ -26,7 +26,7 @@
     # App
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
-    ../../user/app/nixvim.nix # Neovim config
+    ../../user/app/nixvim/nixvim.nix # Neovim config
 
   ];
 
