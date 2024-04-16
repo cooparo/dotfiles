@@ -18,7 +18,7 @@ Add:
 Ricing and eye-bleeding stuff:
 - [x] rofi - Add shortcut (mod+o) for windows switching 
 - [ ] rofi - Resize (width) drun window
-- [ ] neovim - Setup and theming
+- [ ] nixvim - Setup
 - [x] alacritty - Theming
 - [ ] wallpaper - fetch online
 - [ ] polybar - Rice default config bar

@@ -53,6 +53,7 @@
                     inherit userSettings;
                     inherit systemSettings;
                     inherit (inputs) nix-colors;
+                    inherit (inputs) nixvim;
                 };
             }; # END homeConfigurations
         };
@@ -66,5 +67,7 @@
 
         nix-colors.url = "github:misterio77/nix-colors";
 
+        nixvim.url = "github:nix-community/nixvim";
+        nixvim.inputs.nixpkgs.follows = "nixpkgs";
     };
 }
