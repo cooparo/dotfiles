@@ -4,7 +4,7 @@
 
 {
   imports = [ 
-      ../../system/hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix

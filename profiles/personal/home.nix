@@ -19,7 +19,7 @@
     ../../user/desktopEnv/i3.nix # i3 config
     ../../user/desktopEnv/picom/picom.nix # picom config 
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
-    ../../user/desktopEnv/rofi/rofi.nix # rofi config
+    ../../user/desktopEnv/rofi.nix # rofi config
     ../../user/desktopEnv/gtk.nix # gtk4 config
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
 

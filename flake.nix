@@ -10,7 +10,6 @@
                 profile = "personal"; # select a profile defined from my profiles directory
                 timezone = "Europe/Rome"; # select timezone
                 locale = "en_US.UTF-8"; # select locale
-                # layout = "it";
                 resolution = "1920x1200";
             };
 
@@ -22,7 +21,7 @@
                 fonts = [ "FiraCode" ];
                 fontSize = 12;
                 term = "alacritty";
-                editor = "neovim";
+                editor = "nvim";
                 browser = "brave";
                 # theme = "nord"; 
                 theme = "gruvbox-dark-medium"; 
