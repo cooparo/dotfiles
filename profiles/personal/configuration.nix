@@ -20,12 +20,15 @@
     wget
     git
     xfce.thunar
+
+    sleek-grub-theme # Grub theme
   ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = false;
+  boot.loader.grub.theme = pkgs.sleek-grub-theme;
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

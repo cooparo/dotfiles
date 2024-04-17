@@ -12,16 +12,20 @@ Themes available: https://github.com/tinted-theming/schemes/tree/spec-0.11/base1
 
 Add:
 - [ ] sddm
-- [ ] qt/gtk
 - [ ] ssh/pgp secrets management
 
+- [x] qt/gtk
+
 Ricing and eye-bleeding stuff:
-- [x] rofi - Add shortcut (mod+o) for windows switching 
 - [ ] rofi - Resize (width) drun window
 - [ ] nixvim - Setup
-- [x] alacritty - Theming
 - [ ] wallpaper - fetch online
 - [ ] polybar - Rice default config bar
+- [ ] gtk - fix cursors theme
+- [ ] rofi - fix rofi theme
+
+- [x] rofi - Add shortcut (mod+o) for windows switching 
+- [x] alacritty - Theming
 
 Fix:
 - [x] picom - Doesn't works
