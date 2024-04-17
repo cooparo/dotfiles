@@ -71,8 +71,9 @@
   ];
 
   home.sessionVariables = {
-    # EDITOR = userSettings.editor;
+    EDITOR = userSettings.editor;
     TERM = userSettings.term;
+    SHELL = userSettings.shell;
     BROWSER = userSettings.browser;
   };
 

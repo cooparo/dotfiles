@@ -23,6 +23,7 @@
                 term = "alacritty";
                 editor = "nvim";
                 browser = "brave";
+                shell = "zsh";
                 # theme = "nord"; 
                 theme = "gruvbox-dark-medium"; 
             };
