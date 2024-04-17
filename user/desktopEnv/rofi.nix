@@ -2,97 +2,114 @@
 
 let
 
-    font = builtins.elemAt userSettings.fonts 0; # First element of fonts list
-    size = toString userSettings.fontSize;
+    # font = builtins.elemAt userSettings.fonts 0; # First element of fonts list
+    # size = toString userSettings.fontSize;
 
 in {
-    programs.rofi = {
-        enable = true;
-        font = "${font} ${size}";
-    };
+    # programs.rofi = {
+    #     enable = true;
+    #     font = "${font} ${size}";
+    # };
 
-    home.file.".config/rofi/theme.rasi" = with config.colorScheme.palette; {
-        
-        target = ".config/rofi/theme.rasi";
-        text =  ''
-            configuration {
+    home.file.".config/rofi/config.rasi".text = with config.colorScheme.palette; ''
 
-            drun {
-                display-name: "";
-            }
+* {
+    font:   "IBM Plex Mono 12";
 
-            run {
-                display-name: "";
-            }
+    nord0:     #2e3440;
+    nord1:     #3b4252;
+    nord2:     #434c5e;
+    nord3:     #4c566a;
 
-            window {
-                display-name: "";
-            }
+    nord4:     #d8dee9;
+    nord5:     #e5e9f0;
+    nord6:     #eceff4;
 
-            timeout {
-                delay: 10;
-                action: "kb-cancel";
-            }
-            }
+    nord7:     #8fbcbb;
+    nord8:     #88c0d0;
+    nord9:     #81a1c1;
+    nord10:    #5e81ac;
+    nord11:    #bf616a;
 
-            * {
-            border: 0;
-            margin: 0;
-            padding: 0;
-            spacing: 0;
+    nord12:    #d08770;
+    nord13:    #ebcb8b;
+    nord14:    #a3be8c;
+    nord15:    #b48ead;
 
-            bg: #${base00};
-            bg-alt: #${base01};
-            fg: #${base0D};
-            fg-alt: #${base0A};
+    background-color:   transparent;
+    text-color:         @nord4;
+    accent-color:       @nord8;
 
-            background-color: @bg;
-            text-color: @fg;    
-            }
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
 
-            window {
-            transparency: "real";
-            }
+window {
+    background-color:   @nord0;
+    border-color:       @accent-color;
 
-            mainbox {
-            children: [inputbar, listview];
-            }
+    location:   center;
+    width:      480px;
+    border:     1px;
+}
 
-            inputbar {
-            background-color: @bg-alt;
-            children: [prompt, entry];
-            }
+inputbar {
+    padding:    8px 12px;
+    spacing:    12px;
+    children:   [ prompt, entry ];
+}
 
-            entry {
-            background-color: inherit;
-            padding: 12px 3px;
-            }
+prompt, entry, element-text, element-icon {
+    vertical-align: 0.5;
+}
 
-            prompt {
-            background-color: inherit;
-            padding: 12px;
-            }
+prompt {
+    text-color: @accent-color;
+}
 
-            listview {
-            lines: 8;
-            }
+listview {
+    lines:      8;
+    columns:    1;
 
-            element {
-            children: [element-icon, element-text];
-            }
+    fixed-height:   false;
+}
 
-            element-icon {
-            padding: 10px 10px;
-            }
+element {
+    padding:    8px;
+    spacing:    8px;
+}
 
-            element-text {
-            padding: 10px 0;
-            }
+element normal urgent {
+    text-color: @nord13;
+}
 
-            element-text selected {
-            text-color: @fg-alt;
-            }
+element normal active {
+    text-color: @accent-color;
+}
 
-        '';
-    };
+element selected {
+    text-color: @nord0;
+}
+
+element selected normal {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @nord13;
+}
+
+element selected active {
+    background-color:   @nord8;
+}
+
+element-icon {
+    size:   0.75em;
+}
+
+element-text {
+    text-color: inherit;
+}
+    '';
 }

@@ -44,9 +44,9 @@ in {
             keybindings = lib.mkOptionDefault {
                 "${mod}+t" = "exec thunar";
                 "Print" = "exec flameshot gui";
-                "${mod}+d" = "exec rofi -config ~/.config/rofi/theme.rasi -show drun -show-icons";
-                "${mod}+p" = "exec rofi -config ~/.config/rofi/theme.rasi -show power-menu -modi power-menu:rofi-power-menu";
-                "${mod}+o" = "exec rofi -config ~/.config/rofi/theme.rasi -show window";
+                "${mod}+d" = "exec rofi -show drun -show-icons";
+                "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
+                "${mod}+o" = "exec rofi -show window";
                 "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
             };
         
