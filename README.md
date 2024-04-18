@@ -17,13 +17,13 @@ Add:
 - [x] qt/gtk
 
 Ricing and eye-bleeding stuff:
-- [ ] rofi - Resize (width) drun window
 - [ ] nixvim - Setup
 - [ ] wallpaper - fetch online
 - [ ] polybar - Rice default config bar
 - [ ] gtk - fix cursors theme
-- [ ] rofi - fix rofi theme
 
+- [x] rofi - Resize (width) drun window
+- [x] rofi - fix rofi theme
 - [x] rofi - Add shortcut (mod+o) for windows switching 
 - [x] alacritty - Theming
 

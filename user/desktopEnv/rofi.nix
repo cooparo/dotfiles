@@ -4,34 +4,35 @@ let
 
     font = builtins.elemAt userSettings.fonts 0; # First element of fonts list
     size = toString userSettings.fontSize;
+    color = config.colorScheme.palette;
 
     # taken from https://github.com/lr-tech/rofi-themes-collection 
     theme = builtins.toFile "rofi-theme.rasi" ''
         * {
 
-            nord0:     #2e3440;
-            nord1:     #3b4252;
-            nord2:     #434c5e;
-            nord3:     #4c566a;
+            base0:     #${color.base00};
+            base1:     #${color.base01};
+            base2:     #${color.base02};
+            base3:     #${color.base03};
 
-            nord4:     #d8dee9;
-            nord5:     #e5e9f0;
-            nord6:     #eceff4;
+            base4:     #${color.base04};
+            base5:     #${color.base05};
+            base6:     #${color.base06};
 
-            nord7:     #8fbcbb;
-            nord8:     #88c0d0;
-            nord9:     #81a1c1;
-            nord10:    #5e81ac;
-            nord11:    #bf616a;
+            base7:     #${color.base07};
+            base8:     #${color.base0C};
+            base9:     #${color.base0D};
+            base10:    #${color.base0F};
+            base11:    #${color.base08};
 
-            nord12:    #d08770;
-            nord13:    #ebcb8b;
-            nord14:    #a3be8c;
-            nord15:    #b48ead;
+            base12:    #${color.base09};
+            base13:    #${color.base0A};
+            base14:    #${color.base0B};
+            base15:    #${color.base0E};
 
             background-color:   transparent;
-            text-color:         @nord4;
-            accent-color:       @nord8;
+            text-color:         @base4;
+            accent-color:       @base8;
 
             margin:     0px;
             padding:    0px;
@@ -39,7 +40,7 @@ let
         }
 
         window {
-            background-color:   @nord0;
+            background-color:   @base0;
             border-color:       @accent-color;
 
             location:   center;
@@ -74,7 +75,7 @@ let
         }
 
         element normal urgent {
-            text-color: @nord13;
+            text-color: @base13;
         }
 
         element normal active {
@@ -82,7 +83,7 @@ let
         }
 
         element selected {
-            text-color: @nord0;
+            text-color: @base0;
         }
 
         element selected normal {
@@ -90,11 +91,11 @@ let
         }
 
         element selected urgent {
-            background-color:   @nord13;
+            background-color:   @base13;
         }
 
         element selected active {
-            background-color:   @nord8;
+            background-color:   @base8;
         }
 
         element-icon {
