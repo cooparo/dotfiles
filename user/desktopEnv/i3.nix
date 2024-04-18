@@ -37,14 +37,14 @@ in {
                 # Picom
                 { command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf"; always=true; notification=false; } 
                 # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
-                { command = "polybar top-bar"; always=false; notification=false; }
-                { command = "polybar-msg cmd quit && systemctl --user restart polybar.service"; always=true; notification=false; }
+                { command = "polybar-msg cmd quit && polybar main &"; always=true; notification=false; }
+                #{ command = "polybar-msg cmd quit && systemctl --user restart polybar.service"; always=true; notification=false; }
             ];
 
             keybindings = lib.mkOptionDefault {
                 "${mod}+t" = "exec thunar";
                 "Print" = "exec flameshot gui";
-                "${mod}+d" = "exec rofi -show drun -show-icons";
+                "${mod}+d" = "exec rofi -show drun";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
                 "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
