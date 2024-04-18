@@ -15,9 +15,9 @@
         theme.name = "Nordic";
         theme.package = nordic;
 
-        cursorTheme.name = "Quintom_Snow";
+        cursorTheme.name = "Quintom_Ink";
         cursorTheme.package = quintom-cursor-theme;
-        cursorTheme.size = 36;
+        cursorTheme.size = 24;
         
     };
 }
