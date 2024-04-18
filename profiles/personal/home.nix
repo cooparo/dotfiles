@@ -66,8 +66,8 @@
     # Dev packages
     pkg-config
     
-    # Nerdfont
-    (nerdfonts.override { fonts = userSettings.fonts; })
+    # Fonts
+    nerdfonts
   ];
 
   home.sessionVariables = {
@@ -75,6 +75,7 @@
     TERM = userSettings.term;
     SHELL = userSettings.shell;
     BROWSER = userSettings.browser;
+    FLAKE = "/home/paro/dotfiles";
   };
 
   # NerdFont

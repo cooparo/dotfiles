@@ -10,7 +10,7 @@
                 profile = "personal"; # select a profile defined from my profiles directory
                 timezone = "Europe/Rome"; # select timezone
                 locale = "en_US.UTF-8"; # select locale
-                resolution = "1920x1200";
+                resolution = "1920x1080";
             };
 
             # --- USER SETTINGS --- #
@@ -18,14 +18,16 @@
                 username = "paro";
                 email = "cooparo@proton.me";
                 dotfilesDir = "~/dotfiles";
-                fonts = [ "FiraCode" ];
-                fontSize = 12;
+                
                 term = "alacritty";
                 editor = "nvim";
                 browser = "brave";
                 shell = "zsh";
-                # theme = "nord"; 
-                theme = "gruvbox-dark-medium"; 
+
+                fonts = [ "FiraCode" ];
+                fontSize = 12;
+                theme = "nord"; 
+                # theme = "gruvbox-dark-medium"; 
             };
 
             # Config lib
