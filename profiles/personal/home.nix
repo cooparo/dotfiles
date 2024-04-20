@@ -27,6 +27,7 @@
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
     ../../user/app/nixvim/nixvim.nix # Neovim config
+    ../../user/app/megasync.nix
 
   ];
 
@@ -41,6 +42,10 @@
     zsh
     alacritty
     flameshot
+    
+    spotify
+    obsidian
+    megasync
 
     # Tools
     htop 
@@ -65,21 +70,18 @@
 
     # Dev packages
     pkg-config
-    
-    # Fonts
-    nerdfonts
   ];
 
-  home.sessionVariables = {
-    EDITOR = userSettings.editor;
-    TERM = userSettings.term;
-    SHELL = userSettings.shell;
-    BROWSER = userSettings.browser;
-    FLAKE = "/home/paro/dotfiles";
+  home.sessionVariables = with userSettings; {
+    EDITOR = editor;
+    TERM = term;
+    SHELL = shell;
+    BROWSER = browser;
+    FLAKE = dotfilesDir;
+    ETH_INTERFACE = eth-interface;
+    WIFI_INTERFACE = wifi-interface;
+    INTERFACE = if (wifi-interface == "") then eth-interface else wifi-interface;
   };
-
-  # NerdFont
-  fonts.fontconfig.enable = true;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 }
