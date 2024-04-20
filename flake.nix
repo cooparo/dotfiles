@@ -24,7 +24,10 @@
                 browser = "brave";
                 shell = "zsh";
 
-                fonts = [ "FiraCode" ];
+                eth-interface = "enp1s0";
+                wifi-interface = "";
+
+                nerdfonts = [ "FiraCode" "Iosevka" ];
                 fontSize = 12;
                 theme = "nord"; 
                 # theme = "gruvbox-dark-medium"; 

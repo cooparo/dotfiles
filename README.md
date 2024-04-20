@@ -14,13 +14,14 @@ Add:
 - [ ] sddm
 - [ ] ssh/pgp secrets management
 
-- [x] qt/gtk
+- [x] gtk
 
 Ricing and eye-bleeding stuff:
 - [ ] nixvim - Setup
 - [ ] wallpaper - fetch online
 - [ ] polybar - Rice default config bar
 - [ ] gtk - fix cursors theme
+- [ ] polybar - auto-getting name of network interfaces 
 
 - [x] rofi - Resize (width) drun window
 - [x] rofi - fix rofi theme

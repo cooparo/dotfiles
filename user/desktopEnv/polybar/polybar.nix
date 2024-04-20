@@ -5,19 +5,20 @@
     services.polybar = with config.colorScheme.palette;  {
         enable = true;
 
-        script = "polybar main &"; # Don't remove this or will throw an error
-        extraConfig = 
-        ''
+        script = ''
+        polybar-msg cmd quit
         
-        include-file = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/bars.ini
-        include-file = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/modules.ini
-        include-file = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/user_modules.ini
-        include-file = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/main.ini
+        echo "---" | tee -a /tmp/polybar.log
+        polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+        ''; # Don't remove this or will throw an error
+        
+        extraConfig = ''
+        include-directory = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/
         
         [color]
-        background = #212B30
-        foreground = #C4C7C5
-        sep = #3F5360
+        background = #${base00}
+        foreground = #${base04}
+        sep = #${base0D}
 
         white = #FFFFFF
         black = #000000
@@ -47,4 +48,7 @@
         # disabled = #${base03}
         
     };
+
+    # Install Feather font
+    home.file.".local/share/fonts/feather.ttf".source = ./forest/font/feather.ttf;
 }

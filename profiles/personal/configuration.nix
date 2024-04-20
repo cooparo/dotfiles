@@ -9,6 +9,7 @@
       # Desktop env
       ../../system/desktopEnv/i3.nix
       ../../system/desktopEnv/x11.nix
+      ../../system/desktopEnv/fonts.nix
 
       # Tools
       ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs

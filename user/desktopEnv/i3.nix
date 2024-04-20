@@ -33,12 +33,11 @@ in {
                 # Set wallpaper
                 { command = "feh --bg-fill ~/.wallpaper.jpg"; always = true; notification = false; }
                 # Reload display definition
-                { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=true; notification = false; }
+                { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=false; notification = false; }
                 # Picom
                 { command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf"; always=true; notification=false; } 
-                # Polybar (with always=false, the command get exec only at boot and not every time I restart i3)
-                { command = "polybar-msg cmd quit && polybar main &"; always=true; notification=false; }
-                #{ command = "polybar-msg cmd quit && systemctl --user restart polybar.service"; always=true; notification=false; }
+                # Polybar 
+                { command = "systemctl --user restart polybar.service"; always=true; notification=false; }
             ];
 
             keybindings = lib.mkOptionDefault {
