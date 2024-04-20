@@ -17,7 +17,7 @@
             userSettings = {
                 username = "paro";
                 email = "cooparo@proton.me";
-                dotfilesDir = "~/dotfiles";
+                dotfilesDir = "/home/paro/dotfiles";
                 
                 term = "alacritty";
                 editor = "nvim";

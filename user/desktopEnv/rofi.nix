@@ -2,7 +2,7 @@
 
 let
 
-    font = builtins.elemAt userSettings.fonts 0; # First element of fonts list
+    font = builtins.elemAt userSettings.nerdfonts 0; # First element of fonts list
     size = toString userSettings.fontSize;
     color = config.colorScheme.palette;
 
