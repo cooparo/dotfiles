@@ -19,10 +19,11 @@ Add:
 Ricing and eye-bleeding stuff:
 - [ ] nixvim - Setup
 - [ ] wallpaper - fetch online
-- [ ] polybar - Rice default config bar
 - [ ] gtk - fix cursors theme
 - [ ] polybar - auto-getting name of network interfaces 
+- [ ] polybar - add spotify module
 
+- [x] polybar - Rice default config bar
 - [x] rofi - Resize (width) drun window
 - [x] rofi - fix rofi theme
 - [x] rofi - Add shortcut (mod+o) for windows switching 
