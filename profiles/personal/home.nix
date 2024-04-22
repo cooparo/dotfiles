@@ -35,14 +35,14 @@
     
     # Core
     brave
-    # neovim
     vscode
     neofetch
     git
     zsh
     alacritty
     flameshot
-    
+
+    telegram-desktop
     spotify
     obsidian
     megasync
