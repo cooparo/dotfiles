@@ -20,7 +20,7 @@
                 normal.blue = "#${base0D}";
                 normal.magenta = "#${base0E}";
                 normal.cyan = "#${base0C}";
-                normal.white = "#${base07}";
+                normal.white = "#${base06}";
             };  
         };
     };
