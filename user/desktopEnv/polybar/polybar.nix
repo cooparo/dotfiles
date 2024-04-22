@@ -20,32 +20,24 @@
         foreground = #${base04}
         sep = #${base0D}
 
-        white = #FFFFFF
-        black = #000000
-        red = #EC7875
+        white = #${base06}
+        black = #${base00}
+        red = #${base08}
         pink = #EC407A
-        purple = #BA68C8
-        blue = #42A5F5
-        cyan = #4DD0E1
+        purple = #${base0E}
+        blue = #${base0D}
+        cyan = #${base0C}
         teal = #00B19F
-        green = #61C766
+        green = #${base0B}
         lime = #B9C244
-        yellow = #FDD835
+        yellow = #${base0A}
         amber = #FBC02D
-        orange = #E57C46
+        orange = #${base09}
         brown = #AC8476
         indigo = #6C77BB
-        gray = #9E9E9E
+        gray = #${base04}
         blue-gray = #6D8895
         '';
-
-        # background = #${base00}
-        # background-alt = #${base02}
-        # foreground = #${base06}
-        # primary = #${base0A}
-        # secondary = #${base07}
-        # alert = #${base08}
-        # disabled = #${base03}
         
     };
 
