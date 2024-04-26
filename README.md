@@ -14,8 +14,6 @@ Add:
 - [ ] sddm
 - [ ] ssh/pgp secrets management
 
-- [x] gtk
-
 Ricing and eye-bleeding stuff:
 - [ ] nixvim - Setup
 - [ ] wallpaper - fetch online
@@ -23,20 +21,15 @@ Ricing and eye-bleeding stuff:
 - [ ] polybar - auto-getting name of network interfaces 
 - [ ] polybar - add spotify module
 
-- [x] polybar - Rice default config bar
-- [x] rofi - Resize (width) drun window
-- [x] rofi - fix rofi theme
-- [x] rofi - Add shortcut (mod+o) for windows switching 
-- [x] alacritty - Theming
 
 Fix:
-- [x] picom - Doesn't works
+
 
 ## Misc
 
 For rebuilding system
 ```
-sudo nixos-rebuild build --flake .
+sudo nixos-rebuild switch --flake .
 ```
 To update flake.lock
 ```
