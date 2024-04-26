@@ -12,11 +12,11 @@
         script = ''
         polybar-msg cmd quit
         
-        echo "---" | tee -a /tmp/polybar.log
+        echo "---" | tee -a /tmp/polybar.log 
         polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+        polybar secondary 2>&1 | tee -a /tmp/polybar.log & disown
         '';
         
-        # TODO: remove include directory inject file content with builtins.readFile
         extraConfig = ''
         include-directory = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/ 
         
