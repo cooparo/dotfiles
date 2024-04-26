@@ -36,9 +36,7 @@
         green = #${base0B}
         lime = #B9C244
         yellow = #${base0A}
-        amber = #FBC02D
         orange = #${base09}
-        brown = #AC8476
         indigo = #6C77BB
         gray = #${base04}
         blue-gray = #6D8895
