@@ -1,19 +1,24 @@
-{ userSettings, config, ... }:
+{ pkgs, userSettings, config, ... }:
 {
     # kill polybar: polybar-msg cmd quit
 
     services.polybar = with config.colorScheme.palette;  {
         enable = true;
 
+        package = pkgs.polybar.override {
+            i3Support = true;
+        };
+
         script = ''
         polybar-msg cmd quit
         
         echo "---" | tee -a /tmp/polybar.log
         polybar main 2>&1 | tee -a /tmp/polybar.log & disown
-        ''; # Don't remove this or will throw an error
+        '';
         
+        # TODO: remove include directory inject file content with builtins.readFile
         extraConfig = ''
-        include-directory = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/
+        include-directory = ${userSettings.dotfilesDir}/user/desktopEnv/polybar/forest/ 
         
         [color]
         background = #${base00}
