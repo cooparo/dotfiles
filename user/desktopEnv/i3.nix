@@ -28,12 +28,10 @@ in {
             gaps.inner = 5;
             gaps.outer = 2;
 
-            # Start up services
+            # Start up command
             startup = [
                 # Set wallpaper
                 { command = "feh --bg-fill ~/.wallpaper.jpg"; always = true; notification = false; }
-                # Reload display definition
-                { command = "xrandr --output Virtual-1 --mode ${systemSettings.resolution}"; always=false; notification = false; }
                 # Picom
                 { command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf"; always=true; notification=false; } 
                 # Polybar 
@@ -46,7 +44,7 @@ in {
                 "${mod}+d" = "exec rofi -show drun";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
-                "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
+                #"${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh"; #TODO: only for laptop
             };
         
             colors = {

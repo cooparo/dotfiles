@@ -57,10 +57,8 @@
     # Desktop env
     feh
     picom
-    polybar
     rofi
     rofi-power-menu
-    # gtk4
     gtk3
 
     # Building tools

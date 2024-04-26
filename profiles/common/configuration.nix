@@ -6,6 +6,8 @@
   imports = [ 
       /etc/nixos/hardware-configuration.nix
 
+      ../../system/bootloader.nix
+
       # Desktop env
       ../../system/desktopEnv/i3.nix
       ../../system/desktopEnv/x11.nix
@@ -15,21 +17,14 @@
       ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs
     ];
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     home-manager
     vim
     wget
     git
     xfce.thunar
-
-    sleek-grub-theme # Grub theme
   ];
-
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = false;
-  boot.loader.grub.theme = pkgs.sleek-grub-theme;
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -58,9 +53,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure console keymap
-  # console.keyMap = systemSettings.layout;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

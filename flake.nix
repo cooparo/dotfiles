@@ -7,7 +7,7 @@
             systemSettings = {
                 system = "x86_64-linux";
                 hostname = "nixos"; # hostname
-                profile = "personal"; # select a profile defined from my profiles directory
+                profile = "desktop"; # select a profile defined from my profiles directory
                 timezone = "Europe/Rome"; # select timezone
                 locale = "en_US.UTF-8"; # select locale
                 resolution = "1920x1080";
@@ -24,7 +24,7 @@
                 browser = "brave";
                 shell = "zsh";
 
-                eth-interface = "enp1s0";
+                eth-interface = "eno1";
                 wifi-interface = "";
 
                 nerdfonts = [ "FiraCode" "Iosevka" ];
