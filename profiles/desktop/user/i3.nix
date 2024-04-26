@@ -1,4 +1,4 @@
-{ lib, systemSettings, ... }:
+{ lib, systemSettings, userSettings, ... }:
 let
 
   mod = "Mod4";
@@ -12,6 +12,7 @@ in {
     ];
 
     keybindings = lib.mkOptionDefault {
+      "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
       
     };  
 
