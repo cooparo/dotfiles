@@ -3,7 +3,6 @@
     home.packages = with pkgs; [
         nordic
         qogir-icon-theme
-        quintom-cursor-theme
     ];
 
     # gtk = with pkgs; {
