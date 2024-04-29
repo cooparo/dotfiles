@@ -7,6 +7,7 @@
       /etc/nixos/hardware-configuration.nix
 
       ../../system/bootloader.nix
+      ../../system/printer.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix
