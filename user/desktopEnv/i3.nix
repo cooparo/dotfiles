@@ -27,6 +27,7 @@ in {
 
             gaps.inner = 5;
             gaps.outer = 2;
+            gaps.smartGaps = true;
 
             # Start up command
             startup = [
