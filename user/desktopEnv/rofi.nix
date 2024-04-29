@@ -99,7 +99,7 @@ let
         }
 
         element-icon {
-            size:   0.75em;
+            size:   1.2em;
         }
 
         element-text {
