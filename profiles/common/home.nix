@@ -60,6 +60,7 @@
     rofi
     rofi-power-menu
     gtk3
+    autotiling
 
     # Building tools
     cmake

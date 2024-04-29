@@ -37,6 +37,7 @@ in {
                 { command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf"; always=true; notification=false; } 
                 # Polybar 
                 { command = "systemctl --user restart polybar.service"; always=true; notification=false; }
+                { command = "autotiling &"; always=true; notification=false; }
             ];
 
             keybindings = lib.mkOptionDefault {
@@ -45,7 +46,6 @@ in {
                 "${mod}+d" = "exec rofi -show drun";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
-                #"${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh"; #TODO: only for laptop
             };
         
             colors = {
