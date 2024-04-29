@@ -53,6 +53,7 @@
     nix-du # See What's Consuming Disk Space
     nix-index # See Which Derivation Supplies a File
     playerctl # Media player manager (eg. spotify)
+    pulseaudioFull
 
     # Desktop env
     feh

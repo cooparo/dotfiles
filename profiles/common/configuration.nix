@@ -8,6 +8,7 @@
 
       ../../system/bootloader.nix
       ../../system/printer.nix
+      ../../system/audio.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix

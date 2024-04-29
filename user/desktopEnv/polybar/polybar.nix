@@ -7,6 +7,8 @@
 
         package = pkgs.polybar.override {
             i3Support = true;
+            alsaSupport = true;
+            pulseSupport = true;
         };
 
         script = ''
