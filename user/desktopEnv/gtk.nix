@@ -6,18 +6,18 @@
         quintom-cursor-theme
     ];
 
-    gtk = with pkgs; {
-        enable = true;
+    # gtk = with pkgs; {
+    #     enable = true;
 
-        iconTheme.name = "Qogir";
-        iconTheme.package = qogir-icon-theme;
+    #     iconTheme.name = "Qogir";
+    #     iconTheme.package = qogir-icon-theme;
 
-        theme.name = "Nordic";
-        theme.package = nordic;
+    #     theme.name = "Nordic";
+    #     theme.package = nordic;
 
-        cursorTheme.name = "Quintom_Ink";
-        cursorTheme.package = quintom-cursor-theme;
-        cursorTheme.size = 24;
+    #     cursorTheme.name = "Quintom_Ink";
+    #     cursorTheme.package = quintom-cursor-theme;
+    #     cursorTheme.size = 24;
         
-    };
+    # };
 }

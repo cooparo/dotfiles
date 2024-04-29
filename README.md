@@ -16,11 +16,7 @@ Add:
 
 Ricing and eye-bleeding stuff:
 - [ ] nixvim - Setup
-- [ ] wallpaper - fetch online
-- [ ] gtk - fix cursors theme
-- [ ] polybar - auto-getting name of network interfaces 
 - [ ] polybar - add spotify module
-
 
 Fix:
 

@@ -22,10 +22,13 @@ in {
       # "XF86AudioLowerVolume" = "";
       # "XF86AudioMute" = "";
 
+      # Cycle moving workspaces in different monitor
+      "${mod}+Tab" = "move workspace to output next";
+
     };  
 
     startup = [
-
+      { command = "xrandr --output DP-2 --primary"; always=false; notification=false; }
     ];
   };
 }

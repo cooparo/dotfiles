@@ -20,7 +20,7 @@
     ../../user/desktopEnv/picom/picom.nix # picom config 
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi.nix # rofi config
-    ../../user/desktopEnv/gtk.nix # gtk4 config
+    ../../user/desktopEnv/gtk.nix # gtk config
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
 
     # App
@@ -61,6 +61,7 @@
     rofi-power-menu
     gtk3
     autotiling
+    lxappearance
 
     # Building tools
     cmake
