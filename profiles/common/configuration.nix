@@ -9,6 +9,7 @@
       ../../system/bootloader.nix
       ../../system/printer.nix
       ../../system/audio.nix
+      ../../system/doas.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix
@@ -17,6 +18,7 @@
 
       # Tools
       ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs
+      ../../system/tools/garbage-collector.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
