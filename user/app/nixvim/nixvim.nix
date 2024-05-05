@@ -7,11 +7,17 @@
 		./colorscheme.nix
 	];
 
+	home.packages = with pkgs; [
+		xclip
+	];
+
   programs.nixvim = {
 		enable = true;
 		defaultEditor = true;
 
 		globals.mapleader = " ";
+
+		clipboard.providers.xclip.enable = true;
 		
 		opts = {
 			number = true;
