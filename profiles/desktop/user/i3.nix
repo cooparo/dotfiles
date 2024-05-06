@@ -12,15 +12,8 @@ in {
     ];
 
     keybindings = lib.mkOptionDefault {
-
-      # Audio button
-      "XF86AudioPrev" = "exec playerctl previous";
-      "XF86AudioNext" = "exec playerctl next";
-      "XF86AudioPlay" = "exec playerctl play-pause";
-
       # Cycle moving workspaces in different monitor
       "${mod}+Tab" = "move workspace to output next";
-
     };  
 
     startup = [

@@ -57,6 +57,7 @@
     playerctl # Media player manager (eg. spotify)
     pulseaudioFull
     brightnessctl # Manage display brightness
+    pavucontrol
 
     # Desktop env
     feh

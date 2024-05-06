@@ -48,9 +48,12 @@ in {
                 "${mod}+o" = "exec rofi -show window";
 
                 # Audio
-                # "XF86AudioMute" = "exec "; # TODO
+                "XF86AudioMute" = "exec amixer sset Master toggle";
                 "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
                 "XF86AudioLowerVolume" = "exec amixer sset Master 10%-";
+                "XF86AudioPrev" = "exec playerctl previous";
+                "XF86AudioNext" = "exec playerctl next";
+                "XF86AudioPlay" = "exec playerctl play-pause";
 
                 # Brightness
                 "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
