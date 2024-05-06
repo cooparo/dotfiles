@@ -3,6 +3,7 @@
     home.packages = with pkgs; [
         nordic
         qogir-icon-theme
+        gruvbox-dark-gtk
     ];
 
     # gtk = with pkgs; {

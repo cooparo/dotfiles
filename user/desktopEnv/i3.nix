@@ -46,6 +46,15 @@ in {
                 "${mod}+d" = "exec rofi -show drun";
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
+
+                # Audio
+                # "XF86AudioMute" = "exec "; # TODO
+                "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
+                "XF86AudioLowerVolume" = "exec amixer sset Master 10%-";
+
+                # Brightness
+                "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
+                "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
             };
         
             colors = {

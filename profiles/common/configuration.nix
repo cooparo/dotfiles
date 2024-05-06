@@ -10,6 +10,7 @@
       ../../system/printer.nix
       ../../system/audio.nix
       ../../system/doas.nix
+      ../../system/bluetooth.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix
@@ -56,6 +57,9 @@
     LC_PAPER = locale;
     LC_TELEPHONE = locale;
     LC_TIME = locale;
+    
+    # LANGUAGE = locale;
+    # LC_ALL = locale;
   };
 
   # Enable the GNOME Desktop Environment.

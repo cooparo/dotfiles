@@ -18,9 +18,6 @@ in {
       "XF86AudioPrev" = "exec playerctl previous";
       "XF86AudioNext" = "exec playerctl next";
       "XF86AudioPlay" = "exec playerctl play-pause";
-      # "XF86AudioRaiseVolume" = "";
-      # "XF86AudioLowerVolume" = "";
-      # "XF86AudioMute" = "";
 
       # Cycle moving workspaces in different monitor
       "${mod}+Tab" = "move workspace to output next";

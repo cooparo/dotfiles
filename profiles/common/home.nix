@@ -28,6 +28,7 @@
     ../../user/app/alacritty.nix # Alacritty config
     ../../user/app/nixvim/nixvim.nix # Neovim config
     ../../user/app/megasync.nix
+    ../../user/app/bluetooth.nix # Headset button
     ../../user/app/pkgs-stable.nix
   ];
 
@@ -55,6 +56,7 @@
     nix-index # See Which Derivation Supplies a File
     playerctl # Media player manager (eg. spotify)
     pulseaudioFull
+    brightnessctl # Manage display brightness
 
     # Desktop env
     feh
