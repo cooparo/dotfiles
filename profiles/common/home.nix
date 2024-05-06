@@ -66,7 +66,6 @@
     gtk3
     autotiling
     lxappearance
-    electron
 
     # Building tools
     cmake
