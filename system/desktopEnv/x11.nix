@@ -1,7 +1,8 @@
-{ pkgs, systemSettings, ... }:
+{ pkgs, userSettings, ... }:
 {
     services.xserver = {
         enable = true;
-        # xkb.layout = systemSettings.layout;
+        xkb.layout = userSettings.kbLayout;
+        xkb.options = "grp:win_space_toggle";
     };
 }

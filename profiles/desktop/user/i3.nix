@@ -12,7 +12,6 @@ in {
     ];
 
     keybindings = lib.mkOptionDefault {
-      "${mod}+space" = "exec ${userSettings.dotfilesDir}/user/scripts/kb-itus-toggle.sh";
 
       # Audio button
       "XF86AudioPrev" = "exec playerctl previous";

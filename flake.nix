@@ -28,6 +28,7 @@
                 wifi-interface = "";
 
                 nerdfonts = [ "FiraCode" "Iosevka" ];
+                kbLayout = "us, it";
                 fontSize = 12;
                 theme = "nord"; 
                 # theme = "gruvbox-dark-medium"; 
