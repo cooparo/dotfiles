@@ -29,7 +29,7 @@
 
                 nerdfonts = [ "FiraCode" "Iosevka" ];
                 kbLayout = "us, it";
-                fontSize = 12;
+                fontSize = 11;
                 theme = "nord"; 
                 # theme = "gruvbox-dark-medium"; 
             };
