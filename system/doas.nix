@@ -5,8 +5,8 @@
   # Configure doas
   security.doas.enable = true;
   security.doas.extraRules = [{
-    groups = [ "weel" ];
+    groups = [ "wheel" ];
     keepEnv = true;
-    persist = true;  #TODO: fix non persist un cazzo
+    persist = true;
   }];
 }
