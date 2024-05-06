@@ -7,6 +7,6 @@
   security.doas.extraRules = [{
     groups = [ "weel" ];
     keepEnv = true;
-    persist = true;  
+    persist = true;  #TODO: fix non persist un cazzo
   }];
 }

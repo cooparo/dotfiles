@@ -1,9 +1,10 @@
-{ config, ...}: 
+{ lib, config, userSettings, ...}: 
 {
     programs.alacritty = {
         enable = true;
         settings = {
             # TOML value
+            font.size = lib.mkDefault userSettings.fontSize;
             window = {
                 padding = {x=5; y=5;};
                 dynamic_padding = true;
