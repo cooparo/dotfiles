@@ -82,9 +82,6 @@
     SHELL = shell;
     BROWSER = browser;
     FLAKE = dotfilesDir;
-    ETH_INTERFACE = eth-interface;
-    WIFI_INTERFACE = wifi-interface;
-    INTERFACE = if (wifi-interface == "") then eth-interface else wifi-interface;
   };
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
