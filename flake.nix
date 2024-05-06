@@ -1,7 +1,7 @@
 {
     description = "Paro's flake";
     
-    outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
         let
             # --- SYSTEM SETTINGS --- #
             systemSettings = {
@@ -38,6 +38,7 @@
 
             # Nixpkgs
 	        pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+            pkgs-stable = nixpkgs-stable.legacyPackages.${systemSettings.system};
 
         in {
             nixosConfigurations.${systemSettings.hostname} = lib.nixosSystem {
@@ -47,6 +48,7 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
+                    inherit pkgs-stable;
                 };
             }; # END nixosConfigurations
 
@@ -57,6 +59,7 @@
                 extraSpecialArgs = {
                     inherit userSettings;
                     inherit systemSettings;
+                    inherit pkgs-stable;
                     inherit (inputs) nix-colors;
                     inherit (inputs) nixvim;
                 };

@@ -22,6 +22,10 @@
     ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-19.1.9"
+  ];
+  
   environment.systemPackages = with pkgs; [
     home-manager
     vim

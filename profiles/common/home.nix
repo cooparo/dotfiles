@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
+{ config, pkgs, pkgs-stable, userSettings, systemSettings, ... }:
 
 ## USER SETTINGS
 
@@ -28,7 +28,7 @@
     ../../user/app/alacritty.nix # Alacritty config
     ../../user/app/nixvim/nixvim.nix # Neovim config
     ../../user/app/megasync.nix
-
+    ../../user/app/pkgs-stable.nix
   ];
 
   home.packages = with pkgs; [
@@ -41,6 +41,7 @@
     zsh
     alacritty
     flameshot
+    openvpn
 
     telegram-desktop
     spotify
@@ -63,6 +64,7 @@
     gtk3
     autotiling
     lxappearance
+    electron
 
     # Building tools
     cmake
