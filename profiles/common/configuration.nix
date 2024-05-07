@@ -11,6 +11,7 @@
       ../../system/audio.nix
       ../../system/doas.nix
       ../../system/bluetooth.nix
+      ../../system/networking.nix
 
       # Desktop env
       ../../system/desktopEnv/i3.nix
@@ -31,12 +32,6 @@
     git
     xfce.thunar
   ];
-
-  networking.hostName = systemSettings.hostname; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = systemSettings.timezone;

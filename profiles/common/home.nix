@@ -49,6 +49,9 @@
     obsidian
     megasync
 
+    # Language
+    python3
+
     # Tools
     htop 
     nix-tree # See What Depends on What
@@ -58,6 +61,7 @@
     pulseaudioFull
     brightnessctl # Manage display brightness
     pavucontrol
+    dhcpcd
 
     # Desktop env
     feh
