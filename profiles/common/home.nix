@@ -52,6 +52,9 @@
 
     # Language
     python3
+    gcc # c lang
+    libclang
+    lua
 
     # Tools
     htop 
