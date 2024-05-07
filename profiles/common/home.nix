@@ -30,6 +30,7 @@
     ../../user/app/megasync.nix
     ../../user/app/bluetooth.nix # Headset button
     ../../user/app/pkgs-stable.nix
+    ../../user/app/ssh.nix
   ];
 
   home.packages = with pkgs; [
