@@ -4,24 +4,25 @@
 
 {
   imports = [ 
-      /etc/nixos/hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
 
-      ../../system/bootloader.nix
-      ../../system/printer.nix
-      ../../system/audio.nix
-      ../../system/doas.nix
-      ../../system/bluetooth.nix
-      ../../system/networking.nix
+    ../../system/bootloader.nix
+    ../../system/printer.nix
+    ../../system/audio.nix
+    ../../system/doas.nix
+    ../../system/bluetooth.nix
+    ../../system/networking.nix
+    ../../system/ssh.nix
 
-      # Desktop env
-      ../../system/desktopEnv/i3.nix
-      ../../system/desktopEnv/x11.nix
-      ../../system/desktopEnv/fonts.nix
+    # Desktop env
+    ../../system/desktopEnv/i3.nix
+    ../../system/desktopEnv/x11.nix
+    ../../system/desktopEnv/fonts.nix
 
-      # Tools
-      ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs
-      ../../system/tools/garbage-collector.nix
-    ];
+    # Tools
+    ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs
+    ../../system/tools/garbage-collector.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
   
