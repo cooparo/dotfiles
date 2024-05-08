@@ -50,6 +50,7 @@
                     inherit userSettings;
                     inherit systemSettings;
                     inherit pkgs-stable;
+                    inherit (inputs) nixos-hardware;
                 };
             }; # END nixosConfigurations
 
@@ -63,7 +64,6 @@
                     inherit pkgs-stable;
                     inherit (inputs) nix-colors;
                     inherit (inputs) nixvim;
-                    inherit (inputs) nixos-hardware;
                 };
             }; # END homeConfigurations
         };
