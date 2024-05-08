@@ -7,8 +7,7 @@
     ../common/configuration.nix
 
     # From https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/13-9310/default.nix
-    # nixos-hardware.nixosModules.dell-xps-13-9310 TODO: does not works
-    "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/dell/xps/13-9310"
+    nixos-hardware.nixosModules.dell-xps-13-9310
   ];
 
   environment.systemPackages = with pkgs; [
