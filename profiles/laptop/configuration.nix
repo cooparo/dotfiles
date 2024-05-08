@@ -5,6 +5,7 @@
 {
   imports = [
     ../common/configuration.nix
+    ./system/networking.nix
 
     # Hardware optimization
     # From https://github.com/NixOS/nixos-hardware/blob/master/dell/xps/13-9310/default.nix
