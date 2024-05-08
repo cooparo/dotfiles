@@ -17,6 +17,7 @@
         satoshi = "ssh paro@192.168.0.158";
         ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
         la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
+        sudo = "doas";
     };
     
     oh-my-zsh = { 
