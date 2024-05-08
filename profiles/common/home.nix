@@ -66,6 +66,7 @@
     brightnessctl # Manage display brightness
     pavucontrol
     dhcpcd
+    nssmdns
 
     # Desktop env
     feh

@@ -63,6 +63,7 @@
                     inherit pkgs-stable;
                     inherit (inputs) nix-colors;
                     inherit (inputs) nixvim;
+                    inherit (inputs) nixos-hardware;
                 };
             }; # END homeConfigurations
         };
@@ -78,5 +79,7 @@
 
         nixvim.url = "github:nix-community/nixvim";
         nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+        nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     };
 }
