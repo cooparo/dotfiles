@@ -1,7 +1,7 @@
 {
     description = "Paro's flake";
     
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
+    outputs = { nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
         let
             # --- SYSTEM SETTINGS --- #
             systemSettings = {
