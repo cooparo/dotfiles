@@ -9,6 +9,8 @@
 
 	home.packages = with pkgs; [
 		xclip
+		ripgrep
+		lazygit
 	];
 
   programs.nixvim = {

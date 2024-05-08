@@ -44,6 +44,7 @@
     alacritty
     flameshot
     openvpn
+    vlc
 
     telegram-desktop
     spotify
