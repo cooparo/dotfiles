@@ -51,6 +51,8 @@
     obsidian
     megasync
 
+    android-studio
+
     # Language
     python3
     gcc # c lang

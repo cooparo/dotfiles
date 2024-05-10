@@ -14,6 +14,8 @@
     ../../system/networking.nix
     ../../system/ssh.nix
 
+    ../../system/android.nix #Android hardware acceleration 
+
     # Desktop env
     ../../system/desktopEnv/i3.nix
     ../../system/desktopEnv/x11.nix
