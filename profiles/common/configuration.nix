@@ -34,6 +34,20 @@
     wget
     git
     xfce.thunar
+
+    # Language
+
+    gcc # c lang
+    libclang
+
+    # Building tools
+    cmake
+    ninja
+    meson
+    gnumake
+    dbus
+    # Dev packages
+    pkg-config
   ];
 
   # Set your time zone.

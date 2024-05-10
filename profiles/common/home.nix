@@ -55,8 +55,6 @@
 
     # Language
     python3
-    gcc # c lang
-    libclang
     lua
 
     # Tools
@@ -80,14 +78,7 @@
     autotiling
     lxappearance
 
-    # Building tools
-    cmake
-    ninja
-    meson
-
-    # Dev packages
-    pkg-config
-  ];
+ ];
 
   home.sessionVariables = with userSettings; {
     EDITOR = editor;
