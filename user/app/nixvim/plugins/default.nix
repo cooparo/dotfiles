@@ -1,10 +1,11 @@
 { ... }:
 {
-	imports = [
-		./cmp.nix
-		./harpoon.nix
-		./lsp.nix
-	];
+  imports = [
+    ./cmp.nix
+      ./harpoon.nix
+      ./lsp.nix
+      ./oil.nix
+  ];
 
   programs.nixvim.plugins = {
 		
@@ -12,6 +13,10 @@
     telescope.enable = true;
     none-ls.enable = true;
     gitsigns.enable = true;
+    nvim-autopairs.enable = true;
+    comment.enable = true;
+    which-key.enable = true;
+    lazygit.enable = true;
 
     neo-tree = {
 	    enable = true;

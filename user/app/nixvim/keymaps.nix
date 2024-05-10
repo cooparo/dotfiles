@@ -1,6 +1,6 @@
 { ... }:
 
-{
+{ 
   programs.nixvim.keymaps = [
   { # Exit insert mode
     action = "<Esc>";
@@ -15,6 +15,10 @@
   { # Close file 
     action = "<cmd>q<CR>";
     key = "<leader>q";
+  }
+  { # Close without saving
+    action = "<cmd>q!<CR>";
+    key = "<leader>qq";
   }
 
 ### - Telescope
@@ -36,7 +40,10 @@
     action = "<cmd>Neotree toggle<CR>";
     key = "<leader>e";
   }
-
+  { # Focus
+    action = "<cmd>Neotree focus<CR>";
+    key = "<leader>o";
+  }
 ### - Gitsigns
   { # Toggle gitsigns
     action = "<cmd>Gitsign toggle_signs<CR>";
@@ -49,6 +56,18 @@
   { # Undo stage hunk 
     action = "<cmd>Gitsign undo_stage_hunk<CR>";
     key = "<leader>hu";
+  }
+  {
+    action = "<cmd>Oil<CR>";
+    key = "-";
+    options = {
+      desc = "Open parent directory";
+      silent = true;
+    };
+  }
+  { # Open Lazygit
+    action = "<cmd>LazyGit<CR>";
+    key = "<leader>gg";
   }
   ];
 }
