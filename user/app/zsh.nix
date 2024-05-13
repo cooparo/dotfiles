@@ -14,7 +14,7 @@
     enableCompletion = true;
     shellAliases = {
         gs = "git status";
-        satoshi = "ssh paro@192.168.0.158";
+        satoshi = "ssh paro@192.168.0.159";
         ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
         la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
         sudo = "doas";

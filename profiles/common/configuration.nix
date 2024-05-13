@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
+{ pkgs, userSettings, systemSettings, ... }:
 
 ## SYSTEM SETTINGS
 
@@ -13,6 +13,7 @@
     ../../system/bluetooth.nix
     ../../system/networking.nix
     ../../system/ssh.nix
+    ../../system/tailscale.nix
 
     ../../system/android.nix #Android hardware acceleration 
 
