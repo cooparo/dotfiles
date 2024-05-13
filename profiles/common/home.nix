@@ -45,11 +45,13 @@
     flameshot
     openvpn
     vlc
+    tmux
 
     telegram-desktop
     spotify
     obsidian
     megasync
+    discord
 
     android-studio
 
