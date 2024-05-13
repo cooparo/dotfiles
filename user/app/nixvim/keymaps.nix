@@ -2,6 +2,7 @@
 
 { 
   programs.nixvim.keymaps = [
+### - Vim 
   { # Exit insert mode
     action = "<Esc>";
     key = "jk";
@@ -20,6 +21,19 @@
     action = "<cmd>q!<CR>";
     key = "<leader>qq";
   }
+  { # Next buffer 
+      action = "<cmd>bnext<CR>";
+    key = "<leader>bn";
+  }
+  { # Previous buffer 
+    action = "<cmd>bprevious<CR>";
+    key = "<leader>bp";
+  }
+  { # Close buffer 
+    action = "<cmd>bdelete!<CR>";
+    key = "<C-w>";
+  }
+
 
 ### - Telescope
   { # open find files
@@ -57,6 +71,7 @@
     action = "<cmd>Gitsign undo_stage_hunk<CR>";
     key = "<leader>hu";
   }
+### - Oil
   {
     action = "<cmd>Oil<CR>";
     key = "-";
@@ -65,9 +80,15 @@
       silent = true;
     };
   }
+### - Lazygit
   { # Open Lazygit
     action = "<cmd>LazyGit<CR>";
     key = "<leader>gg";
+  }
+### - Shell coomand
+  { # Run home-manager switch from nvim
+    action = "<cmd>!home-manager switch --flake ~/dotfiles<CR>";
+    key = "<leader>hm";
   }
   ];
 }

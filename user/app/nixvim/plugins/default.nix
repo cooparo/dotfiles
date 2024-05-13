@@ -17,10 +17,13 @@
     comment.enable = true;
     which-key.enable = true;
     lazygit.enable = true;
+    bufferline.enable = true;
+    bufferline.alwaysShowBufferline = false;
 
     neo-tree = {
 	    enable = true;
 	    closeIfLastWindow = true;
+	    resizeTimerInterval = 500; 
     };
 
 		treesitter = {
