@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ userSettings, ... }:
 
 {
     programs.git = {
@@ -10,6 +10,7 @@
         pull.rebase = "false";
         init.defaultBranch = "main";
         rerere.enabled = true;
+	push.autoSetupRemote = true;
       };
     };
 }
