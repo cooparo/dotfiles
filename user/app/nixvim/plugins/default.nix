@@ -12,6 +12,8 @@
     lualine.enable = true;
     telescope.enable = true;
     none-ls.enable = true;
+    none-ls.enableLspFormat = true;
+    lsp-format.enable = true;
     gitsigns.enable = true;
     nvim-autopairs.enable = true;
     comment.enable = true;
@@ -22,14 +24,14 @@
     luasnip.enable = true;
 
     neo-tree = {
-	    enable = true;
-	    closeIfLastWindow = true;
-	    resizeTimerInterval = 500; 
+      enable = true;
+      closeIfLastWindow = true;
+      resizeTimerInterval = 500; 
     };
 
-		treesitter = {
-			enable = true;
-			ensureInstalled = [ "c" "lua" "nix" "javascript" "typescript" "python" "help" "rust" ];
-		};
-	};
+    treesitter = {
+      enable = true;
+      ensureInstalled = [ "c" "lua" "nix" "javascript" "typescript" "python" "help" "rust" ];
+    };
+  };
 }
