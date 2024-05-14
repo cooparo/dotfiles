@@ -52,6 +52,7 @@
     obsidian
     megasync
     discord
+    burpsuite
 
     android-studio
 
