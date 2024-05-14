@@ -19,6 +19,7 @@
     lazygit.enable = true;
     bufferline.enable = true;
     bufferline.alwaysShowBufferline = false;
+    luasnip.enable = true;
 
     neo-tree = {
 	    enable = true;
