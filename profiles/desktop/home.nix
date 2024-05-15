@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
+{ pkgs, ... }:
 
 ## DESKTOP USER SETTINGS
 {
@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-
-    android-studio
+    vmware-horizon-client
   ];
 }
