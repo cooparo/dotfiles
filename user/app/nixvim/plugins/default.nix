@@ -11,16 +11,20 @@
 		
     lualine.enable = true;
     telescope.enable = true;
+    
     none-ls.enable = true;
     none-ls.enableLspFormat = true;
+    
     lsp-format.enable = true;
     gitsigns.enable = true;
     nvim-autopairs.enable = true;
     comment.enable = true;
     which-key.enable = true;
     lazygit.enable = true;
+
     bufferline.enable = true;
     bufferline.alwaysShowBufferline = false;
+    
     luasnip.enable = true;
 
     neo-tree = {
@@ -32,6 +36,20 @@
     treesitter = {
       enable = true;
       ensureInstalled = [ "c" "lua" "nix" "javascript" "typescript" "python" "help" "rust" ];
+    };
+
+    toggleterm = {
+      enable = true;
+      settings = {
+	direction = "float";
+	float_opts = {
+	  border = "curved";
+	  height = 30;
+	  width = 130;
+	};
+	open_mapping = "[[<leader>tt]]";
+
+      };
     };
   };
 }
