@@ -40,7 +40,7 @@
 			hlsearch = false;
 			incsearch = true;
 			termguicolors = true;
-			scrolloff = 8;
+			scrolloff = 16;
 
 			updatetime = 50; # faster completion (default: 4000ms)
 			completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
