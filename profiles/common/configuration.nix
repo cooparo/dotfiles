@@ -15,8 +15,6 @@
     ../../system/ssh.nix
     ../../system/tailscale.nix
 
-    ../../system/android.nix #Android hardware acceleration 
-
     # Desktop env
     ../../system/desktopEnv/i3.nix
     ../../system/desktopEnv/x11.nix
@@ -87,7 +85,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = userSettings.username;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" ]; # kvm is Kernel Virtual Machine, it's for hardware acceleration
   };
 
   # I use zsh btw
