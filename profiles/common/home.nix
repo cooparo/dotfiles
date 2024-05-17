@@ -32,6 +32,7 @@
     ../../user/app/pkgs-stable.nix
     ../../user/app/ssh.nix
     ../../user/virtualization.nix
+    ../../user/app/tmux.nix
   ];
 
   home.packages = with pkgs; [
