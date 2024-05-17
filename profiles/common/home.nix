@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, userSettings, systemSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 ## USER SETTINGS
 
@@ -13,7 +13,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ../../user/app/zsh.nix # Zsh config
 
     # Desktop env
     ../../user/desktopEnv/i3.nix # i3 config
@@ -24,6 +23,7 @@
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
 
     # App
+    ../../user/app/zsh.nix # Zsh config
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
     ../../user/app/nixvim/nixvim.nix # Neovim config
@@ -31,6 +31,7 @@
     ../../user/app/bluetooth.nix # Headset button
     ../../user/app/pkgs-stable.nix
     ../../user/app/ssh.nix
+    ../../user/virtualization.nix
   ];
 
   home.packages = with pkgs; [

@@ -14,6 +14,7 @@
     ../../system/networking.nix
     ../../system/ssh.nix
     ../../system/tailscale.nix
+    ../../system/virtualization.nix
 
     # Desktop env
     ../../system/desktopEnv/i3.nix
@@ -47,7 +48,12 @@
     dbus
     # Dev packages
     pkg-config
-  ];
+
+# Virtualization
+    qemu
+    virt-manager
+    libvirt
+    ];
 
   # Set your time zone.
   time.timeZone = systemSettings.timezone;
