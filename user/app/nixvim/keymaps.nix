@@ -108,7 +108,7 @@
   }
 ### - toggleterm
   {
-    action = "<cmd>Toggleterm";
+    action = "<cmd>ToggleTerm<CR>";
     key = "<leader>tt";
     mode = [ "n" ];
   }
