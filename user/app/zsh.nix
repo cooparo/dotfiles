@@ -5,6 +5,7 @@
     git
     eza
     oh-my-zsh
+    zsh-powerlevel10k
   ];
 
   programs.zsh = {
@@ -23,11 +24,19 @@
     
     oh-my-zsh = { 
         enable = true;
-        plugins = [ "git" ];
-        theme = "robbyrussell";
+        plugins = [ "git" "dircycle "];
       };  
-  };
 
+    initExtra = "source ~/.p10k.zsh";
+    plugins = [
+      {
+	name = "powerlevel10k";
+	src = pkgs.zsh-powerlevel10k;
+	file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
+      }
+    ];
+
+  };
   programs.direnv.enable = true;
   programs.direnv.enableZshIntegration = true;
   programs.direnv.nix-direnv.enable = true;
