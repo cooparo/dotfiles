@@ -10,11 +10,12 @@ in
     clock24 = true;
     mouse = true;
     newSession = true;
+    secureSocket = false;
     extraConfig = ''
       set -as terminal-features ",alacritty*:RGB"
     '';
-    plugins = with pkgs; [
-      tmuxPlugins.${theme}
+    plugins = [
+      pkgs.tmuxPlugins.${theme}
     ];
   };
 }
