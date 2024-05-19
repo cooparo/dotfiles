@@ -15,7 +15,7 @@
     mode = [ "n" ];
   }
   { # Close file 
-    action = "<cmd>q<CR>";
+    action = "<cmd>wq<CR>";
     key = "<leader>q";
     mode = [ "n" ];
   }
@@ -35,8 +35,8 @@
     mode = [ "n" ];
   }
   { # Close buffer 
-    action = "<cmd>bdelete!<CR>";
-    key = "<C-w>";
+    action = "<cmd>bd<CR>";
+    key = "<leader>bq";
     mode = [ "n" ];
   }
 

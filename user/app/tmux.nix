@@ -10,6 +10,7 @@ in
     clock24 = true;
     mouse = true;
     newSession = true;
+    terminal = "screen-256color";
     secureSocket = false;
     extraConfig = ''
       set -as terminal-features ",alacritty*:RGB"
