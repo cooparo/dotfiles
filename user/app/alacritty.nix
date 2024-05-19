@@ -1,9 +1,17 @@
-{ lib, config, userSettings, ...}: 
+{ pkgs, lib, config, userSettings, ...}: 
 {
+    home.packages = with pkgs; [
+      meslo-lgs-nf      
+    ];
+
     programs.alacritty = {
         enable = true;
         settings = {
             # TOML value
+	    font.normal = { 
+	      family = "MesloLGS NF"; 
+	      style="Regular";
+	    };
             font.size = lib.mkDefault userSettings.fontSize;
             window = {
                 padding = {x=5; y=5;};
