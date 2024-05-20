@@ -1,4 +1,4 @@
-{ pkgs, userSettings, systemSettings, ... }:
+{ pkgs-stable, pkgs, userSettings, systemSettings, ... }:
 
 ## SYSTEM SETTINGS
 
@@ -34,9 +34,9 @@
     wget
     git
     xfce.thunar
+    # pkgs-stable.etcher
 
     # Language
-
     gcc # c lang
     libclang
 
@@ -49,7 +49,7 @@
     # Dev packages
     pkg-config
 
-# Virtualization
+    # Virtualization
     qemu
     virt-manager
     libvirt
