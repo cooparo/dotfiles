@@ -36,6 +36,9 @@
     xfce.thunar
     # pkgs-stable.etcher
 
+    # Authentication 
+    lxde.lxsession
+
     # Language
     gcc # c lang
     libclang

@@ -39,6 +39,7 @@ in {
                 { command = "systemctl --user restart polybar.service"; always=true; notification=false; }
                 { command = "autotiling &"; always=true; notification=false; }
                 { command = "ssh-add ~/.ssh/github"; always=false; notification=false; }
+                { command = "exec lxsession"; always=false; notification=false; }
             ];
 
             keybindings = lib.mkOptionDefault {

@@ -9,4 +9,6 @@
     keepEnv = true;
     persist = true;
   }];
+
+  security.polkit.enable = true;
 }
