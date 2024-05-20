@@ -13,5 +13,5 @@
 
   # Optimising the store
   nix.optimise.automatic = true;
-  nix.optimise.dates = [ "03:45" ]; # Optional; allows customizing optimisation schedule
+  nix.optimise.dates = [ "weekly" ]; # Optional; allows customizing optimisation schedule
 }
