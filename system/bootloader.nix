@@ -9,5 +9,4 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
 }
