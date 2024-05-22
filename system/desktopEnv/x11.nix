@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ userSettings, ... }:
 {
     services.xserver = {
         enable = true;

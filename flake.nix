@@ -1,7 +1,7 @@
 {
   description = "Paro's flake";
 
-  outputs = { nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, stylix, ... } @ inputs:
     let
 # --- SYSTEM SETTINGS --- #
     systemSettings = {
@@ -43,7 +43,11 @@
   in {
     nixosConfigurations.${systemSettings.host} = lib.nixosSystem {
       system = systemSettings.system;
-      modules = [ ./host/${systemSettings.host}/configuration.nix ];
+      modules = [ 
+	./host/${systemSettings.host}/configuration.nix 
+	
+	stylix.nixosModules.stylix 
+      ];
 
       specialArgs = {
 	inherit userSettings;
@@ -80,5 +84,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    stylix.url = "github:danth/stylix";
   };
 }
