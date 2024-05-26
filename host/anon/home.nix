@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
+{ pkgs, ... }:
 
 ## DESKTOP USER SETTINGS
 {
@@ -11,6 +11,6 @@
   ];
 
   home.packages = with pkgs; [
-    
+    gruvbox-gtk-theme   
   ];
 }
