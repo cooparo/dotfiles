@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, lib, ... }:
 {
   imports = [
     ./cmp.nix
@@ -8,8 +8,10 @@
   ];
 
   programs.nixvim.plugins = {
-		
-    lualine.enable = true;
+    lualine = lib.mkForce {		
+      enable = true;
+      theme = if(userSettings.theme == "nord") then userSettings.theme else "gruvbox_dark";
+    };
     telescope.enable = true;
     
     none-ls.enable = true;
