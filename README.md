@@ -31,6 +31,11 @@ To update flake.lock
 ```
 nix flake update
 ```
+To update the channel
+```
+nix-channel --update
+```
+
 ### home-manager
 
 To rebuild home-manager with new edits
