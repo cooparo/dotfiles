@@ -20,6 +20,7 @@
         la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
         sudo = "doas";
 	rm = "rm -i";
+	nix-shell = "nix-shell --command zsh";
     };
     
     oh-my-zsh = { 
@@ -35,8 +36,8 @@
 	file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
       }
     ];
-
   };
+
   programs.direnv.enable = true;
   programs.direnv.enableZshIntegration = true;
   programs.direnv.nix-direnv.enable = true;
