@@ -5,6 +5,8 @@ in
 {
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
+    keyMode = "vi";
     shell = "${pkgs.zsh}/bin/zsh";
     baseIndex = 1;
     clock24 = true;
