@@ -5,6 +5,7 @@
     git
     eza
     oh-my-zsh
+    oh-my-posh
     zsh-powerlevel10k
   ];
 
@@ -27,14 +28,21 @@
         plugins = [ "git" "dircycle "];
       };  
 
-    initExtra = "source ~/.p10k.zsh";
+ #    initExtra = "source ~/.p10k.zsh";
     plugins = [
-      {
-	name = "powerlevel10k";
-	src = pkgs.zsh-powerlevel10k;
-	file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
-      }
+ #      {
+	# name = "powerlevel10k";
+	# src = pkgs.zsh-powerlevel10k;
+	# file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
+ #      }
     ];
+  };
+
+  programs.oh-my-posh = {
+    enable = true;
+    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh/my-robbyrussel.json));
+    useTheme = "robbyrussell"; # fallback value
+    enableZshIntegration = true;
   };
 
   programs.direnv.enable = true;

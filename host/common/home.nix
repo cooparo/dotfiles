@@ -22,7 +22,7 @@
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
 
     # App
-    ../../user/app/zsh.nix # Zsh config
+    ../../user/app/zsh/zsh.nix # Zsh config
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
     ../../user/app/nixvim/nixvim.nix # Neovim config
