@@ -15,6 +15,7 @@
     ../../system/ssh.nix
     ../../system/tailscale.nix
     ../../system/virtualization.nix
+    ../../system/openvpn.nix 
 
     # Desktop env
     ../../system/desktopEnv/i3.nix
