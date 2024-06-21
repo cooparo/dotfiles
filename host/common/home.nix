@@ -72,6 +72,7 @@
     pavucontrol
     dhcpcd
     nssmdns
+    kdePackages.ark # Archive utility app (extract & compress files)
 
     # Desktop env
     feh
