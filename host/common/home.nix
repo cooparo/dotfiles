@@ -20,6 +20,7 @@
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi.nix # rofi config
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
+    ../../user/desktopEnv/dunst.nix # Notification 
 
     # App
     ../../user/app/zsh/zsh.nix # Zsh config
@@ -74,6 +75,7 @@
     nssmdns
     kdePackages.ark # Archive utility app (extract & compress files)
 
+    libnotify # Notification
     # Desktop env
     feh
     picom
