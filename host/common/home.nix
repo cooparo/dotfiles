@@ -73,7 +73,6 @@
     pavucontrol
     dhcpcd
     nssmdns
-    kdePackages.ark # Archive utility app (extract & compress files)
 
     libnotify # Notification
     # Desktop env

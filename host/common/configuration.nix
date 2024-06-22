@@ -22,6 +22,7 @@
     ../../system/desktopEnv/x11.nix
     ../../system/desktopEnv/fonts.nix
     ../../system/desktopEnv/stylix.nix
+    ../../system/thunar.nix
 
     # Tools
     ../../system/tools/upgrade-diff.nix # Shows cool list of version changes in sys pkgs
