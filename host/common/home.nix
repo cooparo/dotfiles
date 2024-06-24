@@ -57,6 +57,7 @@
     burpsuite
 
     android-studio
+    vmware-horizon-client
 
     # Language
     python3
@@ -70,18 +71,18 @@
     playerctl # Media player manager (eg. spotify)
     pulseaudioFull
     brightnessctl # Manage display brightness
-    pavucontrol
+    pavucontrol # Manage audio
     dhcpcd
     nssmdns
-
     libnotify # Notification
+
     # Desktop env
-    feh
-    picom
-    rofi
+    feh # wallpaper
+    picom # Compositor
+    rofi # Menu
     rofi-power-menu
     gtk3
-    autotiling
+    autotiling # Open window by golden ratio
     lxappearance
 
  ];
