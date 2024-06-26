@@ -16,6 +16,7 @@
     ../../system/tailscale.nix
     ../../system/virtualization.nix
     ../../system/openvpn.nix 
+    ../../system/docker.nix
 
     # Desktop env
     ../../system/desktopEnv/i3.nix

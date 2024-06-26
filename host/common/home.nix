@@ -55,6 +55,7 @@
     megasync
     discord
     burpsuite
+    docker
 
     android-studio
     vmware-horizon-client
