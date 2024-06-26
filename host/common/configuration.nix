@@ -38,6 +38,7 @@
     wget
     git
     xfce.thunar
+    man-pages
     # pkgs-stable.etcher
 
     # Authentication 
