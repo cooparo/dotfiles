@@ -64,6 +64,7 @@
     # Language
     python3
     lua
+    gdb # GNU project debugger
 
     # Tools
     htop 
