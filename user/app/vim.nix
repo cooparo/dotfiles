@@ -15,6 +15,8 @@
       " Turn syntax highlighting on.
       syntax on
 
+      set clipboard=unnamedplus
+
       " Options
       set number
       set relativenumber 
