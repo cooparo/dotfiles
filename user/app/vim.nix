@@ -30,6 +30,10 @@
       set nohlsearch
       set history=1000
 
+      " Man pages with K 
+      " with this coole man pages
+      set keywordprg=:Man 
+      
       " Mappings
       let mapleader = " "
       inoremap jk <esc>
