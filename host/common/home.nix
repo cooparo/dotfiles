@@ -15,15 +15,16 @@
   imports = [
 
     # Desktop env
-    ../../user/app/vim.nix # Vim options 
     ../../user/desktopEnv/i3.nix # i3 config
     ../../user/desktopEnv/picom/picom.nix # picom config 
     ../../user/desktopEnv/polybar/polybar.nix # polybar config
     ../../user/desktopEnv/rofi.nix # rofi config
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
     ../../user/desktopEnv/dunst.nix # Notification 
+    ../../user/desktopEnv/lockscreen.nix
 
     # App
+    ../../user/app/vim.nix # Vim options 
     ../../user/app/zsh/zsh.nix # Zsh config
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config

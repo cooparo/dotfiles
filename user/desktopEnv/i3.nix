@@ -50,6 +50,9 @@ in {
                 "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
                 "${mod}+o" = "exec rofi -show window";
 
+		# Lockscreen
+		"${mod}+l" = "exec betterlockscreen -l blur";
+
                 # Audio
                 "XF86AudioMute" = "exec amixer sset Master toggle";
                 "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
