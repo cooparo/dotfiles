@@ -24,7 +24,7 @@
     ../../user/desktopEnv/lockscreen.nix
 
     # App
-    ../../user/app/vim.nix # Vim options 
+    ../../user/app/vim/vim.nix # Vim options 
     ../../user/app/zsh/zsh.nix # Zsh config
     ../../user/app/git.nix # Git config
     ../../user/app/alacritty.nix # Alacritty config
