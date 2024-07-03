@@ -89,6 +89,8 @@
     autotiling # Open window by golden ratio
     lxappearance
 
+    # Sec tools
+    nmap
  ];
 
   home.sessionVariables = with userSettings; {
