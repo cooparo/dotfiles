@@ -32,7 +32,9 @@
     neo-tree = {
       enable = true;
       closeIfLastWindow = true;
-      resizeTimerInterval = 500; 
+      enableRefreshOnWrite = true;
+      window.autoExpandWidth = true;
+      window.width = 30;
     };
 
     treesitter = {
