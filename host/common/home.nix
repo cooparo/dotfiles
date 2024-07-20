@@ -59,9 +59,6 @@
     burpsuite
     docker
 
-    android-studio
-    vmware-horizon-client
-
     # Language
     python3
     lua
