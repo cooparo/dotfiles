@@ -39,7 +39,7 @@
 
     treesitter = {
       enable = true;
-      ensureInstalled = [ "c" "lua" "nix" "javascript" "typescript" "python" "help" "rust" ];
+      settings.ensure_installed = [ "c" "lua" "nix" "javascript" "typescript" "python" "rust" ];
     };
 
     toggleterm = {

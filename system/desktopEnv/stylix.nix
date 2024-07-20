@@ -1,7 +1,15 @@
 { userSettings, pkgs, ... }:
 {
+
+  environment.systemPackages = with pkgs; [
+    qogir-icon-theme
+    base16-schemes
+    dejavu_fonts
+  ];
+  
   stylix = {
-    image = "/home/paro/wallpaper.jpg";
+    enable = true;
+    image = "/home/paro/.wallpaper.jpg";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
     polarity = "dark";
 
