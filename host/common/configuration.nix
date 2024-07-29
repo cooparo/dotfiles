@@ -39,6 +39,7 @@
     git
     xfce.thunar
     man-pages
+    gparted
     # pkgs-stable.etcher
 
     # Authentication 
