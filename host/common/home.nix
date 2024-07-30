@@ -76,6 +76,7 @@
     dhcpcd
     nssmdns
     libnotify # Notification
+    openssl
 
     # Desktop env
     feh # wallpaper
