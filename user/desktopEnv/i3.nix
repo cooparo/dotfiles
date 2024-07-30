@@ -29,7 +29,11 @@ in {
             gaps.outer = 2;
             gaps.smartGaps = true;
 
-            # Start up command
+	    floating.criteria = [
+	      { title = "Bitwarden"; }
+	    ];
+            
+	    # Start up command
             startup = [
                 # Set wallpaper
                 { command = "feh --bg-fill ~/.wallpaper.jpg"; always = true; notification = false; }
