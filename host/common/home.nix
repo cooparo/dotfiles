@@ -50,6 +50,7 @@
     openvpn
     vlc
     tmux
+    unzip
 
     telegram-desktop
     spotify
