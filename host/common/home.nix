@@ -52,12 +52,12 @@
     tmux
     unzip
 
+    # App
     telegram-desktop
     spotify
     obsidian
     megasync
     discord
-    burpsuite
     docker
 
     # Language
@@ -67,9 +67,6 @@
 
     # Tools
     htop 
-    nix-tree # See What Depends on What
-    nix-du # See What's Consuming Disk Space
-    nix-index # See Which Derivation Supplies a File
     playerctl # Media player manager (eg. spotify)
     pulseaudioFull
     brightnessctl # Manage display brightness
@@ -88,9 +85,10 @@
     autotiling # Open window by golden ratio
     lxappearance
 
-    # Sec tools
+    # CyberSec tools
     nmap
- ];
+    burpsuite
+  ];
 
   home.sessionVariables = with userSettings; {
     EDITOR = editor;
