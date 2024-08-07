@@ -62,7 +62,7 @@
     qemu
     virt-manager
     libvirt
-    ];
+  ];
 
   # Set your time zone.
   time.timeZone = systemSettings.timezone;
