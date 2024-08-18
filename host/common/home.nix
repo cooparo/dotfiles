@@ -88,6 +88,8 @@
     # CyberSec tools
     nmap
     burpsuite
+    gobuster
+    seclists
   ];
 
   home.sessionVariables = with userSettings; {
