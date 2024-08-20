@@ -59,6 +59,7 @@
     megasync
     discord
     docker
+    qbittorrent
 
     # Language
     python3
