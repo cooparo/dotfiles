@@ -85,7 +85,8 @@
     gtk3
     autotiling # Open window by golden ratio
     lxappearance
-
+    alsa-utils
+  
     # CyberSec tools
     nmap
     burpsuite
