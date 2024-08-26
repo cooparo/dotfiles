@@ -5,12 +5,15 @@
     package = pkgs.dunst;
     settings = {
       global = with config.colorScheme.palette; {
-	width = 300;
+	width = 200;
 	height = 300;
-	offset = "30x50";
+	offset = "20x50";
 	transparency = 10;
 	notification_limit = 5;
 	frame_color = "#${base04}";
+	frame_width = 0;
+	corner_radius = 5;
+	gap_size = 3;
       };
     };
   };
