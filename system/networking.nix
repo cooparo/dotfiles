@@ -7,4 +7,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Tailscale: fixing not internet on exit-node
+  networking.firewall.checkReversePath = "loose";
 }
