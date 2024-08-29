@@ -5,10 +5,10 @@
     package = pkgs.dunst;
     settings = {
       global = with config.colorScheme.palette; {
-	width = 200;
+	width = 300;
 	height = 300;
 	offset = "20x50";
-	transparency = 10;
+	transparency = 5;
 	notification_limit = 5;
 	frame_color = "#${base04}";
 	frame_width = 0;
