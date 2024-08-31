@@ -60,6 +60,7 @@
     discord
     docker
     qbittorrent
+    gimp
 
     # Language
     python3
