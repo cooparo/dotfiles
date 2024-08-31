@@ -86,7 +86,15 @@
     autotiling # Open window by golden ratio
     lxappearance
     alsa-utils
-  
+    ## For betterlockscreen
+    bc
+    xorg.xdpyinfo
+    xorg.xrandr
+    xorg.xrdb
+    xorg.xset
+    imagemagick
+    i3lock-color
+
     # CyberSec tools
     nmap
     burpsuite
