@@ -14,6 +14,8 @@
     };
     telescope.enable = true;
     
+    nvim-colorizer.enable = true;
+
     none-ls.enable = true;
     none-ls.enableLspFormat = true;
     
