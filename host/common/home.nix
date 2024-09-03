@@ -35,6 +35,8 @@
     ../../user/app/ssh.nix
     ../../user/virtualization.nix
     ../../user/app/tmux.nix
+    ../../user/app/redshift.nix
+
   ];
 
   home.packages = with pkgs; [
@@ -77,6 +79,7 @@
     nssmdns
     libnotify # Notification
     openssl
+    acpi # battery status
 
     # Desktop env
     feh # wallpaper
