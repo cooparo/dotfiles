@@ -79,7 +79,6 @@
     nssmdns
     libnotify # Notification
     openssl
-    acpi # battery status
 
     # Desktop env
     feh # wallpaper
