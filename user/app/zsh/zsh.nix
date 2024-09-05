@@ -21,6 +21,7 @@
         sudo = "doas";
 	rm = "rm -i";
 	nix-shell = "nix-shell --command zsh";
+	develop = "nix develop --command zsh";
     };
     
     oh-my-zsh = { 
