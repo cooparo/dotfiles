@@ -1,67 +1,74 @@
 {
-	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-	"blocks": [
-		{
-			"alignment": "left",
-			"segments": [
-				{
-					"foreground": "#98C379",
-					"style": "plain",
-					"template": "\u279c",
-					"type": "text"
-				},
-				{
-					"foreground": "#56B6C2",
-					"properties": {
-						"style": "folder"
-					},
-					"style": "plain",
-					"template": " {{ .Path }} ",
-					"type": "path"
-				},
-				{
-					"foreground": "#D0666F",
-					"properties": {
-						"branch_icon": "",
-						"fetch_status": true
-					},
-					"style": "plain",
-					"template": "<#5FAAE8>git:(</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}<#5FAAE8>)</>",
-					"type": "git"
-				},
-				{
-					"foreground": "#BF616A",
-					"style": "plain",
-					"template": " \u2717",
-					"type": "status"
-				}
-			],
-			"type": "prompt"
-		},
-		{
-			"alignment": "right",
-			"segments": [
-				{
-					"type": "python",
-					"style": "plain",
-					"foreground": "#ffffff",
-					"template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }} {{ .Full }}{{ end }}"
-				},
-				{
-					"type": "session",
-					"style": "plain",
-					"template": "{{ if .SSHSession }}󰣀 {{ .HostName }}{{ end }}"
-				},
-				{
-					"type": "project",
-					"style": "plain",
-					"foreground": "#ffffff",
-					"template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
-				}
-			],
-			"type": "rprompt"
-		}
-	],
-	"final_space": true,
-	"version": 2
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+	{
+	  "foreground": "#98C379",
+	  "style": "plain",
+	  "template": "\u279c",
+	  "type": "text"
+	},
+	{
+	  "foreground": "#56B6C2",
+	  "properties": {
+	    "style": "folder"
+	  },
+	  "style": "plain",
+	  "template": " {{ .Path }} ",
+	  "type": "path"
+	},
+	{
+	  "foreground": "#D0666F",
+	  "properties": {
+	    "branch_icon": "",
+	    "fetch_status": true
+	  },
+	  "style": "plain",
+	  "template": "<#5FAAE8>git:(</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}<#5FAAE8>)</>",
+	  "type": "git"
+	},
+	{
+	  "foreground": "#BF616A",
+	  "style": "plain",
+	  "template": " \u2717",
+	  "type": "status"
+	}
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+	{
+	  "type": "python",
+	  "style": "plain",
+	  "foreground": "#ebcb8b",
+	  "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }} {{ .Full }}{{ end }}"
+	},
+	{
+	  "type": "session",
+	  "style": "plain",
+	  "template": "{{ if .SSHSession }}󰣀 {{ .HostName }}{{ end }}"
+	},
+	{
+	  "type": "project",
+	  "style": "plain",
+	  "foreground": "#ffffff",
+	  "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
+	},
+	{
+	  "type": "nix-shell",
+	  "style": "plain",
+	  "foreground": "#81a1c1",
+	  "background": "transparent",
+	  "template": "\uF313 (nix-{{ .Type }})"
+	}
+      ],
+      "type": "rprompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
 }

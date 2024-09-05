@@ -14,7 +14,6 @@
 
       # C/C++
       clangd.enable = true;
-      jsonls.enable = true;
     };
   };
 }
