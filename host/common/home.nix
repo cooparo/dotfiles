@@ -63,6 +63,7 @@
     docker
     qbittorrent
     gimp
+    libreoffice
 
     # Language
     python3
