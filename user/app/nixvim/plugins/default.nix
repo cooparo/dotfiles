@@ -10,7 +10,7 @@
   programs.nixvim.plugins = {
     lualine = lib.mkForce {		
       enable = true;
-      theme = if(userSettings.theme == "nord") then userSettings.theme else "gruvbox_dark";
+      settings.options.theme = if(userSettings.theme == "nord") then userSettings.theme else "gruvbox_dark";
     };
     telescope.enable = true;
     
@@ -27,7 +27,7 @@
     lazygit.enable = true;
 
     bufferline.enable = true;
-    bufferline.alwaysShowBufferline = false;
+    bufferline.settings.options.always_show_bufferline = false;
     
     luasnip.enable = true;
 
