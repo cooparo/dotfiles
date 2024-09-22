@@ -31,6 +31,7 @@ in {
 
 	    floating.criteria = [
 	      { title = "Bitwarden"; }
+	      { title = "Calculator"; }
 	    ];
             
 	    # Start up command
