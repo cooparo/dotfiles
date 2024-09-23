@@ -90,6 +90,7 @@
     autotiling # Open window by golden ratio
     lxappearance
     alsa-utils
+
     ## For betterlockscreen
     bc
     xorg.xdpyinfo
@@ -104,6 +105,8 @@
     burpsuite
     gobuster
     seclists
+    exiftool # Image exif meta infos
+    file
   ];
 
   home.sessionVariables = with userSettings; {
