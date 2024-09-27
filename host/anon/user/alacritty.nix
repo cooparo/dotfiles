@@ -1,6 +1,6 @@
-{ lib, config, userSettings, ...}: 
+{ lib, ...}: 
 {
   programs.alacritty = {
-      settings.font.size = lib.mkForce 7;    
+      settings.font.size = lib.mkForce 6;    
   };
 }
