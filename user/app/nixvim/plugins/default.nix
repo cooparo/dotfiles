@@ -2,12 +2,14 @@
 {
   imports = [
     ./cmp.nix
-      ./harpoon.nix
+      ./harpoon.nix 
       ./lsp.nix
       ./oil.nix
   ];
 
   programs.nixvim.plugins = {
+    web-devicons.enable = true;
+
     lualine = lib.mkForce {		
       enable = true;
       settings.options.theme = if(userSettings.theme == "nord") then userSettings.theme else "gruvbox_dark";
