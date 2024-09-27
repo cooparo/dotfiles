@@ -59,7 +59,7 @@
 
 ### - Neo-tree
   { # Open 
-    action = "<cmd>Neotree toggle<CR>";
+    action = "<cmd>Neotree position=left reveal toggle<CR>";
     key = "<leader>e";
     mode = [ "n" ];
   }
