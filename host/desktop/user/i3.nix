@@ -1,4 +1,4 @@
-{ lib, systemSettings, userSettings, ... }:
+{ lib, ... }:
 let
 
   mod = "Mod4";
