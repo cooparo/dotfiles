@@ -53,6 +53,8 @@
     vlc
     tmux
     unzip
+    zoxide # smarter cd
+    fzf
 
     # App
     telegram-desktop

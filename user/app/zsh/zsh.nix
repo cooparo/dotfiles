@@ -22,6 +22,8 @@
 	rm = "rm -i";
 	nix-shell = "nix-shell --command zsh";
 	develop = "nix develop --command zsh";
+	cd = "z";
+	cdi = "zi";
     };
     
     oh-my-zsh = { 
@@ -37,6 +39,9 @@
 	# file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
  #      }
     ];
+    initExtra = ''
+     eval "$(zoxide init zsh)"
+    '';
   };
 
   programs.oh-my-posh = {
