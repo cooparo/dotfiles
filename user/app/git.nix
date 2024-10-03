@@ -1,5 +1,4 @@
 { userSettings, ... }:
-
 {
     programs.git = {
       enable = true;
