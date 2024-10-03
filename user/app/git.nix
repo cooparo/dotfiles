@@ -15,6 +15,8 @@
 	};
 	maintenance.auto = true;
 	maintenance.strategy = "incremental";
+
+	safe.directory = "*";
       };
     };
 }
