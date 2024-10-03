@@ -1,6 +1,6 @@
 { pkgs, userSettings,... }: 
 let
-  theme = if(userSettings.theme == "nord") then  "nord" else "gruvbox";
+  theme = if(userSettings.theme == "nord") then "nord" else "gruvbox";
 in
 {
   programs.tmux = {
