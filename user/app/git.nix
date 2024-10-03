@@ -14,6 +14,8 @@
 	url = {
 	  "ssh://git@github.com/" = { insteadOf = "https://github.com/"; };
 	};
+	maintenance.auto = true;
+	maintenance.strategy = "incremental";
       };
     };
 }
