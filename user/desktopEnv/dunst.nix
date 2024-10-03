@@ -12,7 +12,7 @@
 	notification_limit = 5;
 	frame_color = "#${base0E}";
 	background = "#${base02}";
-	foreground = "#${base07}";
+	foreground = "#ffffff";
 	frame_width = 1;
 	corner_radius = 5;
 	gap_size = 3;
