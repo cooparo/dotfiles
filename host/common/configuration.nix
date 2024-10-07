@@ -1,4 +1,4 @@
-{ pkgs-stable, pkgs, userSettings, systemSettings, ... }:
+{ pkgs, userSettings, systemSettings, ... }:
 
 ## SYSTEM SETTINGS
 

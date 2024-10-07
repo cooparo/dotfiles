@@ -77,7 +77,6 @@
     htop 
     playerctl # Media player manager (eg. spotify)
     pulseaudioFull
-    brightnessctl # Manage display brightness
     pavucontrol # Manage audio
     dhcpcd
     nssmdns
