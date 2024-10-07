@@ -66,6 +66,7 @@
     qbittorrent
     gimp
     libreoffice
+    zoom-us
 
     # Language
     python3
