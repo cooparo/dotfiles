@@ -31,7 +31,7 @@
       # Concerns some desktop and embedded hardware only.
       # Default: <none>
       
-      #TLP_DEFAULT_MODE=AC
+      TLP_DEFAULT_MODE="AC";
       
       # Operation mode select: 0=depend on power source, 1=always use TLP_DEFAULT_MODE
       # Note: use in conjunction with TLP_DEFAULT_MODE=BAT for BAT settings on AC.
@@ -65,8 +65,8 @@
       # AMD Zen 2 or newer CPU with amd-pstate_driver as of kernel 6.3/6.4(*):
       #   active, passive, guided(*).
       # Default: <none>
-      #CPU_DRIVER_OPMODE_ON_AC=active
-      #CPU_DRIVER_OPMODE_ON_BAT=active
+      CPU_DRIVER_OPMODE_ON_AC="active";
+      CPU_DRIVER_OPMODE_ON_BAT="active";
       
       # Select a CPU frequency scaling governor.
       # Intel CPU with intel_pstate driver or
@@ -84,8 +84,8 @@
       #   changing the governor.
       # Default: <none>
       
-      #CPU_SCALING_GOVERNOR_ON_AC=powersave
-      #CPU_SCALING_GOVERNOR_ON_BAT=powersave
+      CPU_SCALING_GOVERNOR_ON_AC="powersave";
+      CPU_SCALING_GOVERNOR_ON_BAT="powersave";
       
       # Set the min/max frequency available for the scaling governor.
       # Possible values depend on your CPU. For available frequencies see
