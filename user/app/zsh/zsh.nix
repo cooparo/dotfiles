@@ -32,7 +32,7 @@ in {
     
     oh-my-zsh = { 
         enable = true;
-        plugins = [ "git" "dircycle "];
+        plugins = [ "git" "dircycle colored-man-pages"];
       };  
 
  #    initExtra = "source ~/.p10k.zsh";
