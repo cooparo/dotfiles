@@ -43,18 +43,13 @@
     
     # Core
     brave
-    vscode
     neofetch
     git
     zsh
     alacritty
-    flameshot
     openvpn
     vlc
-    tmux
     unzip
-    zoxide # smarter cd
-    fzf
 
     # App
     telegram-desktop
@@ -67,6 +62,8 @@
     gimp
     libreoffice
     zoom-us
+    vscode
+    tmux
 
     # Language
     python3
@@ -80,8 +77,11 @@
     pavucontrol # Manage audio
     dhcpcd
     nssmdns
-    libnotify # Notification
     openssl
+    zoxide # smarter cd
+    fzf
+    flameshot
+    bat 
 
     # Desktop env
     feh # wallpaper
@@ -92,6 +92,7 @@
     autotiling # Open window by golden ratio
     lxappearance
     alsa-utils
+    libnotify # Notification
 
     ## For betterlockscreen
     bc

@@ -24,6 +24,7 @@
 	develop = "nix develop --command zsh";
 	cd = "z";
 	cdi = "zi";
+	cat = "bat";
     };
     
     oh-my-zsh = { 
