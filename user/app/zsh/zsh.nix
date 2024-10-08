@@ -1,5 +1,8 @@
-{ pkgs, ... }:
-{
+{ pkgs, userSettings, ... }:
+let
+  theme = if (userSettings.theme == "nord") then "Nord" else "gruvbox-dark";
+
+in {
   home.packages = with pkgs; [
     zsh
     git
@@ -24,6 +27,7 @@
 	develop = "nix develop --command zsh";
 	cd = "z";
 	cdi = "zi";
+	cat = "bat --theme=${theme}";
     };
     
     oh-my-zsh = { 
