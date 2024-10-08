@@ -19,11 +19,6 @@
     key = "<leader>q";
     mode = [ "n" ];
   }
-  { # Close without saving
-    action = "<cmd>q!<CR>";
-    key = "<leader>qq";
-    mode = [ "n" ];
-  }
   { # Next buffer 
       action = "<cmd>bnext<CR>";
     key = "<leader>bn";
