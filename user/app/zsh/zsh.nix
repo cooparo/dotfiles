@@ -35,15 +35,7 @@ in {
         plugins = [ "git" "dircycle colored-man-pages"];
       };  
 
- #    initExtra = "source ~/.p10k.zsh";
-    plugins = [
- #      {
-	# name = "powerlevel10k";
-	# src = pkgs.zsh-powerlevel10k;
-	# file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme"; 
- #      }
-    ];
-    initExtra = ''
+  initExtra = ''
      eval "$(zoxide init zsh)"
     '';
   };
@@ -55,7 +47,11 @@ in {
     enableZshIntegration = true;
   };
 
-  programs.direnv.enable = true;
-  programs.direnv.enableZshIntegration = true;
-  programs.direnv.nix-direnv.enable = true;
+  programs.direnv = { 
+    enable = true;
+    enableZshIntegration = true;
+    silent = true;
+
+    nix-direnv.enable = true;
+  };
 }
