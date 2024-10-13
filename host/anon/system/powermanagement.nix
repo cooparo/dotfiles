@@ -56,8 +56,8 @@
       # Dirty page values (timeouts in secs).
       # Default: 15 (AC), 60 (BAT)
       
-      #MAX_LOST_WORK_SECS_ON_AC=15
-      #MAX_LOST_WORK_SECS_ON_BAT=60
+      MAX_LOST_WORK_SECS_ON_AC=15;
+      MAX_LOST_WORK_SECS_ON_BAT=60;
       
       # Select a CPU scaling driver operation mode.
       # Intel CPU with intel_pstate driver:
@@ -352,14 +352,14 @@
       # (*) keeps BIOS ASPM defaults (recommended)
       # Default: <none>
       
-      #PCIE_ASPM_ON_AC=default
-      #PCIE_ASPM_ON_BAT=default
+      PCIE_ASPM_ON_AC="performance";
+      PCIE_ASPM_ON_BAT="powersave";
       
       # Runtime Power Management for PCIe bus devices: on=disable, auto=enable.
       # Default: on (AC), auto (BAT)
       
-      #RUNTIME_PM_ON_AC=on
-      #RUNTIME_PM_ON_BAT=auto
+      RUNTIME_PM_ON_AC="on";
+      RUNTIME_PM_ON_BAT="auto";
       
       # Exclude listed PCIe device adresses from Runtime PM.
       # Note: this preserves the kernel driver default, to force a certain state
@@ -554,7 +554,7 @@
       
       # Radio devices to enable on disconnect.
       
-      #DEVICES_TO_ENABLE_ON_LAN_DISCONNECT="wifi wwan"
+      DEVICES_TO_ENABLE_ON_LAN_DISCONNECT="wifi";
       #DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT=""
       #DEVICES_TO_ENABLE_ON_WWAN_DISCONNECT=""
       
