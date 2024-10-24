@@ -4,11 +4,13 @@
 
   # Configure doas
   security.doas.enable = true;
-  security.doas.extraRules = [{
-    groups = [ "wheel" ];
-    keepEnv = true;
-    persist = true;
-  }];
+  security.doas.extraRules = [
+    {
+      groups = [ "wheel" ];
+      keepEnv = true;
+      persist = true;
+    }
+  ];
 
   security.polkit.enable = true;
 }

@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 {
 
   # ssh-agent starts, but doesn't add key automatically

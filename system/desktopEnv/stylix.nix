@@ -6,7 +6,7 @@
     base16-schemes
     dejavu_fonts
   ];
-  
+
   stylix = {
     enable = true;
     image = "/home/paro/.wallpaper.jpg";
@@ -15,23 +15,23 @@
 
     fonts = {
       serif = {
-	package = pkgs.dejavu_fonts;
-	name = "DejaVu Sans";
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
       };
 
       sansSerif = {
-	package = pkgs.dejavu_fonts;
-	name = "DejaVu Sans";
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
       };
 
       monospace = {
-	package = (pkgs.nerdfonts.override { fonts = userSettings.nerdfonts; });
-	name = "FiraCode";
+        package = (pkgs.nerdfonts.override { fonts = userSettings.nerdfonts; });
+        name = "FiraCode";
       };
 
       emoji = {
-	package = pkgs.noto-fonts-emoji;
-	name = "Noto Color Emoji";
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
     };
 

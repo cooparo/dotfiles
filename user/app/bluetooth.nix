@@ -3,7 +3,7 @@
 
   # TODO: FIX Using Bluetooth headset buttons to control media player 
   # check https://nixos.wiki/wiki/Bluetooth
-  
+
   # From https://nixos.wiki/wiki/Bluetooth
   # Using Bluetooth headset buttons to control media player
 

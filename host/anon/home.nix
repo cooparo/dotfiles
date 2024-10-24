@@ -12,7 +12,7 @@
   ];
 
   home.packages = with pkgs; [
-    gruvbox-gtk-theme   
+    gruvbox-gtk-theme
 
     brightnessctl # Manage display brightness
     powertop

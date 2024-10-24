@@ -6,5 +6,5 @@
     (nerdfonts.override { fonts = userSettings.nerdfonts; })
     material-design-icons
     font-awesome
-  ];  
+  ];
 }

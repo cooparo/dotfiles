@@ -1,9 +1,14 @@
-{ pkgs, userSettings, systemSettings, ... }:
+{
+  pkgs,
+  userSettings,
+  systemSettings,
+  ...
+}:
 
 ## SYSTEM SETTINGS
 
 {
-  imports = [ 
+  imports = [
     /etc/nixos/hardware-configuration.nix
 
     ../../system/bootloader.nix
@@ -15,7 +20,7 @@
     ../../system/ssh.nix
     ../../system/tailscale.nix
     ../../system/virtualization.nix
-    ../../system/openvpn.nix 
+    ../../system/openvpn.nix
     ../../system/docker.nix
 
     # Desktop env
@@ -31,7 +36,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.systemPackages = with pkgs; [
     home-manager
     vim
@@ -80,7 +85,7 @@
     LC_PAPER = locale;
     LC_TELEPHONE = locale;
     LC_TIME = locale;
-    
+
     # LANGUAGE = locale;
     # LC_ALL = locale;
   };
@@ -100,7 +105,11 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = userSettings.username;
-    extraGroups = [ "networkmanager" "wheel" "kvm" ]; # kvm is Kernel Virtual Machine, it's for hardware acceleration
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "kvm"
+    ]; # kvm is Kernel Virtual Machine, it's for hardware acceleration
   };
 
   # I use zsh btw
@@ -109,5 +118,8 @@
   programs.zsh.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }

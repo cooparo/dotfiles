@@ -2,7 +2,8 @@
 let
   theme = if (userSettings.theme == "nord") then "Nord" else "gruvbox-dark";
 
-in {
+in
+{
   home.packages = with pkgs; [
     zsh
     git
@@ -18,36 +19,41 @@ in {
     syntaxHighlighting.enable = true;
     enableCompletion = true;
     shellAliases = {
-        gs = "git status";
-        ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
-        la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
-        sudo = "doas";
-	rm = "rm -i";
-	nix-shell = "nix-shell --command zsh";
-	develop = "nix develop --command zsh";
-	cd = "z";
-	cdi = "zi";
-	cat = "bat --theme=${theme}";
+      gs = "git status";
+      ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
+      la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
+      sudo = "doas";
+      rm = "rm -i";
+      nix-shell = "nix-shell --command zsh";
+      develop = "nix develop --command zsh";
+      cd = "z";
+      cdi = "zi";
+      cat = "bat --theme=${theme}";
     };
-    
-    oh-my-zsh = { 
-        enable = true;
-        plugins = [ "git" "dircycle colored-man-pages"];
-      };  
 
-  initExtra = ''
-     eval "$(zoxide init zsh)"
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "dircycle colored-man-pages"
+      ];
+    };
+
+    initExtra = ''
+      eval "$(zoxide init zsh)"
     '';
   };
 
   programs.oh-my-posh = {
     enable = true;
-    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh/my-robbyrussel.json));
+    settings = builtins.fromJSON (
+      builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh/my-robbyrussel.json)
+    );
     useTheme = "robbyrussell"; # fallback value
     enableZshIntegration = true;
   };
 
-  programs.direnv = { 
+  programs.direnv = {
     enable = true;
     enableZshIntegration = true;
     silent = true;

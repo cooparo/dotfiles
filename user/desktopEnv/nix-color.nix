@@ -1,9 +1,9 @@
 { nix-colors, userSettings, ... }:
 
 {
-    imports = [ nix-colors.homeManagerModules.default ];
+  imports = [ nix-colors.homeManagerModules.default ];
 
-    colorScheme = nix-colors.colorSchemes.${userSettings.theme};
+  colorScheme = nix-colors.colorSchemes.${userSettings.theme};
 }
 
 # scheme: "Nord"
@@ -42,4 +42,4 @@
 # base0C: "#8ec07c"  
 # base0D: "#83a598"  
 # base0E: "#d3869b"  
-# base0F: "#d65d0e" 
+# base0F: "#d65d0e"

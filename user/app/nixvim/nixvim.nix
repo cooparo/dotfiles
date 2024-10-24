@@ -1,6 +1,12 @@
-{ pkgs, nixvim, userSettings, lib,  ... }:
 {
-  imports = [ 
+  pkgs,
+  nixvim,
+  userSettings,
+  lib,
+  ...
+}:
+{
+  imports = [
     nixvim.homeManagerModules.nixvim
     ./keymaps.nix
     ./plugins/default.nix
@@ -9,16 +15,16 @@
 
   home.packages = with pkgs; [
     xclip
-      ripgrep
-      lazygit
+    ripgrep
+    lazygit
   ];
 
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
 
-    colorschemes.base16.enable = true; 
-    colorschemes.base16.colorscheme = lib.mkDefault userSettings.theme; 
+    colorschemes.base16.enable = true;
+    colorschemes.base16.colorscheme = lib.mkDefault userSettings.theme;
 
     globals.mapleader = " ";
 
@@ -33,7 +39,7 @@
       softtabstop = 2;
       showtabline = 2;
       smartindent = true; # enables autoindenting
-	wrap = false;
+      wrap = false;
       breakindent = true;
       backup = false;
       swapfile = false;
@@ -43,11 +49,15 @@
       scrolloff = 8;
 
       updatetime = 50; # faster completion (default: 4000ms)
-	completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
-	undofile = true;
+      completeopt = [
+        "menuone"
+        "noselect"
+        "noinsert"
+      ]; # mostly just for cmp
+      undofile = true;
       cursorline = true; # highlights the line where the cursor is located
 
-	encoding = "utf-8";
+      encoding = "utf-8";
       fileencoding = "utf-8";
     };
   };

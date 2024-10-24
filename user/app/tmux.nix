@@ -1,13 +1,13 @@
-{ pkgs, userSettings,... }: 
+{ pkgs, userSettings, ... }:
 let
-  theme = if(userSettings.theme == "nord") then "nord" else "gruvbox";
+  theme = if (userSettings.theme == "nord") then "nord" else "gruvbox";
 in
 {
   home.packages = with pkgs; [
-   gnused
-   psmisc
-   fzf
-   bash
+    gnused
+    psmisc
+    fzf
+    bash
   ];
 
   programs.fzf.tmux.enableShellIntegration = true;
