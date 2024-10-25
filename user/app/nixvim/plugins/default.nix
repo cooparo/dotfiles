@@ -5,7 +5,6 @@
     ./harpoon.nix
     ./lsp.nix
     ./oil.nix
-    ./none-ls.nix
   ];
 
   programs.nixvim.plugins = {

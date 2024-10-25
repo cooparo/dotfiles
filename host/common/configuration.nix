@@ -62,6 +62,7 @@
     dbus
     # Dev packages
     pkg-config
+    nixd
 
     # Virtualization
     qemu
