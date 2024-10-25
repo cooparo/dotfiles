@@ -4,7 +4,10 @@
     enable = true;
 
     servers = {
-      pylsp.enable = true;
+      pylsp = {
+	enable = true;
+	settings.configurationSources = "flake8";
+      };
 
       lua-ls.enable = true;
       lua-ls.settings.telemetry.enable = false;
