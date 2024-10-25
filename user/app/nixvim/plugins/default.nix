@@ -42,6 +42,7 @@
       window.width = 30;
     };
 
+    # syntax highlighting
     treesitter = {
       enable = true;
       settings.ensure_installed = [
@@ -53,6 +54,8 @@
         "python"
         "rust"
         "bash"
+	"java"
+	"go"
       ];
     };
 
