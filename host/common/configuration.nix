@@ -2,6 +2,7 @@
   pkgs,
   userSettings,
   systemSettings,
+  inputs,
   ...
 }:
 
@@ -60,6 +61,7 @@
     meson
     gnumake
     dbus
+
     # Dev packages
     pkg-config
     nixd
@@ -119,6 +121,7 @@
   programs.zsh.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

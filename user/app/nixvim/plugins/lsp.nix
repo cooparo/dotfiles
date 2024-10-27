@@ -1,5 +1,10 @@
 { userSettings, ... }:
+{ userSettings, pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    nixfmt-rfc-style
+  ];
+
   programs.nixvim.plugins.lsp = {
     enable = true;
 

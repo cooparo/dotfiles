@@ -64,10 +64,10 @@
           inherit userSettings;
           inherit systemSettings;
           inherit pkgs-stable;
+          inherit inputs;
           inherit (inputs) nixos-hardware;
         };
       }; # END nixosConfigurations
-
       homeConfigurations.${userSettings.username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./host/${systemSettings.host}/home.nix ];
@@ -80,8 +80,6 @@
           inherit (inputs) nixvim;
         };
       }; # END homeConfigurations
-
-      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     };
 
   inputs = {

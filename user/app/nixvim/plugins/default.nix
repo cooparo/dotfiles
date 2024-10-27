@@ -19,9 +19,6 @@
 
     nvim-colorizer.enable = true;
 
-    none-ls.enable = true;
-    none-ls.enableLspFormat = true;
-
     lsp-format.enable = true;
     gitsigns.enable = true;
     nvim-autopairs.enable = true;
@@ -34,6 +31,7 @@
 
     luasnip.enable = true;
 
+    # File explorer
     neo-tree = {
       enable = true;
       closeIfLastWindow = true;
@@ -45,18 +43,26 @@
     # syntax highlighting
     treesitter = {
       enable = true;
-      settings.ensure_installed = [
-        "c"
-        "lua"
-        "nix"
-        "javascript"
-        "typescript"
-        "python"
-        "rust"
-        "bash"
-	"java"
-	"go"
-      ];
+      settings = {
+        auto_install = false;
+        ensure_installed = [
+          "c"
+          "lua"
+          "nix"
+          "javascript"
+          "typescript"
+          "python"
+          "rust"
+          "bash"
+          "java"
+          "go"
+        ];
+
+        highlight = {
+          enable = true;
+          additional_vim_regex_highlighting = false;
+        };
+      };
     };
 
     toggleterm = {
