@@ -14,12 +14,14 @@
       action = "<cmd>w<CR>";
       key = "<leader>w";
       mode = [ "n" ];
+      options.desc = "Save file";
     }
     {
       # Close file 
       action = "<cmd>wq<CR>";
       key = "<leader>q";
       mode = [ "n" ];
+      options.desc = "Close nvim";
     }
     {
       # Next buffer
@@ -39,7 +41,18 @@
       key = "<leader>bq";
       mode = [ "n" ];
     }
-
+    {
+      # Format buffer
+      mode = [
+        "n"
+      ];
+      key = "<leader>cf";
+      action = "<cmd>lua vim.lsp.buf.format()<cr>";
+      options = {
+        silent = true;
+        desc = "Format buffer";
+      };
+    }
     ### - Telescope
     {
       # open find files
@@ -108,6 +121,7 @@
       action = "<cmd>LazyGit<CR>";
       key = "<leader>gg";
       mode = [ "n" ];
+      options.desc = "Open LazyGit";
     }
     ### - Shell command
     {
@@ -121,18 +135,6 @@
       action = "<cmd>ToggleTerm<CR>";
       key = "<leader>tt";
       mode = [ "n" ];
-    }
-    {
-      mode = [
-        "n"
-        "v"
-      ];
-      key = "<leader>cf";
-      action = "<cmd>lua vim.lsp.buf.format()<cr>";
-      options = {
-        silent = true;
-        desc = "Format";
-      };
     }
   ];
 }
