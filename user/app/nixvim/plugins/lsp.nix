@@ -11,21 +11,19 @@
 
   programs.nixvim.plugins = {
     luasnip.enable = true;
-
     # VSCode 💡(suggestions) for neovim's built-in LSP.
     nvim-lightbulb.enable = true;
-
     # This tiny plugin adds vscode-like pictograms to neovim built-in lsp
     lspkind = {
       enable = true;
       cmp.enable = true;
     };
-
     # Previews incremental renaming
     inc-rename.enable = true;
-
     # Show function's signature when you type 
     lsp-signature.enable = true;
+    # Define which LSP server to use for each language
+    lsp-format.enable = true;
 
     # Language Servers
     lsp = {
@@ -47,7 +45,14 @@
         # Python
         basedpyright.enable = true;
         ruff.enable = true;
-
+        # Bash 
+        bashls.enable = true;
+        # Grammar checker
+        harper_ls.enable = true;
+        # C/C++
+        clangd.enable = true;
+        # Java
+        java-language-server.enable = true;
         # Lua   
         lua-ls.enable = true;
         lua-ls.settings.telemetry.enable = false;
@@ -73,11 +78,6 @@
               };
           };
         };
-
-        # C/C++
-        clangd.enable = true;
-        # Java
-        java-language-server.enable = true;
       };
     };
   };
