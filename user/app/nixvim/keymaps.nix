@@ -95,6 +95,12 @@
       key = "<leader>hu";
       mode = [ "n" ];
     }
+    {
+      # Reset hunk 
+      action = "<cmd>Gitsign reset_hunk<CR>";
+      key = "<leader>hr";
+      mode = [ "n" ];
+    }
     ### - Oil
     {
       action = "<cmd>Oil<CR>";
