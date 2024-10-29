@@ -8,7 +8,6 @@
       key = "jk";
       mode = [ "i" ];
     }
-
     {
       # Save file 
       action = "<cmd>w<CR>";
