@@ -29,8 +29,6 @@
     bufferline.enable = true;
     bufferline.settings.options.always_show_bufferline = false;
 
-    luasnip.enable = true;
-
     # File explorer
     neo-tree = {
       enable = true;

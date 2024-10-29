@@ -41,18 +41,6 @@
       key = "<leader>bq";
       mode = [ "n" ];
     }
-    {
-      # Format buffer
-      mode = [
-        "n"
-      ];
-      key = "<leader>cf";
-      action = "<cmd>lua vim.lsp.buf.format()<cr>";
-      options = {
-        silent = true;
-        desc = "Format buffer";
-      };
-    }
     ### - Telescope
     {
       # open find files

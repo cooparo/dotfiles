@@ -1,37 +1,84 @@
-{ userSettings, ... }:
-{ userSettings, pkgs, ... }:
+{
+  userSettings,
+  systemSettings,
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
     nixfmt-rfc-style
   ];
 
-  programs.nixvim.plugins.lsp = {
-    enable = true;
+  programs.nixvim.plugins = {
+    luasnip.enable = true;
 
-    servers = {
-      pylsp = {
-	enable = true;
-	settings.configurationSources = "flake8";
-      };
+    # VSCode 💡(suggestions) for neovim's built-in LSP.
+    nvim-lightbulb.enable = true;
 
-      lua-ls.enable = true;
-      lua-ls.settings.telemetry.enable = false;
+    # This tiny plugin adds vscode-like pictograms to neovim built-in lsp
+    lspkind = {
+      enable = true;
+      cmp.enable = true;
+    };
 
-      # Nix lang
-      nixd = {
-        enable = true;
-        settings = {
-          formatting.command = [ "nixfmt" ];
-          nixpkgs.expr = "import <nixpkgs> { }";
+    # Previews incremental renaming
+    inc-rename.enable = true;
 
-          # Completitions for nixos and home manager options
-          options.nixos.expr = "(builtins.getFlake ${userSettings.dotfilesDir}).nixosConfigurations.CONFIGNAME.options";
-          options.home_manager.expr = "(builtins.getFlake ${userSettings.dotfilesDir}).homeConfigurations.CONFIGNAME.options";
+    # Show function's signature when you type 
+    lsp-signature.enable = true;
+
+    # Language Servers
+    lsp = {
+      enable = true;
+
+      keymaps = {
+        silent = true;
+
+        lspBuf = {
+          "gd" = "definition";
+          "gD" = "declaration";
+          "ca" = "code_action";
+          "ff" = "format";
+          "K" = "hover";
         };
       };
 
-      # C/C++
-      clangd.enable = true;
+      servers = {
+        # Python
+        basedpyright.enable = true;
+        ruff.enable = true;
+
+        # Lua   
+        lua-ls.enable = true;
+        lua-ls.settings.telemetry.enable = false;
+
+        # Nix lang
+        nixd = {
+          enable = true;
+          settings = {
+            formatting.command = [ "nixfmt" ];
+            nixpkgs.expr = "import <nixpkgs> { }";
+
+            options =
+              let
+                flake = "(builtins.getFlake ${userSettings.dotfilesDir})";
+              in
+              {
+                # Completitions for nixos and home manager options
+                nixos.expr = "${flake}.nixosConfigurations.${systemSettings.host}.options";
+                home_manager.expr = "${flake}.homeConfigurations.${userSettings.username}.options";
+
+                # TODO: add nixvim autocompletion options 
+                # nixvim.expr = "(builtins.getFlake \"github:nix-community/nixvim\").output.packages.${systemSettings.system}.options-json.options";
+              };
+          };
+        };
+
+        # C/C++
+        clangd.enable = true;
+        # Java
+        java-language-server.enable = true;
+      };
     };
   };
 }
