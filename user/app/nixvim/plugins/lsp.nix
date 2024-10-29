@@ -52,10 +52,10 @@
         # C/C++
         clangd.enable = true;
         # Java
-        java-language-server.enable = true;
+        jdtls.enable = true;
         # Lua   
-        lua-ls.enable = true;
-        lua-ls.settings.telemetry.enable = false;
+        lua_ls.enable = true;
+        lua_ls.settings.telemetry.enable = false;
 
         # Nix lang
         nixd = {
