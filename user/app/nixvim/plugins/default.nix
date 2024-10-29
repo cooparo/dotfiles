@@ -66,12 +66,14 @@
     toggleterm = {
       enable = true;
       settings = {
-        direction = "float";
-        float_opts = {
-          border = "curved";
-          height = 30;
-          width = 130;
-        };
+        direction = "horizontal";
+        auto_scroll = true;
+        open.mapping = "[[<c-\>]]";
+        # float_opts = {
+        #   border = "curved";
+        #   height = 30;
+        #   width = 130;
+        # };
       };
     };
   };
