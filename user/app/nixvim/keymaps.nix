@@ -27,18 +27,21 @@
       action = "<cmd>bnext<CR>";
       key = "<leader>bn";
       mode = [ "n" ];
+      options.desc = "Go next buffer";
     }
     {
       # Previous buffer 
       action = "<cmd>bprevious<CR>";
       key = "<leader>bp";
       mode = [ "n" ];
+      options.desc = "Go previous buffer";
     }
     {
       # Close buffer 
       action = "<cmd>bd<CR>";
       key = "<leader>bq";
       mode = [ "n" ];
+      options.desc = "Close buffer";
     }
     ### - Telescope
     {
