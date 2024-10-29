@@ -19,12 +19,12 @@
 
     nvim-colorizer.enable = true;
 
-    lsp-format.enable = true;
     gitsigns.enable = true;
     nvim-autopairs.enable = true;
     comment.enable = true;
     which-key.enable = true;
     lazygit.enable = true;
+    render-markdown = true;
 
     bufferline.enable = true;
     bufferline.settings.options.always_show_bufferline = false;
