@@ -66,15 +66,13 @@
 
             options =
               let
-                flake = "(builtins.getFlake ${userSettings.dotfilesDir})";
+                flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
               in
               {
-                # Completitions for nixos and home manager options
+                # Completitions for nixos, home manager and nixvim options
                 nixos.expr = "${flake}.nixosConfigurations.${systemSettings.host}.options";
                 home_manager.expr = "${flake}.homeConfigurations.${userSettings.username}.options";
-
-                # TODO: add nixvim autocompletion options 
-                # nixvim.expr = "(builtins.getFlake \"github:nix-community/nixvim\").output.packages.${systemSettings.system}.options-json.options";
+                nixvim.expr = "${flake}.homeConfigurations.${userSettings.username}.options.programs.nixvim.type.getSubOptions []";
               };
           };
         };
