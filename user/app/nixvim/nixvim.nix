@@ -33,6 +33,8 @@
 
     ./ui/alpha.nix
     ./ui/barbecue.nix
+    ./ui/notify.nix
+    ./ui/indent-blankline.nix
   ];
 
   home.packages = with pkgs; [
