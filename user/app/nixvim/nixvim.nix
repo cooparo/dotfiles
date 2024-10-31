@@ -32,6 +32,7 @@
     ./pluginsmanager/lazy.nix
 
     ./ui/alpha.nix
+    ./ui/barbecue.nix
   ];
 
   home.packages = with pkgs; [
