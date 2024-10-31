@@ -19,7 +19,10 @@
       # Close file 
       action = "<cmd>wq<CR>";
       key = "<leader>q";
-      mode = [ "n" ];
+      mode = [
+        "n"
+        "v"
+      ];
       options.desc = "Close nvim";
     }
 
