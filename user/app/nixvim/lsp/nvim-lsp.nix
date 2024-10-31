@@ -7,19 +7,24 @@
 {
   home.packages = with pkgs; [
     nixfmt-rfc-style
+    vimPlugins.friendly-snippets
   ];
 
   programs.nixvim.plugins = {
-    luasnip.enable = true;
-    # VSCode 💡(suggestions) for neovim's built-in LSP.
-    nvim-lightbulb.enable = true;
-    # This tiny plugin adds vscode-like pictograms to neovim built-in lsp
-    lspkind = {
+    luasnip = {
       enable = true;
-      cmp.enable = true;
+
+      settings = {
+        enable_autosnippets = true;
+        store_selection_keys = "<Tab>";
+      };
+      fromVscode = [
+        {
+          lazyLoad = true;
+          paths = "${pkgs.vimPlugins.friendly-snippets}";
+        }
+      ];
     };
-    # Previews incremental renaming
-    inc-rename.enable = true;
     # Show function's signature when you type 
     lsp-signature.enable = true;
     # Define which LSP server to use for each language
@@ -29,6 +34,7 @@
     lsp = {
       enable = true;
 
+      inlayHints = true;
       keymaps = {
         silent = true;
 
@@ -51,8 +57,6 @@
         harper_ls.enable = true;
         # C/C++
         clangd.enable = true;
-        # Java
-        jdtls.enable = true;
         # Lua   
         lua_ls.enable = true;
         lua_ls.settings.telemetry.enable = false;
@@ -60,6 +64,12 @@
         # Nix lang
         nixd = {
           enable = true;
+
+          # FIXME: semantic-tokens error for lua code
+          # cmd = [
+          #   "nixd"
+          #   "--semantic-tokens=false"
+          # ];
           settings = {
             formatting.command = [ "nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
@@ -68,11 +78,11 @@
               let
                 flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
               in
-              {
+              rec {
                 # Completitions for nixos, home manager and nixvim options
                 nixos.expr = "${flake}.nixosConfigurations.${systemSettings.host}.options";
                 home_manager.expr = "${flake}.homeConfigurations.${userSettings.username}.options";
-                nixvim.expr = "${flake}.homeConfigurations.${userSettings.username}.options.programs.nixvim.type.getSubOptions []";
+                nixvim.expr = "${home_manager.expr}.programs.nixvim.type.getSubOptions []";
               };
           };
         };

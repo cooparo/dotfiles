@@ -9,6 +9,7 @@
 
     cmp = {
       enable = true;
+
       settings = {
         autoEnableSources = true;
         experimental.ghost_text = true;

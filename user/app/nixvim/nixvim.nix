@@ -8,9 +8,30 @@
 {
   imports = [
     nixvim.homeManagerModules.nixvim
+    ./bufferline.nix
+    ./neo-tree.nix
     ./keymaps.nix
-    ./plugins/default.nix
-    ./ui/default.nix
+    ./lualine.nix
+    ./oil.nix
+    ./telescope.nix
+
+    ./language/treesitter.nix
+    ./language/nvim-lint.nix
+
+    ./git/lazygit.nix
+    ./git/gitsigns.nix
+    ./git/diffview.nix
+
+    ./completion/cmp.nix
+    ./completion/lspkind.nix
+
+    ./lsp/nvim-lsp.nix
+    ./lsp/fidget.nix
+    ./lsp/trouble.nix
+
+    ./pluginsmanager/lazy.nix
+
+    ./ui/alpha.nix
   ];
 
   home.packages = with pkgs; [
@@ -30,6 +51,14 @@
 
     clipboard.register = "unnamedplus";
     clipboard.providers.xclip.enable = true;
+
+    plugins = {
+      web-devicons.enable = true;
+      nvim-autopairs.enable = true;
+      nvim-colorizer.enable = true;
+      which-key.enable = true;
+      render-markdown.enable = true;
+    };
 
     opts = {
       number = true;
