@@ -14,7 +14,7 @@
       systemSettings = {
         system = "x86_64-linux";
         host = "anon"; # hostname
-        timezone = "America/Argentina/Buenos_Aires"; # select timezone
+        timezone = "Europe/Rome"; # select timezone
         locale = "en_US.UTF-8"; # select locale
         resolution = "1920x1200";
       };
