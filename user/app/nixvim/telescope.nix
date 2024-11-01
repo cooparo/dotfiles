@@ -1,5 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = [
+    pkgs.fd
+  ];
+
   programs.nixvim.plugins.telescope = {
     enable = true;
 
