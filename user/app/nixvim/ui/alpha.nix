@@ -11,16 +11,19 @@
         "░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ "
         "░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░  "
         "                                                      "
-        "          from git@github.com:elythh                  "
+        "          from git@github.com:cooparo"
       ];
+
+      padding = val: {
+        type = "padding";
+        inherit val;
+      };
     in
     {
       enable = true;
+
       layout = [
-        {
-          type = "padding";
-          val = 4;
-        }
+        (padding 4)
         {
           opts = {
             hl = "AlphaHeader";
@@ -29,51 +32,145 @@
           type = "text";
           val = nixFlake;
         }
+        (padding 2)
         {
-          type = "padding";
-          val = 2;
-        }
-        {
-          type = "group";
-          val =
-            let
-              mkButton = shortcut: cmd: val: hl: {
-                type = "button";
-                inherit val;
-                opts = {
-                  inherit hl shortcut;
-                  keymap = [
-                    "n"
-                    shortcut
-                    cmd
-                    { }
-                  ];
-                  position = "center";
-                  cursor = 0;
-                  width = 40;
-                  align_shortcut = "right";
-                  hl_shortcut = "Keyword";
-                };
-              };
-            in
-            [
-              (mkButton "f" "<CMD>lua require('telescope.builtin').find_files({hidden = true})<CR>" "🔍 Find File"
-                "Operator"
-              )
-              (mkButton "q" "<CMD>qa<CR>" "💣 Quit Neovim" "String")
-            ];
-        }
-        {
-          type = "padding";
-          val = 2;
-        }
-        {
-          opts = {
-            hl = "GruvboxBlue";
-            position = "center";
+          type = "button";
+          val = "  Find File";
+          on_press = {
+            __raw = "function() require('telescope.builtin').find_files() end";
           };
-          type = "text";
-          val = "https://github.com/elythh/nixvim";
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "f"
+              ":Telescope find_files <CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "f";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
+          val = "󰈚  Recent Files";
+          on_press = {
+            __raw = "function() require('telescope.builtin').oldfiles() end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "r"
+              ":Telescope oldfiles <CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "r";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
+          val = "󰈭  Find Word";
+          on_press = {
+            __raw = "function() require('telescope.builtin').live_grep() end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "g"
+              ":Telescope live_grep <CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "g";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
+          val = "  LazyGit";
+          on_press = {
+            __raw = "function() vim.cmd('LazyGit') end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "l"
+              ":LazyGit<CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "l";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
+          val = "  Quit Neovim";
+          on_press = {
+            __raw = "function() vim.cmd[[qa]] end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "q"
+              ":qa<CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "q";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
         }
       ];
     };
