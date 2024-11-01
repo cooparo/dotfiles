@@ -8,15 +8,7 @@
         char = "│"; # "│" or "▎"
       };
 
-      scope = {
-        enabled = true;
-
-        exclude.node_type = {
-          "*" = [
-            "source_file"
-          ];
-        };
-      };
+      scope.enabled = true;
 
       exclude = {
         buftypes = [
