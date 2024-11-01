@@ -29,8 +29,6 @@
     ./lsp/fidget.nix
     ./lsp/trouble.nix
 
-    ./pluginsmanager/lazy.nix
-
     ./ui/alpha.nix
     ./ui/barbecue.nix
     ./ui/notify.nix
