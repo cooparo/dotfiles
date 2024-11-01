@@ -49,8 +49,8 @@
 
       servers = {
         # Python
-        basedpyright.enable = true;
-        ruff.enable = true;
+        pyright.enable = true;
+        ruff_lsp.enable = true;
         # Bash 
         bashls.enable = true;
         # Grammar checker
