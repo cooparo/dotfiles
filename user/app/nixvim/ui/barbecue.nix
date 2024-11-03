@@ -1,6 +1,4 @@
-{ ... }:
-{
-  # FIXME: showing always (anonymous lamda)
+{ ... }: {
   programs.nixvim = {
     plugins.barbecue = {
       enable = true;

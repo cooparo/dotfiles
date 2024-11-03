@@ -14,6 +14,7 @@
     ./lualine.nix
     ./oil.nix
     ./telescope.nix
+    ./none-ls.nix
 
     ./language/treesitter.nix
     ./language/nvim-lint.nix
@@ -59,7 +60,8 @@
       nvim-autopairs.enable = true;
       nvim-colorizer.enable = true;
       which-key.enable = true;
-      render-markdown.enable = true;
+      nvim-surround.enable = true;
+      todo-comments.enable = true;
     };
 
     opts = {
