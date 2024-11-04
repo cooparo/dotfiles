@@ -14,7 +14,7 @@
     ./lualine.nix
     ./oil.nix
     ./telescope.nix
-    ./none-ls.nix
+    # ./none-ls.nix
 
     ./language/treesitter.nix
     ./language/nvim-lint.nix
