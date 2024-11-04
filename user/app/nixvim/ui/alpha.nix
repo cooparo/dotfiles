@@ -147,6 +147,34 @@
         (padding 1)
         {
           type = "button";
+          val = "  Todos";
+          on_press = {
+            __raw = "function() vim.cmd('LazyGit') end";
+          };
+          opts = {
+            # hl = "comment";
+            keymap = [
+              "n"
+              "t"
+              ":TodoTelescope keywords=TODO,FIX<CR>"
+              {
+                noremap = true;
+                silent = true;
+                nowait = true;
+              }
+            ];
+            shortcut = "t";
+
+            position = "center";
+            cursor = 3;
+            width = 38;
+            align_shortcut = "right";
+            hl_shortcut = "Keyword";
+          };
+        }
+        (padding 1)
+        {
+          type = "button";
           val = "  Quit Neovim";
           on_press = {
             __raw = "function() vim.cmd[[qa]] end";
