@@ -53,19 +53,20 @@
         ruff_lsp.enable = true;
         # Bash 
         bashls.enable = true;
-        # Grammar checker
-        harper_ls.enable = true;
         # C/C++
         clangd.enable = true;
         # Lua   
         lua_ls.enable = true;
         lua_ls.settings.telemetry.enable = false;
 
+        # Java
+        jdtls.enable = true;
+
         # Nix lang
         nixd = {
           enable = true;
 
-          # FIXME: semantic-tokens error for lua code
+          # FIX: semantic-tokens error for lua code
           # cmd = [
           #   "nixd"
           #   "--semantic-tokens=false"
