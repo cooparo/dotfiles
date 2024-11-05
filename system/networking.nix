@@ -1,13 +1,20 @@
 { lib, systemSettings, ... }:
 {
-  networking.hostName = systemSettings.host; # Define your hostname.
+  networking = {
+    hostName = systemSettings.host; # Define your hostname.
 
-  # Enables wireless support via wpa_supplicant.
-  networking.wireless.enable = lib.mkDefault false;
+    # Enables wireless support via wpa_supplicant.
+    wireless.enable = lib.mkDefault false;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+    # Tailscale: fixing not internet on exit-node
+    firewall.checkReversePath = "loose";
 
-  # Tailscale: fixing not internet on exit-node
-  networking.firewall.checkReversePath = "loose";
+    # Enable networking
+    networkmanager = {
+      enable = true;
+
+      wifi.powersave = false;
+      wifi.macAddress = "stable-ssid";
+    };
+  };
 }
