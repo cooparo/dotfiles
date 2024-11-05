@@ -60,13 +60,14 @@
         lua_ls.settings.telemetry.enable = false;
 
         # Java
-        jdtls.enable = true;
+        jdtls.enable = true; # TODO: remove all weird warnings
 
         # Nix lang
         nixd = {
           enable = true;
 
-          # FIX: semantic-tokens error for lua code
+          # NOTE: semantic-tokens error for lua code, for some char
+          # but, if I enable this nix code looks weird.
           # cmd = [
           #   "nixd"
           #   "--semantic-tokens=false"
