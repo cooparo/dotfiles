@@ -9,6 +9,8 @@
     # Tailscale: fixing not internet on exit-node
     firewall.checkReversePath = "loose";
 
+    #FIX: unstable wifi connection for some type of connections
+
     # Enable networking
     networkmanager = {
       enable = true;
