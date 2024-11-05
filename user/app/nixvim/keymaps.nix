@@ -33,5 +33,16 @@
       key = "<leader>hm";
       mode = [ "n" ];
     }
+    ### - todo-comments
+    {
+      # Open todos 
+      action = "<cmd>TodoTelescope keywords=TODO,FIX<CR>";
+      key = "<leader>tt";
+      mode = [
+        "n"
+        "v"
+      ];
+      options.desc = "Opens todos/fixes";
+    }
   ];
 }
