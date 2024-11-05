@@ -60,7 +60,7 @@
         lua_ls.settings.telemetry.enable = false;
 
         # Java
-        jdtls.enable = true;
+        jdtls.enable = true; # TODO: remove all weird warnings
 
         # Nix lang
         nixd = {
