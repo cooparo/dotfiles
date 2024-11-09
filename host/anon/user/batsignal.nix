@@ -1,9 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  home.packages = with pkgs; [
-    batsignal
-  ];
-
   services.batsignal = {
     enable = true;
     extraArgs = [
