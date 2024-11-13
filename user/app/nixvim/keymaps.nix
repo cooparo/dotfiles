@@ -3,20 +3,20 @@
   programs.nixvim.keymaps = [
     ### - Vim 
     {
-      # Exit insert mode
       action = "<Esc>";
       key = "jk";
       mode = [ "i" ];
     }
     {
-      # Save file 
       action = "<cmd>w<CR>";
       key = "<leader>w";
-      mode = [ "n" ];
+      mode = [
+        "n"
+        "v"
+      ];
       options.desc = "Save file";
     }
     {
-      # Close file 
       action = "<cmd>wq<CR>";
       key = "<leader>q";
       mode = [
@@ -25,7 +25,24 @@
       ];
       options.desc = "Close nvim";
     }
-
+    {
+      action = "0";
+      key = "H";
+      mode = [
+        "n"
+        "v"
+      ];
+      options.desc = "Start of the line";
+    }
+    {
+      action = "$";
+      key = "L";
+      mode = [
+        "n"
+        "v"
+      ];
+      options.desc = "End of the line";
+    }
     ### - Shell command
     {
       # Run home-manager switch from nvim
