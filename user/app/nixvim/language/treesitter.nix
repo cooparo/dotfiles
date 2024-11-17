@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # syntax highlight
   programs.nixvim.plugins = {
     treesitter = {
@@ -33,6 +34,7 @@
           "vimdoc"
           "toml"
           "yaml"
+          "ini"
         ];
 
         highlight = {
