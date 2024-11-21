@@ -51,6 +51,8 @@
         # Python
         pyright.enable = true;
         ruff_lsp.enable = true;
+        # typescript
+        ts_ls.enable = true;
         # Bash 
         bashls.enable = true;
         # C/C++
