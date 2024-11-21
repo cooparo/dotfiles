@@ -2,6 +2,7 @@
   lib,
   userSettings,
   config,
+  pkgs,
   ...
 }:
 let
@@ -28,16 +29,19 @@ in
       terminal = userSettings.term;
       focus.followMouse = false;
       bars = [ ];
+      menu = "${pkgs.rofi-power-menu}/bin/rofi-power-menu";
 
       window.titlebar = false;
 
-      gaps.inner = 5;
-      gaps.outer = 2;
-      gaps.smartGaps = true;
+      gaps = {
+        inner = 5;
+        outer = 2;
+        smartGaps = true;
+      };
 
       floating.criteria = [
         { title = "Bitwarden"; }
-        { title = "Calculator"; }
+        { class = "gnome-calculator"; }
       ];
 
       # Start up command
