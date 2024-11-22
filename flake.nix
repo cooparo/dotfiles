@@ -83,7 +83,7 @@
     };
 
   inputs = {
-    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager/master";
