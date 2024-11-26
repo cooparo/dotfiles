@@ -82,6 +82,8 @@
     fzf
     flameshot
     bat
+    gitflow
+    merge-fmt
 
     # Desktop env
     feh # wallpaper
