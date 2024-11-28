@@ -10,5 +10,8 @@
   programs.ssh = {
     enable = true;
     addKeysToAgent = "yes";
+    extraConfig = ''
+      SetEnv TERM=xterm-256color
+    '';
   };
 }
