@@ -5,7 +5,7 @@
     userName = "cooparo";
     userEmail = userSettings.email;
     extraConfig = {
-      core.editor = userSettings.term;
+      core.editor = userSettings.editor;
       pull.rebase = "false";
       init.defaultBranch = "main";
       rerere.enabled = true;
