@@ -112,6 +112,8 @@
     seclists
     exiftool # Image exif meta infos
     file
+    wireshark
+    sleuthkit
   ];
 
   home.sessionVariables = with userSettings; {
