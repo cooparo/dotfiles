@@ -114,6 +114,7 @@
     file
     wireshark
     sleuthkit
+    imhex
   ];
 
   home.sessionVariables = with userSettings; {
