@@ -64,6 +64,7 @@
     zoom-us
     vscode
     tmux
+    electrum
 
     # Language
     python3
