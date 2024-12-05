@@ -113,7 +113,7 @@
     seclists
     exiftool # Image exif meta infos
     file
-    wireshark
+    wireshark # FIX: doas not connect to interfaces
     sleuthkit
     imhex
   ];

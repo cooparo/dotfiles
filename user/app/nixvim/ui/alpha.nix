@@ -1,4 +1,5 @@
 {
+  #FIX: keep giving error 'semantic token'
   programs.nixvim.plugins.alpha =
     let
       nixFlake = [
@@ -91,7 +92,7 @@
         (padding 1)
         {
           type = "button";
-          val = "󰈭  Find Word";
+          val = "󰈭  Find Word"; # FIX: very slow
           on_press = {
             __raw = "function() require('telescope.builtin').live_grep() end";
           };
