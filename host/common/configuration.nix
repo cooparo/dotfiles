@@ -111,8 +111,9 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "kvm"
-    ]; # kvm is Kernel Virtual Machine, it's for hardware acceleration
+      "kvm" # kvm is Kernel Virtual Machine, it's for hardware acceleration
+
+    ];
   };
 
   # I use zsh btw
