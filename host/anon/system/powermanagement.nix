@@ -84,7 +84,7 @@
       #   changing the governor.
       # Default: <none>
 
-      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
       # Set the min/max frequency available for the scaling governor.
@@ -159,6 +159,8 @@
 
       #NMI_WATCHDOG=0
 
+      # NOTE: platform profile are not available
+
       # Select platform profile:
       #   performance, balanced, low-power.
       # Controls system operating characteristics around power/performance levels,
@@ -167,8 +169,8 @@
       # hardware and additional profiles such as: balanced-performance, quiet, cool.
       # Default: <none>
 
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "low-power";
+      # PLATFORM_PROFILE_ON_AC = "performance";
+      # PLATFORM_PROFILE_ON_BAT = "low-power";
 
       # System suspend mode:
       #   s2idle: Idle standby - a pure software, light-weight, system sleep state,
@@ -181,7 +183,7 @@
       # Default: <none>
 
       MEM_SLEEP_ON_AC = "s2idle";
-      MEM_SLEEP_ON_BAT = "deep";
+      MEM_SLEEP_ON_BAT = "s2idle";
 
       # Define disk devices on which the following DISK/AHCI_RUNTIME parameters act.
       # Separate multiple devices with spaces.
@@ -352,8 +354,8 @@
       # (*) keeps BIOS ASPM defaults (recommended)
       # Default: <none>
 
-      PCIE_ASPM_ON_AC = "performance";
-      PCIE_ASPM_ON_BAT = "powersave";
+      PCIE_ASPM_ON_AC = "default";
+      PCIE_ASPM_ON_BAT = "default";
 
       # Runtime Power Management for PCIe bus devices: on=disable, auto=enable.
       # Default: on (AC), auto (BAT)
