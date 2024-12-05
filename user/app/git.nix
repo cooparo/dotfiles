@@ -15,8 +15,15 @@
           insteadOf = "https://github.com/";
         };
       };
-      maintenance.auto = true;
-      maintenance.strategy = "incremental";
+
+      maintenance = {
+        enable = true;
+        auto = true;
+        strategy = "incremental";
+        repositories = [
+          userSettings.dotfilesDir
+        ];
+      };
 
       safe.directory = "*";
     };
