@@ -15,6 +15,8 @@
 
       window.autoExpandWidth = true;
       window.width = 30;
+
+      filesystem.filteredItems.hideHidden = false;
     };
 
     keymaps = [
