@@ -23,6 +23,7 @@
     ../../system/virtualization.nix
     ../../system/openvpn.nix
     ../../system/docker.nix
+    ../../system/wireshark.nix
 
     # Desktop env
     ../../system/desktopEnv/i3.nix
@@ -112,7 +113,6 @@
       "networkmanager"
       "wheel"
       "kvm" # kvm is Kernel Virtual Machine, it's for hardware acceleration
-
     ];
   };
 
