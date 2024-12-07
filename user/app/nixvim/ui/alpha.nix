@@ -37,9 +37,6 @@
         {
           type = "button";
           val = "  Find File";
-          on_press = {
-            __raw = "function() require('telescope.builtin').find_files() end";
-          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -65,9 +62,9 @@
         {
           type = "button";
           val = "󰈚  Recent Files";
-          on_press = {
-            __raw = "function() require('telescope.builtin').oldfiles() end";
-          };
+          # on_press = {
+          #   __raw = "function() require('telescope.builtin').oldfiles() end";
+          # };
           opts = {
             # hl = "comment";
             keymap = [
@@ -92,15 +89,12 @@
         (padding 1)
         {
           type = "button";
-          val = "󰈭  Find Word"; # FIX: very slow
-          on_press = {
-            __raw = "function() require('telescope.builtin').live_grep() end";
-          };
+          val = "󰈭  Find Word";
           opts = {
             # hl = "comment";
             keymap = [
               "n"
-              "g"
+              "fg"
               ":Telescope live_grep <CR>"
               {
                 noremap = true;
@@ -108,7 +102,7 @@
                 nowait = true;
               }
             ];
-            shortcut = "g";
+            shortcut = "fg";
 
             position = "center";
             cursor = 3;
@@ -121,9 +115,6 @@
         {
           type = "button";
           val = "  LazyGit";
-          on_press = {
-            __raw = "function() vim.cmd('LazyGit') end";
-          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -149,9 +140,6 @@
         {
           type = "button";
           val = "  Todos";
-          on_press = {
-            __raw = "function() vim.cmd('LazyGit') end";
-          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -177,9 +165,6 @@
         {
           type = "button";
           val = "  Quit Neovim";
-          on_press = {
-            __raw = "function() vim.cmd[[qa]] end";
-          };
           opts = {
             # hl = "comment";
             keymap = [
