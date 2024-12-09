@@ -14,7 +14,7 @@
       };
       fromVscode = [ { paths = pkgs.vimPlugins.friendly-snippets; } ];
     };
-    # Show function's signature when you type 
+    # Show function's signature when you type
     lsp-signature.enable = true;
     # Define which LSP server to use for each language
     lsp-format.enable = true;
@@ -39,14 +39,14 @@
       servers = {
         # Python
         pyright.enable = true;
-        ruff_lsp.enable = true;
+        ruff.enable = true;
         # typescript
         ts_ls.enable = true;
-        # Bash 
+        # Bash
         bashls.enable = true;
         # C/C++
         clangd.enable = true;
-        # Lua   
+        # Lua
         lua_ls.enable = true;
         lua_ls.settings.telemetry.enable = false;
 
