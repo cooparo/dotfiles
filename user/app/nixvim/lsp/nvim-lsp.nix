@@ -1,14 +1,19 @@
-{ userSettings, systemSettings, pkgs, ... }: {
+{
+  userSettings,
+  systemSettings,
+  pkgs,
+  ...
+}:
+{
   programs.nixvim.plugins = {
-    # FIX: luasnip not showing for nix file
     luasnip = {
+      # FIXME:  snippets not showing
       enable = true;
       settings = {
         enable_autosnippets = true;
         store_selection_keys = "<Tab>";
       };
-      fromVscode =
-        [{ paths = "${pkgs.vimPlugins.friendly-snippets}/snippets"; }];
+      fromVscode = [ { paths = "${pkgs.vimPlugins.friendly-snippets}/snippets"; } ];
     };
     # Show function's signature when you type 
     lsp-signature.enable = true;
@@ -60,7 +65,7 @@
           #   "--semantic-tokens=false"
           # ];
           settings = {
-            formatting.command = [ "nixfmt" ];
+            formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
 
             options =
