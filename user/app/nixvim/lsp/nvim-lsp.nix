@@ -7,13 +7,12 @@
 {
   programs.nixvim.plugins = {
     luasnip = {
-      # FIXME:  snippets not showing
       enable = true;
       settings = {
         enable_autosnippets = true;
         store_selection_keys = "<Tab>";
       };
-      fromVscode = [ { paths = "${pkgs.vimPlugins.friendly-snippets}/snippets"; } ];
+      fromVscode = [ { paths = pkgs.vimPlugins.friendly-snippets; } ];
     };
     # Show function's signature when you type 
     lsp-signature.enable = true;
