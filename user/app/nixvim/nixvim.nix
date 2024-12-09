@@ -14,7 +14,6 @@
     ./lualine.nix
     ./oil.nix
     ./telescope.nix
-    # ./none-ls.nix
 
     ./language/treesitter.nix
     ./language/nvim-lint.nix
@@ -28,7 +27,6 @@
 
     ./lsp/nvim-lsp.nix
     ./lsp/fidget.nix
-    ./lsp/trouble.nix
 
     ./ui/alpha.nix
     ./ui/barbecue.nix
