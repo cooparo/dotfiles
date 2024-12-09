@@ -1,29 +1,14 @@
-{
-  userSettings,
-  systemSettings,
-  pkgs,
-  ...
-}:
-{
-  home.packages = with pkgs; [
-    nixfmt-rfc-style
-    vimPlugins.friendly-snippets
-  ];
-
+{ userSettings, systemSettings, pkgs, ... }: {
   programs.nixvim.plugins = {
+    # FIX: luasnip not showing for nix file
     luasnip = {
       enable = true;
-
       settings = {
         enable_autosnippets = true;
         store_selection_keys = "<Tab>";
       };
-      fromVscode = [
-        {
-          lazyLoad = true;
-          paths = "${pkgs.vimPlugins.friendly-snippets}";
-        }
-      ];
+      fromVscode =
+        [{ paths = "${pkgs.vimPlugins.friendly-snippets}/snippets"; }];
     };
     # Show function's signature when you type 
     lsp-signature.enable = true;
