@@ -1,12 +1,5 @@
 { userSettings, pkgs, ... }:
 {
-
-  environment.systemPackages = with pkgs; [
-    qogir-icon-theme
-    base16-schemes
-    dejavu_fonts
-  ];
-
   stylix = {
     enable = true;
     image = "/home/paro/.wallpaper.jpg";
@@ -25,8 +18,8 @@
       };
 
       monospace = {
-        package = (pkgs.nerdfonts.override { fonts = userSettings.nerdfonts; });
-        name = "FiraCode";
+        package = pkgs.nerd-fonts.bitstream-vera-sans-mono;
+        name = "Bitstream Vera Sans Mono";
       };
 
       emoji = {

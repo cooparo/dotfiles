@@ -3,8 +3,9 @@
   # Fonts
   fonts.fontconfig.enable = true;
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = userSettings.nerdfonts; })
     material-design-icons
     font-awesome
+    nerd-fonts.iosevka
+    nerd-fonts.bitstream-vera-sans-mono
   ];
 }
