@@ -1,5 +1,4 @@
 {
-  #FIX: keep giving error 'semantic token'
   programs.nixvim.plugins.alpha =
     let
       nixFlake = [
@@ -37,6 +36,9 @@
         {
           type = "button";
           val = "  Find File";
+          on_press = {
+            __raw = "function() require('telescope.builtin').find_files() end";
+          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -62,9 +64,9 @@
         {
           type = "button";
           val = "󰈚  Recent Files";
-          # on_press = {
-          #   __raw = "function() require('telescope.builtin').oldfiles() end";
-          # };
+          on_press = {
+            __raw = "function() require('telescope.builtin').oldfiles() end";
+          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -90,11 +92,14 @@
         {
           type = "button";
           val = "󰈭  Find Word";
+          on_press = {
+            __raw = "function() require('telescope.builtin').live_grep() end";
+          };
           opts = {
             # hl = "comment";
             keymap = [
               "n"
-              "fg"
+              "g"
               ":Telescope live_grep <CR>"
               {
                 noremap = true;
@@ -102,7 +107,7 @@
                 nowait = true;
               }
             ];
-            shortcut = "fg";
+            shortcut = "g";
 
             position = "center";
             cursor = 3;
@@ -115,6 +120,9 @@
         {
           type = "button";
           val = "  LazyGit";
+          on_press = {
+            __raw = "function() vim.cmd('LazyGit') end";
+          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -140,6 +148,9 @@
         {
           type = "button";
           val = "  Todos";
+          on_press = {
+            __raw = "function() require('telescope.builtin').find_files() end";
+          };
           opts = {
             # hl = "comment";
             keymap = [
@@ -165,6 +176,9 @@
         {
           type = "button";
           val = "  Quit Neovim";
+          # on_press = {
+          #   __raw = "function() require('telescope.builtin').find_files() end";
+          # };
           opts = {
             # hl = "comment";
             keymap = [
