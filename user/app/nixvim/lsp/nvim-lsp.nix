@@ -57,12 +57,6 @@
         nixd = {
           enable = true;
 
-          # NOTE: semantic-tokens error for lua code, for some char
-          # but, if I enable this nix code looks weird.
-          # cmd = [
-          #   "nixd"
-          #   "--semantic-tokens=false"
-          # ];
           settings = {
             formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
