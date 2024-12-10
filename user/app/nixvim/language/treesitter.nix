@@ -1,7 +1,10 @@
-{ ... }:
 {
   # syntax highlight
   programs.nixvim.plugins = {
+    treesitter-context.enable = true;
+    comment.enable = true;
+    ts-autotag.enable = true;
+
     treesitter = {
       enable = true;
 
@@ -9,6 +12,9 @@
 
       settings = {
         auto_install = true;
+        highlight.enable = true;
+        indent.enable = true;
+
         ensure_installed = [
           "bash"
           "c"
@@ -37,12 +43,6 @@
           "ini"
         ];
 
-        highlight = {
-          enable = true;
-          additional_vim_regex_highlighting = false;
-        };
-        indent.enable = true;
-
         incremental_selection = {
           enable = true;
 
@@ -55,9 +55,5 @@
         };
       };
     };
-
-    treesitter-context.enable = true;
-    comment.enable = true;
-    ts-autotag.enable = true;
   };
 }
