@@ -57,6 +57,13 @@
         nixd = {
           enable = true;
 
+          # NOTE: see https://github.com/nix-community/nixd/commit/d6e2390a5564a104dc771d0e5d495f6488ba675e
+          # in nixd version 2.5.1 --semantic-tokens it is disabled temporaly bc of the troubles that generates
+          # cmd = [
+          #   "nixd"
+          #   "--semantic-tokens=true"
+          # ];
+
           settings = {
             formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
             nixpkgs.expr = "import <nixpkgs> { }";
