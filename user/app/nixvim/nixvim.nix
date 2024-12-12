@@ -56,7 +56,7 @@
       web-devicons.enable = true;
       mini.enable = true;
       nvim-autopairs.enable = true;
-      nvim-colorizer.enable = true;
+      colorizer.enable = true;
       which-key.enable = true;
       nvim-surround.enable = true;
       todo-comments.enable = true;
