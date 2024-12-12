@@ -13,16 +13,16 @@
       # --- SYSTEM SETTINGS --- #
       systemSettings = {
         system = "x86_64-linux";
-        host = "desktop"; # hostname
+        host = "anon"; # hostname
         timezone = "Europe/Rome"; # select timezone
         locale = "en_US.UTF-8"; # select locale
-        resolution = "1920x1080";
+        resolution = "1920x1200";
       };
 
       # --- USER SETTINGS --- #
       userSettings = {
         username = "paro";
-        email = "cooparo@proton.me";
+        email = "github.ambitious226@slmails.com";
         dotfilesDir = "/home/paro/dotfiles";
 
         term = "alacritty";
@@ -30,17 +30,18 @@
         browser = "brave";
         shell = "zsh";
 
-        eth-interface = "eno1";
-        wifi-interface = "";
+        eth-interface = "";
+        wifi-interface = "wlp0s20f3";
 
         nerdfonts = [
           "FiraCode"
           "Iosevka"
         ];
-        kbLayout = "us,it";
+
+        kbLayout = "it";
         fontSize = 11;
-        theme = "nord";
-        # theme = "gruvbox-dark-medium";
+        # theme = "nord";
+        theme = "gruvbox-dark-medium";
       };
 
       # Config lib
