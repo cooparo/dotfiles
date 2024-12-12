@@ -13,10 +13,10 @@
       # --- SYSTEM SETTINGS --- #
       systemSettings = {
         system = "x86_64-linux";
-        host = "anon"; # hostname
+        host = "desktop"; # hostname
         timezone = "Europe/Rome"; # select timezone
         locale = "en_US.UTF-8"; # select locale
-        resolution = "1920x1200";
+        resolution = "1920x1080";
       };
 
       # --- USER SETTINGS --- #
@@ -30,17 +30,17 @@
         browser = "brave";
         shell = "zsh";
 
-        eth-interface = "";
-        wifi-interface = "wlp0s20f3";
+        eth-interface = "eno1";
+        wifi-interface = "";
 
         nerdfonts = [
           "FiraCode"
           "Iosevka"
         ];
-        kbLayout = "it";
+        kbLayout = "us,it";
         fontSize = 11;
-        # theme = "nord"; 
-        theme = "gruvbox-dark-medium";
+        theme = "nord";
+        # theme = "gruvbox-dark-medium";
       };
 
       # Config lib
