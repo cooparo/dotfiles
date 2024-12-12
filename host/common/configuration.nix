@@ -49,7 +49,7 @@
     gparted
     # pkgs-stable.etcher
 
-    # Authentication 
+    # Authentication
     lxde.lxsession
 
     # Language
@@ -116,9 +116,16 @@
   programs.zsh.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+
+  nix = {
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    settings.warn-dirty = false;
+    # extraOptions = ''
+    #   warn-dirty=false
+    # '';
+  };
 }
