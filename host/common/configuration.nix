@@ -98,12 +98,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.sessionVariables = with userSettings; {
-    ETH_INTERFACE = eth-interface;
-    WIFI_INTERFACE = wifi-interface;
-    INTERFACE = if (wifi-interface == "") then eth-interface else wifi-interface;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${userSettings.username} = {
     isNormalUser = true;
