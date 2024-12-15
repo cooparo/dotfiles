@@ -124,8 +124,11 @@
       "flakes"
     ];
     settings.warn-dirty = false;
-    # extraOptions = ''
-    #   warn-dirty=false
-    # '';
+  };
+
+  environment.sessionVariables = with userSettings; {
+    ETH_INTERFACE = eth-interface;
+    WIFI_INTERFACE = wifi-interface;
+    INTERFACE = if (wifi-interface == "") then eth-interface else wifi-interface;
   };
 }
