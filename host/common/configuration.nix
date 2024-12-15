@@ -55,6 +55,7 @@
     # Language
     gcc # c lang
     libclang
+    perl
 
     # Building tools
     cmake

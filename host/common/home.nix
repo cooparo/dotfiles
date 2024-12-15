@@ -109,12 +109,9 @@
     # CyberSec tools
     nmap
     burpsuite
-    gobuster
     seclists
-    exiftool # Image exif meta infos
+    exiftool
     file
-    sleuthkit
-    imhex
   ];
 
   home.sessionVariables = with userSettings; {
