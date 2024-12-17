@@ -47,6 +47,7 @@
     xfce.thunar
     man-pages
     gparted
+    gnupg
     # pkgs-stable.etcher
 
     # Authentication
