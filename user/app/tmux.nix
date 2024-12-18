@@ -1,6 +1,6 @@
 { pkgs, userSettings, ... }:
 let
-  theme = if (userSettings.theme == "nord") then "nord" else "gruvbox";
+  theme = if (userSettings.theme == "gruvbox-dark-medium") then "gruvbox" else userSettings.theme;
 in
 {
   home.packages = with pkgs; [
