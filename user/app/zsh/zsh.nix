@@ -1,11 +1,6 @@
 { pkgs, userSettings, ... }:
-let
-  theme = if (userSettings.theme == "nord") then "Nord" else "gruvbox-dark";
-
-in
 {
   home.packages = with pkgs; [
-    zsh
     git
     eza
     oh-my-zsh
@@ -28,7 +23,7 @@ in
       develop = "nix develop --command zsh";
       cd = "z";
       cdi = "zi";
-      cat = "bat --theme=${theme}";
+      cat = "bat";
     };
 
     oh-my-zsh = {
@@ -39,25 +34,25 @@ in
       ];
     };
 
+    # NOTE: noxide evaluation
     initExtra = ''
       eval "$(zoxide init zsh)"
     '';
-  };
 
-  programs.oh-my-posh = {
-    enable = true;
-    settings = builtins.fromJSON (
-      builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh/my-robbyrussel.json)
-    );
-    useTheme = "robbyrussell"; # fallback value
-    enableZshIntegration = true;
-  };
+    oh-my-posh = {
+      enable = true;
+      settings = builtins.fromJSON (
+        builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh/my-robbyrussel.json)
+      );
+      useTheme = "robbyrussell"; # fallback value
+      enableZshIntegration = true;
+    };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      silent = true;
 
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    silent = true;
-
-    nix-direnv.enable = true;
+      nix-direnv.enable = true;
+    };
   };
 }
