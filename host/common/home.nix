@@ -87,7 +87,6 @@
     merge-fmt
 
     # Desktop env
-    feh # wallpaper
     picom # Compositor
     rofi # Menu
     rofi-power-menu

@@ -17,6 +17,12 @@ let
   unfocused = "#${palette.base00}";
   urgent = "#${palette.base08}";
 
+  wallpaperURL = builtins.readFile ../../wallpaper/${userSettings.theme}/url.txt;
+  wallpaperSHA256 = builtins.readFile ../../wallpaper/${userSettings.theme}/sha256.txt;
+  wallpaper = pkgs.fetchurl {
+    url = wallpaperURL;
+    hash = wallpaperSHA256;
+  };
 in
 {
 
@@ -46,26 +52,20 @@ in
 
       # Start up command
       startup = [
-        # Set wallpaper
-        {
-          command = "feh --bg-fill ~/.wallpaper.jpg";
-          always = true;
-          notification = false;
-        }
         # Picom
         {
-          command = "picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf";
+          command = "${pkgs.picom}/bin/picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf";
           always = true;
           notification = false;
         }
-        # Polybar 
+        # Polybar
         {
           command = "systemctl --user restart polybar.service";
           always = true;
           notification = false;
         }
         {
-          command = "autotiling &";
+          command = "${pkgs.autotiling}/bin/autotiling &";
           always = true;
           notification = false;
         }
@@ -74,7 +74,7 @@ in
           always = false;
           notification = false;
         }
-        # Polkit authentication 
+        # Polkit authentication
         {
           command = "exec lxsession";
           always = false;
@@ -90,7 +90,7 @@ in
         "${mod}+o" = "exec rofi -show window";
 
         # Lockscreen
-        "${mod}+l" = "exec betterlockscreen -l blur";
+        "${mod}+l" = "exec betterlockscreen -q -l blur";
 
         # Audio
         "XF86AudioMute" = "exec amixer sset Master toggle";

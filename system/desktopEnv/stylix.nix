@@ -1,8 +1,16 @@
 { userSettings, pkgs, ... }:
+let
+  wallpaperURL = builtins.readFile ../../wallpaper/${userSettings.theme}/url.txt;
+  wallpaperSHA256 = builtins.readFile ../../wallpaper/${userSettings.theme}/sha256.txt;
+in
 {
   stylix = {
     enable = true;
-    image = "/home/paro/.wallpaper.jpg";
+
+    image = pkgs.fetchurl {
+      url = wallpaperURL;
+      sha256 = wallpaperSHA256;
+    };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
     polarity = "dark";
 
@@ -33,6 +41,5 @@
       name = "Qogir";
       size = 32;
     };
-
   };
 }
