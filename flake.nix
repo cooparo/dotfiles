@@ -41,7 +41,8 @@
         kbLayout = "it";
         fontSize = 11;
         # theme = "nord";
-        theme = "gruvbox-dark-medium";
+        # theme = "gruvbox-dark-medium";
+        theme = "rose-pine";
       };
 
       # Config lib
