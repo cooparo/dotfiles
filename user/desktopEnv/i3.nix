@@ -76,7 +76,12 @@ in
         }
         # Polkit authentication
         {
-          command = "exec lxsession";
+          command = "exec ${pkgs.lxsession}/bin/lxsession";
+          always = false;
+          notification = false;
+        }
+        {
+          command = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -q -u ${wallpaper}";
           always = false;
           notification = false;
         }
