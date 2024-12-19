@@ -11,7 +11,7 @@
           ignore_focus = [ "neo-tree" ];
           extensions = [ "fzf" ];
 
-          theme = if (userSettings.theme == "nord") then userSettings.theme else "gruvbox_dark";
+          theme = if (userSettings.theme == "gruvbox-dark-medium") then "gruvbox_dark" else "auto";
           component_separators = {
             left = "|";
             right = "|";
