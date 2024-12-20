@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     git
@@ -35,7 +35,7 @@
         ];
       };
 
-      # NOTE: noxide evaluation
+      # NOTE: zoxide evaluation
       initExtra = ''
         eval "$(zoxide init zsh)"
       '';

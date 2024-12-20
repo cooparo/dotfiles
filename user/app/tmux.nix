@@ -53,7 +53,7 @@ in
     '';
     plugins = with pkgs; [
       # FIX: use base16 coloscheme
-      tmuxPlugins.${theme}
+      # tmuxPlugins.${theme}
       tmuxPlugins.tmux-fzf
     ];
   };
