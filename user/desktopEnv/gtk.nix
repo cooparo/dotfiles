@@ -1,5 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  #TODO: setup GTK
   gtk = {
     enable = true;
     theme = {

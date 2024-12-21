@@ -73,6 +73,8 @@
     qemu
     virt-manager
     libvirt
+
+    cachix # TODO: setup cachix
   ];
 
   # Set your time zone.
