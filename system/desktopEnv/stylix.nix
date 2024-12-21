@@ -1,7 +1,7 @@
 { userSettings, pkgs, ... }:
 let
-  wallpaperURL = builtins.readFile ../../wallpaper/${userSettings.theme}/url.txt;
-  wallpaperSHA256 = builtins.readFile ../../wallpaper/${userSettings.theme}/sha256.txt;
+  wallpaperURL = builtins.readFile ../../themes/${userSettings.theme}/bg-url.txt;
+  wallpaperSHA256 = builtins.readFile ../../themes/${userSettings.theme}/bg-sha256.txt;
 in
 {
   stylix = {

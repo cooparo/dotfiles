@@ -6,7 +6,7 @@
   colorScheme =
     if userSettings.theme == "everforest" then
       nix-colors.lib.schemeFromYAML "everforest" (
-        builtins.readFile ../../theme/everforest/everforest.yaml
+        builtins.readFile ../../themes/everforest/everforest.yaml
       )
     else
       nix-colors.colorSchemes.${userSettings.theme};
