@@ -54,8 +54,21 @@
         jdtls.enable = true;
 
         # Nix lang
-        nixd = {
+        nil_ls = {
           enable = true;
+
+          settings = {
+            formatting.command = [ "${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
+            nix = {
+              maxMemoryMB = null;
+              flake.autoArchive = false;
+              flake.autoEvalInputs = false;
+            };
+          };
+        };
+
+        nixd = {
+          enable = false;
 
           # NOTE: see https://github.com/nix-community/nixd/commit/d6e2390a5564a104dc771d0e5d495f6488ba675e
           # in nixd version 2.5.1 --semantic-tokens it is disabled temporaly bc of the troubles that generates
