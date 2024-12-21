@@ -1,8 +1,8 @@
-scheme: "Everforest Dark Hard"
-author: "Oskar Liew (https://github.com/OskarLiew)"
-base00: "272e33" # bg0,        Default background
-base01: "2e383c" # bg1,        Lighter background
-base02: "414b50" # bg3,        Selection background
+scheme: "Everforest"
+author: "Sainnhe Park (https://github.com/sainnhe)"
+base00: "2f383e" # bg0,        Default background
+base01: "374247" # bg1,        Lighter background
+base02: "4a555b" # bg3,        Selection background
 base03: "859289" # grey1,      Comments
 base04: "9da9a0" # grey2,      Dark foreground
 base05: "d3c6aa" # fg,         Default foreground
@@ -15,7 +15,7 @@ base0B: "a7c080" # green
 base0C: "83c092" # aqua
 base0D: "7fbbb3" # blue
 base0E: "d699b6" # purple
-base0F: "4C3743" # bg_visual
+base0F: "eaedc8" # bg_visual
 
 # base00: "#272e33" 
 # base01: "#2e383c" 
