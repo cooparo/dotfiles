@@ -11,7 +11,7 @@ let
   # Colorscheme
   palette = config.colorScheme.palette;
 
-  text = "#${palette.base07}";
+  text = "#${palette.base06}";
   focused = "#${palette.base0C}";
   inactive = "#${palette.base02}";
   unfocused = "#${palette.base00}";
