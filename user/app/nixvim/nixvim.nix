@@ -1,8 +1,7 @@
 {
   pkgs,
   nixvim,
-  userSettings,
-  lib,
+  config,
   ...
 }:
 {
@@ -44,8 +43,15 @@
     enable = true;
     defaultEditor = true;
 
-    colorschemes.base16.enable = true;
-    colorschemes.base16.colorscheme = lib.mkDefault userSettings.theme;
+    colorschemes.base16 =
+      let
+        formatColor = color: "#${color}";
+        formatPalette = builtins.mapAttrs (_: color: formatColor color) config.colorscheme.palette;
+      in
+      {
+        enable = true;
+        colorscheme = formatPalette;
+      };
 
     globals.mapleader = " ";
 
