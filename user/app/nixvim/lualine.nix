@@ -11,6 +11,7 @@
           ignore_focus = [ "neo-tree" ];
           extensions = [ "fzf" ];
 
+          #TODO: use base16 coloscheme
           theme = if (userSettings.theme == "gruvbox-dark-medium") then "gruvbox_dark" else "auto";
           component_separators = {
             left = "|";
