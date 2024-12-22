@@ -44,7 +44,6 @@
     vim
     wget
     git
-    xfce.thunar
     man-pages
     gparted
     gnupg
