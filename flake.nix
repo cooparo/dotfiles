@@ -44,7 +44,7 @@
       };
 
       # Config lib
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
 
       # Nixpkgs
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
@@ -53,7 +53,7 @@
     in
     {
       nixosConfigurations.${systemSettings.host} = lib.nixosSystem {
-        system = systemSettings.system;
+        inherit (systemSettings) system;
         modules = [
           ./host/${systemSettings.host}/configuration.nix
 
@@ -76,8 +76,7 @@
           inherit userSettings;
           inherit systemSettings;
           inherit pkgs-stable;
-          inherit (inputs) nix-colors;
-          inherit (inputs) nixvim;
+          inherit (inputs) nix-colors nixvim;
         };
       }; # END homeConfigurations
     };

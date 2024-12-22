@@ -9,7 +9,7 @@ let
   mod = "Mod4";
 
   # Colorscheme
-  palette = config.colorScheme.palette;
+  inherit (config.colorScheme) palette;
 
   text = "#${palette.base06}";
   focused = "#${palette.base0C}";
@@ -25,7 +25,6 @@ let
   };
 in
 {
-
   xsession.windowManager.i3 = {
     enable = true;
 
