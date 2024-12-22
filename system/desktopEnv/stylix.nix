@@ -1,13 +1,23 @@
-{ userSettings, pkgs, ... }:
+{
+  userSettings,
+  pkgs,
+  ...
+}:
 let
   wallpaperURL = builtins.readFile ../../themes/${userSettings.theme}/bg-url.txt;
   wallpaperSHA256 = builtins.readFile ../../themes/${userSettings.theme}/bg-sha256.txt;
+
+  base16Scheme =
+    if userSettings.theme == "everforest" then
+      ../../themes/everforest/everforest.yaml
+    else
+      "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
 in
 {
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
+    inherit base16Scheme;
     polarity = "dark";
 
     image = pkgs.fetchurl {
