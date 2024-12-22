@@ -7,12 +7,13 @@ in
   stylix = {
     enable = true;
 
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
+    polarity = "dark";
+
     image = pkgs.fetchurl {
       url = wallpaperURL;
       sha256 = wallpaperSHA256;
     };
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
-    polarity = "dark";
 
     fonts = {
       serif = {
