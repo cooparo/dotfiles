@@ -15,6 +15,7 @@
       syntaxHighlighting.enable = true;
       enableCompletion = true;
       shellAliases = {
+        v = "nvim";
         gs = "git status";
         ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
         la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";
