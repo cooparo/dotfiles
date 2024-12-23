@@ -22,6 +22,7 @@
     ../../user/desktopEnv/nix-color.nix # Colorscheme config
     ../../user/desktopEnv/dunst.nix # Notification
     ../../user/desktopEnv/lockscreen.nix
+    ../../user/desktopEnv/stylix.nix
 
     # App
     ../../user/app/vim/vim.nix # Vim options
@@ -90,9 +91,7 @@
     picom # Compositor
     rofi # Menu
     rofi-power-menu
-    gtk3
     autotiling # Open window by golden ratio
-    lxappearance
     alsa-utils
     libnotify # Notification
 
