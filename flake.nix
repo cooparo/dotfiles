@@ -70,7 +70,11 @@
       }; # END nixosConfigurations
       homeConfigurations.${userSettings.username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./host/${systemSettings.host}/home.nix ];
+        modules = [
+          ./host/${systemSettings.host}/home.nix
+
+          stylix.homeManagerModules.stylix
+        ];
 
         extraSpecialArgs = {
           inherit userSettings;
