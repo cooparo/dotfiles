@@ -6,7 +6,7 @@ let
   size = toString userSettings.fontSize;
   color = config.colorScheme.palette;
 
-  # taken from https://github.com/lr-tech/rofi-themes-collection 
+  # taken from https://github.com/lr-tech/rofi-themes-collection
   theme =
     with color;
     builtins.toFile "rofi-theme.rasi" ''
@@ -114,7 +114,7 @@ in
   programs.rofi = {
     enable = true;
     font = "${font} ${size}";
-    theme = theme;
+    inherit theme;
 
     extraConfig = {
       show-icons = true;
