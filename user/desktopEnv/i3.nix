@@ -113,7 +113,7 @@ in
         focused = {
           border = focused;
           background = focused;
-          text = text;
+          text = unfocused;
           indicator = focused;
           childBorder = focused;
         };
@@ -121,7 +121,7 @@ in
         focusedInactive = {
           border = inactive;
           background = inactive;
-          text = text;
+          inherit text;
           indicator = inactive;
           childBorder = inactive;
         };
@@ -135,7 +135,7 @@ in
         urgent = {
           border = urgent;
           background = urgent;
-          text = text;
+          inherit text;
           indicator = urgent;
           childBorder = urgent;
         };
