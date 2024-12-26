@@ -1,4 +1,6 @@
 {
+  lib,
+  config,
   userSettings,
   pkgs,
   ...
@@ -14,50 +16,58 @@ let
       "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
 in
 {
-  stylix = {
-    enable = true;
 
-    inherit base16Scheme;
-    polarity = "dark";
+  options = {
+    stylix-conf.enable = lib.mkEnableOption "Enables stylix configuration";
+  };
 
-    image = pkgs.fetchurl {
-      url = wallpaperURL;
-      sha256 = wallpaperSHA256;
+  config = lib.mkIf config.stylix-conf.enable {
+    stylix = {
+      enable = true;
+
+      inherit base16Scheme;
+      polarity = "dark";
+
+      image = pkgs.fetchurl {
+        url = wallpaperURL;
+        sha256 = wallpaperSHA256;
+      };
+
+      fonts = {
+        serif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Sans";
+        };
+
+        sansSerif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Sans";
+        };
+
+        monospace = {
+          package = pkgs.nerd-fonts.bitstream-vera-sans-mono;
+          name = "Bitstream Vera Sans Mono";
+        };
+
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = "Noto Color Emoji";
+        };
+
+        sizes = {
+          applications = 11;
+          desktop = 10;
+          popups = 10;
+          terminal = 11;
+        };
+      };
+
+      cursor = {
+        package = pkgs.qogir-icon-theme;
+        name = "Qogir";
+        size = 32;
+      };
     };
 
-    fonts = {
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-
-      monospace = {
-        package = pkgs.nerd-fonts.bitstream-vera-sans-mono;
-        name = "Bitstream Vera Sans Mono";
-      };
-
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-
-      sizes = {
-        applications = 11;
-        desktop = 10;
-        popups = 10;
-        terminal = 11;
-      };
-    };
-
-    cursor = {
-      package = pkgs.qogir-icon-theme;
-      name = "Qogir";
-      size = 32;
-    };
   };
 }

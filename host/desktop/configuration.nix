@@ -1,17 +1,10 @@
-{ pkgs, ... }:
-
-## DESKTOP SYSTEM SETTINGS
-
 {
+  # DESKTOP SYSTEM SETTINGS
   imports = [
-    ../common/configuration.nix
+    /etc/nixos/hardware-configuration.nix
 
-    ./system/nvidia.nix
-    ./system/x11.nix
+    ../../system/default.nix
   ];
 
-  environment.systemPackages = with pkgs; [
-
-  ];
-
+  nvidia.enable = true;
 }

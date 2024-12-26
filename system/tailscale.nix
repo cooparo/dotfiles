@@ -1,7 +1,13 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
+  options = {
+    tailscale.enable = lib.mkEnableOption "Enables tailscale";
+  };
+
+  config = lib.mkIf config.tailscale.enable {
+    services.tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
+    };
   };
 }

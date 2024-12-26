@@ -1,10 +1,16 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  programs.ssh.startAgent = true;
+  options = {
+    ssh.enable = lib.mkEnableOption "Enables ssh";
+  };
 
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = false;
-    settings.PermitRootLogin = "no";
+  config = lib.mkIf config.ssh.enable {
+    programs.ssh.startAgent = true;
+
+    services.openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+      settings.PermitRootLogin = "no";
+    };
   };
 }

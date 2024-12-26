@@ -1,8 +1,21 @@
-{ userSettings, ... }:
 {
-  security.rtkit.enable = true;
-  users.users.${userSettings.username}.extraGroups = [ "audio" ];
+  userSettings,
+  lib,
+  config,
+  ...
+}:
+{
+  options = {
+    audio.enable = lib.mkEnableOption "Enables audio";
+  };
 
-  hardware.pulseaudio.enable = false;
-  hardware.pulseaudio.support32Bit = true;
+  config = lib.mkIf config.audio.enable {
+    security.rtkit.enable = true;
+    users.users.${userSettings.username}.extraGroups = [ "audio" ];
+
+    #TODO: add some infos.
+    # Why pulseaudio is disabled?
+    hardware.pulseaudio.enable = false;
+    hardware.pulseaudio.support32Bit = true;
+  };
 }

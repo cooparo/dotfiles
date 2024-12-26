@@ -1,13 +1,19 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  # Got from https://nixos.wiki/wiki/Printing
+  options = {
+    printer.enable = lib.mkEnableOption "Enables printer";
+  };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  config = lib.mkIf config.printer.enable {
+    # Got from https://nixos.wiki/wiki/Printing
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
+    # Enable CUPS to print documents.
+    services.printing.enable = true;
+
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
 }
