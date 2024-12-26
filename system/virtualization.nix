@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   userSettings,
@@ -12,5 +13,11 @@
   config = lib.mkIf config.virtualization.enable {
     virtualisation.libvirtd.enable = true;
     users.users.${userSettings.username}.extraGroups = [ "libvirtd" ];
+
+    environment.systemPackages = with pkgs; [
+      qemu
+      virt-manager
+      libvirt
+    ];
   };
 }

@@ -80,12 +80,7 @@
     pkg-config
     nixd
 
-    # Virtualization
-    qemu
-    virt-manager
-    libvirt
-
-    cachix # TODO: setup cachix
+    # TODO: setup cachix
   ];
 
   system.stateVersion = "23.11"; # Did you read the comment?
