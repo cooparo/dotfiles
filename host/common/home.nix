@@ -41,14 +41,12 @@
   ];
 
   home.packages = with pkgs; [
-
     # Core
     brave
     neofetch
     git
     zsh
     alacritty
-    openvpn
     vlc
     unzip
 
