@@ -1,4 +1,9 @@
-{ userSettings, config, ... }:
+{
+  lib,
+  config,
+  userSettings,
+  ...
+}:
 
 let
 
@@ -111,17 +116,23 @@ let
 
 in
 {
-  programs.rofi = {
-    enable = true;
-    font = "${font} ${size}";
-    inherit theme;
+  options = {
+    rofi.enable = lib.mkEnableOption "Enables rofi";
+  };
 
-    extraConfig = {
-      show-icons = true;
-      sort = true;
+  config = lib.mkIf config.rofi.enable {
+    programs.rofi = {
+      enable = true;
+      font = "${font} ${size}";
+      inherit theme;
 
-      display-drun = "󱄅  ";
-      display-window = "󱄅  ";
+      extraConfig = {
+        show-icons = true;
+        sort = true;
+
+        display-drun = "󱄅  ";
+        display-window = "󱄅  ";
+      };
     };
   };
 }

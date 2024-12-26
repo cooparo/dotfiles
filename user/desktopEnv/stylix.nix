@@ -1,6 +1,8 @@
 {
   userSettings,
   pkgs,
+  lib,
+  config,
   ...
 }:
 let
@@ -14,65 +16,72 @@ let
       "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
 in
 {
-  stylix = {
-    enable = true;
+  options = {
+    stylix-conf.enable = lib.mkEnableOption "Enables stylix configuration";
+  };
 
-    inherit base16Scheme;
-    polarity = "dark";
-
-    targets = {
-      dunst.enable = false;
-      rofi.enable = false;
-      i3.enable = false;
-      nixvim.enable = false;
-      alacritty.enable = false;
-    };
-
-    image = pkgs.fetchurl {
-      url = wallpaperURL;
-      sha256 = wallpaperSHA256;
-    };
-
-    iconTheme = {
+  config = lib.mkIf config.stylix-conf.enable {
+    stylix = {
       enable = true;
-      package = pkgs.qogir-icon-theme;
-      dark = "Qogir-dark";
-      light = "Qogir";
+
+      inherit base16Scheme;
+      polarity = "dark";
+
+      targets = {
+        dunst.enable = false;
+        rofi.enable = false;
+        i3.enable = false;
+        nixvim.enable = false;
+        alacritty.enable = false;
+      };
+
+      image = pkgs.fetchurl {
+        url = wallpaperURL;
+        sha256 = wallpaperSHA256;
+      };
+
+      iconTheme = {
+        enable = true;
+        package = pkgs.qogir-icon-theme;
+        dark = "Qogir-dark";
+        light = "Qogir";
+      };
+
+      fonts = {
+        serif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Sans";
+        };
+
+        sansSerif = {
+          package = pkgs.dejavu_fonts;
+          name = "DejaVu Sans";
+        };
+
+        monospace = {
+          package = pkgs.nerd-fonts.bitstream-vera-sans-mono;
+          name = "Bitstream Vera Sans Mono";
+        };
+
+        emoji = {
+          package = pkgs.noto-fonts-emoji;
+          name = "Noto Color Emoji";
+        };
+
+        sizes = {
+          applications = 11;
+          desktop = 10;
+          popups = 10;
+          terminal = 11;
+        };
+      };
+
+      cursor = {
+        package = pkgs.qogir-icon-theme;
+        name = "Qogir";
+        size = 32;
+      };
     };
 
-    fonts = {
-      serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-
-      sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-
-      monospace = {
-        package = pkgs.nerd-fonts.bitstream-vera-sans-mono;
-        name = "Bitstream Vera Sans Mono";
-      };
-
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
-
-      sizes = {
-        applications = 11;
-        desktop = 10;
-        popups = 10;
-        terminal = 11;
-      };
-    };
-
-    cursor = {
-      package = pkgs.qogir-icon-theme;
-      name = "Qogir";
-      size = 32;
-    };
   };
 }

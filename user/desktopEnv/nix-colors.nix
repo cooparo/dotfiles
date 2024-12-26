@@ -1,17 +1,29 @@
-{ nix-colors, userSettings, ... }:
+{
+  nix-colors,
+  userSettings,
+  lib,
+  config,
+  ...
+}:
 
 {
   imports = [ nix-colors.homeManagerModules.default ];
 
-  #NOTE: using custom coloring order for everforest,
-  # that is more coherent with the nord and gruvbox's ones
-  colorScheme =
-    if userSettings.theme == "everforest" then
-      nix-colors.lib.schemeFromYAML "everforest" (
-        builtins.readFile ../../themes/everforest/everforest.yaml
-      )
-    else
-      nix-colors.colorSchemes.${userSettings.theme};
+  options = {
+    nix-colors-conf.enable = lib.mkEnableOption "Enables nix-colors configuration";
+  };
+
+  config = lib.mkIf config.nix-colors-conf.enable {
+    #NOTE: using custom coloring order for everforest,
+    # that is more coherent with the nord and gruvbox's ones
+    colorScheme =
+      if userSettings.theme == "everforest" then
+        nix-colors.lib.schemeFromYAML "everforest" (
+          builtins.readFile ../../themes/everforest/everforest.yaml
+        )
+      else
+        nix-colors.colorSchemes.${userSettings.theme};
+  };
 }
 
 # scheme: "Nord"

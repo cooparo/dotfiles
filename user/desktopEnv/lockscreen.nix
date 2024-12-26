@@ -1,12 +1,23 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    betterlockscreen
-  ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options = {
+    lockscreen.enable = lib.mkEnableOption "Enables lockscreen";
+  };
 
-  services.betterlockscreen = {
-    enable = true;
-    arguments = [ "blur" ];
-    inactiveInterval = 20;
+  config = lib.mkIf config.lockscreen.enable {
+    home.packages = with pkgs; [
+      betterlockscreen
+    ];
+
+    services.betterlockscreen = {
+      enable = true;
+      arguments = [ "blur" ];
+      inactiveInterval = 20;
+    };
   };
 }

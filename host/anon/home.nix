@@ -3,7 +3,7 @@
 ## DESKTOP USER SETTINGS
 {
   imports = [
-    ../common/home.nix
+    ../../user/default.nix
 
     ./user/i3.nix # Startup command
     ./user/alacritty.nix # Fixes fontSize
@@ -11,8 +11,6 @@
   ];
 
   home.packages = with pkgs; [
-    gruvbox-gtk-theme
-
     brightnessctl # Manage display brightness
     powertop
   ];

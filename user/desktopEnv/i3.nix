@@ -25,119 +25,125 @@ let
   };
 in
 {
-  xsession.windowManager.i3 = {
-    enable = true;
+  options = {
+    i3.enable = lib.mkEnableOption "Enables i3";
+  };
 
-    config = {
-      modifier = mod; # Windows button
-      defaultWorkspace = "workspace number 1";
-      terminal = userSettings.term;
-      focus.followMouse = false;
-      bars = [ ];
-      menu = "${pkgs.rofi-power-menu}/bin/rofi-power-menu";
+  config = lib.mkIf config.i3.enable {
+    xsession.windowManager.i3 = {
+      enable = true;
 
-      window.titlebar = false;
+      config = {
+        modifier = mod; # Windows button
+        defaultWorkspace = "workspace number 1";
+        terminal = userSettings.term;
+        focus.followMouse = false;
+        bars = [ ];
+        menu = "${pkgs.rofi-power-menu}/bin/rofi-power-menu";
 
-      gaps = {
-        inner = 5;
-        outer = 2;
-        smartGaps = true;
-      };
+        window.titlebar = false;
 
-      floating.criteria = [
-        { title = "Bitwarden"; }
-        { class = "gnome-calculator"; }
-      ];
-
-      # Start up command
-      startup = [
-        # Picom
-        {
-          command = "${pkgs.picom}/bin/picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf";
-          always = true;
-          notification = false;
-        }
-        # Polybar
-        {
-          command = "systemctl --user restart polybar.service";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "${pkgs.autotiling}/bin/autotiling &";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "ssh-add ~/.ssh/github";
-          always = false;
-          notification = false;
-        }
-        # Polkit authentication
-        {
-          command = "exec ${pkgs.lxsession}/bin/lxsession";
-          always = false;
-          notification = false;
-        }
-        {
-          command = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -q -u ${wallpaper}";
-          always = false;
-          notification = false;
-        }
-      ];
-
-      keybindings = lib.mkOptionDefault {
-        "${mod}+t" = "exec thunar";
-        "Print" = "exec flameshot gui";
-        "${mod}+d" = "exec rofi -show drun";
-        "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
-        "${mod}+o" = "exec rofi -show window";
-
-        # Lockscreen
-        "${mod}+l" = "exec betterlockscreen -q -l blur";
-
-        # Audio
-        "XF86AudioMute" = "exec amixer sset Master toggle";
-        "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
-        "XF86AudioLowerVolume" = "exec amixer sset Master 10%-";
-        "XF86AudioPrev" = "exec playerctl previous";
-        "XF86AudioNext" = "exec playerctl next";
-        "XF86AudioPlay" = "exec playerctl play-pause";
-
-        # Brightness
-        "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
-        "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
-      };
-
-      colors = {
-        focused = {
-          border = focused;
-          background = focused;
-          text = unfocused;
-          indicator = focused;
-          childBorder = focused;
+        gaps = {
+          inner = 5;
+          outer = 2;
+          smartGaps = true;
         };
 
-        focusedInactive = {
-          border = inactive;
-          background = inactive;
-          inherit text;
-          indicator = inactive;
-          childBorder = inactive;
+        floating.criteria = [
+          { title = "Bitwarden"; }
+          { class = "gnome-calculator"; }
+        ];
+
+        # Start up command
+        startup = [
+          # Picom
+          {
+            command = "${pkgs.picom}/bin/picom -b --config ${userSettings.dotfilesDir}/user/desktopEnv/picom/picom.conf";
+            always = true;
+            notification = false;
+          }
+          # Polybar
+          {
+            command = "systemctl --user restart polybar.service";
+            always = true;
+            notification = false;
+          }
+          {
+            command = "${pkgs.autotiling}/bin/autotiling &";
+            always = true;
+            notification = false;
+          }
+          {
+            command = "ssh-add ~/.ssh/github";
+            always = false;
+            notification = false;
+          }
+          # Polkit authentication
+          {
+            command = "exec ${pkgs.lxsession}/bin/lxsession";
+            always = false;
+            notification = false;
+          }
+          {
+            command = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -q -u ${wallpaper}";
+            always = false;
+            notification = false;
+          }
+        ];
+
+        keybindings = lib.mkOptionDefault {
+          "${mod}+t" = "exec thunar";
+          "Print" = "exec flameshot gui";
+          "${mod}+d" = "exec rofi -show drun";
+          "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
+          "${mod}+o" = "exec rofi -show window";
+
+          # Lockscreen
+          "${mod}+l" = "exec betterlockscreen -q -l blur";
+
+          # Audio
+          "XF86AudioMute" = "exec amixer sset Master toggle";
+          "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
+          "XF86AudioLowerVolume" = "exec amixer sset Master 10%-";
+          "XF86AudioPrev" = "exec playerctl previous";
+          "XF86AudioNext" = "exec playerctl next";
+          "XF86AudioPlay" = "exec playerctl play-pause";
+
+          # Brightness
+          "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
+          "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
         };
-        unfocused = {
-          border = unfocused;
-          background = unfocused;
-          text = inactive;
-          indicator = unfocused;
-          childBorder = unfocused;
-        };
-        urgent = {
-          border = urgent;
-          background = urgent;
-          inherit text;
-          indicator = urgent;
-          childBorder = urgent;
+
+        colors = {
+          focused = {
+            border = focused;
+            background = focused;
+            text = unfocused;
+            indicator = focused;
+            childBorder = focused;
+          };
+
+          focusedInactive = {
+            border = inactive;
+            background = inactive;
+            inherit text;
+            indicator = inactive;
+            childBorder = inactive;
+          };
+          unfocused = {
+            border = unfocused;
+            background = unfocused;
+            text = inactive;
+            indicator = unfocused;
+            childBorder = unfocused;
+          };
+          urgent = {
+            border = urgent;
+            background = urgent;
+            inherit text;
+            indicator = urgent;
+            childBorder = urgent;
+          };
         };
       };
     };
