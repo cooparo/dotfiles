@@ -1,5 +1,5 @@
-{ ... }:
 {
+  #TODO: remove hardcoded geo-location
   services.redshift = {
     enable = true;
     tray = true;
