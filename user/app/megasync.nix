@@ -1,5 +1,10 @@
-{ ... }:
+{ config, lib, ... }:
 {
+  options = {
+    megasync.enable = lib.mkEnableOption "Enables megasync";
+  };
 
-  services.megasync.enable = true;
+  config = lib.mkIf config.megasync.enable {
+    services.megasync.enable = true;
+  };
 }

@@ -2,6 +2,7 @@
   pkgs,
   nixvim,
   config,
+  lib,
   ...
 }:
 {
@@ -33,69 +34,76 @@
     ./ui/indent-blankline.nix
   ];
 
-  home.packages = with pkgs; [
-    xclip
-    ripgrep
-    lazygit
-  ];
+  options = {
+    nixvim.enable = lib.mkEnableOption "Enables nixvim";
+  };
 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
+  config = lib.mkIf config.nixvim.enable {
+    home.packages = with pkgs; [
+      xclip
+      ripgrep
+      lazygit
+    ];
 
-    colorschemes.base16 =
-      let
-        formatColor = color: "#${color}";
-        formatPalette = builtins.mapAttrs (_: color: formatColor color) config.colorscheme.palette;
-      in
-      {
-        enable = true;
-        colorscheme = formatPalette;
+    programs.nixvim = {
+      enable = true;
+      defaultEditor = true;
+
+      colorschemes.base16 =
+        let
+          formatColor = color: "#${color}";
+          formatPalette = builtins.mapAttrs (_: color: formatColor color) config.colorscheme.palette;
+        in
+        {
+          enable = true;
+          colorscheme = formatPalette;
+        };
+
+      globals.mapleader = " ";
+
+      clipboard.register = "unnamedplus";
+      clipboard.providers.xclip.enable = true;
+
+      plugins = {
+        web-devicons.enable = true;
+        mini.enable = true;
+        nvim-autopairs.enable = true;
+        colorizer.enable = true;
+        which-key.enable = true;
+        nvim-surround.enable = true;
+        todo-comments.enable = true;
       };
 
-    globals.mapleader = " ";
+      opts = {
+        number = true;
+        relativenumber = true;
 
-    clipboard.register = "unnamedplus";
-    clipboard.providers.xclip.enable = true;
+        shiftwidth = 2;
+        softtabstop = 2;
+        showtabline = 2;
+        smartindent = true; # enables autoindenting
+        wrap = false;
+        breakindent = true;
+        backup = false;
+        swapfile = false;
+        hlsearch = false;
+        incsearch = true;
+        termguicolors = true;
+        scrolloff = 8;
 
-    plugins = {
-      web-devicons.enable = true;
-      mini.enable = true;
-      nvim-autopairs.enable = true;
-      colorizer.enable = true;
-      which-key.enable = true;
-      nvim-surround.enable = true;
-      todo-comments.enable = true;
+        updatetime = 50; # faster completion (default: 4000ms)
+        completeopt = [
+          "menuone"
+          "noselect"
+          "noinsert"
+        ]; # mostly just for cmp
+        undofile = true;
+        cursorline = true; # highlights the line where the cursor is located
+
+        encoding = "utf-8";
+        fileencoding = "utf-8";
+      };
     };
 
-    opts = {
-      number = true;
-      relativenumber = true;
-
-      shiftwidth = 2;
-      softtabstop = 2;
-      showtabline = 2;
-      smartindent = true; # enables autoindenting
-      wrap = false;
-      breakindent = true;
-      backup = false;
-      swapfile = false;
-      hlsearch = false;
-      incsearch = true;
-      termguicolors = true;
-      scrolloff = 8;
-
-      updatetime = 50; # faster completion (default: 4000ms)
-      completeopt = [
-        "menuone"
-        "noselect"
-        "noinsert"
-      ]; # mostly just for cmp
-      undofile = true;
-      cursorline = true; # highlights the line where the cursor is located
-
-      encoding = "utf-8";
-      fileencoding = "utf-8";
-    };
   };
 }
