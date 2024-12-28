@@ -2,7 +2,6 @@
 {
   imports = [
     ./alacritty.nix
-    ./bluetooth.nix
     ./git.nix
     ./megasync.nix
     ./pkgs-stable.nix
@@ -15,7 +14,6 @@
   ];
 
   # alacritty.enable = lib.mkDefault true;
-  # bluetooth.enable = lib.mkDefault true;
   # git.enable = lib.mkDefault true;
   # megasync.enable = lib.mkDefault true;
   # pkgs-stable.enable = lib.mkDefault true;
