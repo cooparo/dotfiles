@@ -20,7 +20,6 @@
       device = "nodev";
       efiInstallAsRemovable = true;
       efiSupport = true;
-      useOSProber = if systemSettings.host == "anon" then true else false;
     };
   };
 }
