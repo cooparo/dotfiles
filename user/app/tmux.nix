@@ -63,8 +63,6 @@ in
         set-option -g allow-rename off
       '';
       plugins = with pkgs; [
-        # FIX: use base16 coloscheme
-        # tmuxPlugins.${theme}
         tmuxPlugins.tmux-fzf
       ];
     };
