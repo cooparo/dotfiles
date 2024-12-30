@@ -42,9 +42,7 @@
       discord
       docker
       qbittorrent
-      gimp
       libreoffice
-      zoom-us
       vscode
       tmux
       electrum
