@@ -21,6 +21,7 @@
     ./nix.nix
     ./environmentVariables.nix
     ./nvidia.nix
+    ./geolocation.nix
 
     ./tools/default.nix
     ./desktopEnv/default.nix
