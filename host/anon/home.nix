@@ -4,10 +4,6 @@
 {
   imports = [
     ../../user/default.nix
-
-    ./user/i3.nix # Startup command
-    ./user/alacritty.nix # Fixes fontSize
-    ./user/batsignal.nix # Battery notification
   ];
 
   home.packages = with pkgs; [
@@ -15,4 +11,5 @@
     powertop
   ];
 
+  batsignal.enable = true;
 }
