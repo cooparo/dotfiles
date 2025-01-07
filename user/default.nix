@@ -38,7 +38,6 @@
       telegram-desktop
       spotify
       obsidian
-      megasync
       discord
       docker
       qbittorrent
