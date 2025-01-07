@@ -38,7 +38,7 @@ let
     if systemSettings.host == "desktop" then
       [
         {
-          command = "xrandr --output DP-2 --primary";
+          command = "${pkgs.xorg.xrandr} --output DP-2 --primary";
           always = false;
           notification = false;
         }
@@ -127,29 +127,29 @@ in
 
         keybindings =
           lib.mkOptionDefault {
-            "${mod}+t" = "exec thunar";
+            "${mod}+t" = "exec ${pkgs.xfce.thunar}/bin/thunar";
             "Print" = "exec flameshot gui";
-            "${mod}+d" = "exec rofi -show drun";
-            "${mod}+p" = "exec rofi -show power-menu -modi power-menu:rofi-power-menu";
-            "${mod}+o" = "exec rofi -show window";
+            "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
+            "${mod}+p" = "exec ${pkgs.rofi}/bin/rofi -show power-menu -modi power-menu:rofi-power-menu";
+            "${mod}+o" = "exec ${pkgs.rofi}/bin/rofi -show window";
 
             # Lockscreen
-            "${mod}+l" = "exec betterlockscreen -q -l blur";
+            "${mod}+l" = "exec ${pkgs.betterlockscreen}/bin/betterlockscreen -q -l blur";
 
             # Cycle moving workspaces in different monitor
             "${mod}+Tab" = "move workspace to output next";
 
             # Audio
-            "XF86AudioMute" = "exec amixer sset Master toggle";
-            "XF86AudioRaiseVolume" = "exec amixer sset Master 10%+";
-            "XF86AudioLowerVolume" = "exec amixer sset Master 10%-";
-            "XF86AudioPrev" = "exec playerctl previous";
-            "XF86AudioNext" = "exec playerctl next";
-            "XF86AudioPlay" = "exec playerctl play-pause";
+            "XF86AudioMute" = "exec ${pkgs.alsa-utils}/bin/amixer sset Master toggle";
+            "XF86AudioRaiseVolume" = "exec ${pkgs.alsa-utils}/bin/amixer sset Master 10%+";
+            "XF86AudioLowerVolume" = "exec ${pkgs.alsa-utils}/bin/amixer sset Master 10%-";
+            "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+            "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+            "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
             # Brightness
-            "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
-            "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
+            "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+";
+            "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
 
           }
           // desktopKeybindings; # NOTE: merging sets
