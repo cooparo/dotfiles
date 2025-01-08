@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.nixvim.keymaps = [
-    ### - Vim 
+    ### - Vim
     {
       action = "<Esc>";
       key = "jk";
@@ -43,6 +43,24 @@
       ];
       options.desc = "End of the line";
     }
+    {
+      action = "<C-d>zz";
+      key = "<C-d>";
+      mode = [
+        "n"
+        "v"
+      ];
+      options.desc = "Move the screen down by half paga and re-center cursor";
+    }
+    {
+      action = "<C-u>zz";
+      key = "<C-u>";
+      mode = [
+        "n"
+        "v"
+      ];
+      options.desc = "Move the screen up by half paga and re-center cursor";
+    }
     ### - Shell command
     {
       # Run home-manager switch from nvim
@@ -52,7 +70,7 @@
     }
     ### - todo-comments
     {
-      # Open todos 
+      # Open todos
       action = "<cmd>TodoTelescope keywords=TODO,FIX<CR>";
       key = "<leader>tt";
       mode = [
