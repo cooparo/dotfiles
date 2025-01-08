@@ -55,6 +55,10 @@
         action = "buffers";
         options.desc = "Open buffers";
       };
+      "<leader>fr" = {
+        action = "oldfiles";
+        options.desc = "Open recent files";
+      };
       "<leader>gc" = {
         action = "git_commits";
         options.desc = "Commits";

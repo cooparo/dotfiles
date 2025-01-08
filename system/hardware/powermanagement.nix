@@ -13,6 +13,7 @@
     environment.systemPackages = with pkgs; [
       tlp
       smartmontools
+      powertop
     ];
 
     # Disable conflict with power-profiles-daemon

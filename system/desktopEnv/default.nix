@@ -6,6 +6,7 @@
     ./stylix.nix
     ./x11.nix
     ./gnome.nix
+    ./thunar.nix
   ];
 
   fonts.enable = lib.mkDefault true;

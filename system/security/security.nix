@@ -1,5 +1,6 @@
 { lib, config, ... }:
 {
+  # TODO: change name from "security" to doas
   options = {
     security.enable = lib.mkEnableOption "Enables security";
   };
@@ -18,6 +19,7 @@
         }
       ];
 
+      # TODO: move this to apposite files
       polkit.enable = true;
     };
   };

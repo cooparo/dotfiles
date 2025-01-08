@@ -7,7 +7,7 @@
     ./nix-colors.nix
     ./rofi.nix
     ./stylix.nix
-
+    ./batsignal.nix
     ./picom/picom.nix
     ./polybar/polybar.nix
   ];
@@ -20,4 +20,6 @@
   stylix-conf.enable = lib.mkDefault true;
   picom.enable = lib.mkDefault true;
   polybar.enable = lib.mkDefault true;
+
+  batsignal.enable = lib.mkDefault false;
 }

@@ -3,6 +3,7 @@
   lib,
   config,
   userSettings,
+  systemSettings,
   ...
 }:
 {
@@ -23,7 +24,7 @@
           family = "MesloLGS NF";
           style = "Regular";
         };
-        font.size = lib.mkDefault userSettings.fontSize;
+        font.size = if systemSettings.host == "anon" then 6 else userSettings.fontSize;
         window = {
           padding = {
             x = 5;
