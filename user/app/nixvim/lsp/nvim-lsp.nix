@@ -33,6 +33,7 @@
           "ca" = "code_action";
           "ff" = "format";
           "K" = "hover";
+          "<leader>cr" = "rename";
         };
       };
 
