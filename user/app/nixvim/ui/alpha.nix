@@ -99,7 +99,7 @@
             # hl = "comment";
             keymap = [
               "n"
-              "g"
+              "G"
               ":Telescope live_grep <CR>"
               {
                 noremap = true;
@@ -107,7 +107,7 @@
                 nowait = true;
               }
             ];
-            shortcut = "g";
+            shortcut = "G";
 
             position = "center";
             cursor = 3;
