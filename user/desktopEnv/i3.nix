@@ -127,7 +127,7 @@ in
 
         keybindings =
           lib.mkOptionDefault {
-            "${mod}+t" = "exec ${pkgs.xfce.thunar}/bin/thunar";
+            "${mod}+t" = "exec ${pkgs.nautilus}/bin/nautilus";
             "Print" = "exec flameshot gui";
             "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun";
             "${mod}+p" = "exec ${pkgs.rofi}/bin/rofi -show power-menu -modi power-menu:rofi-power-menu";
