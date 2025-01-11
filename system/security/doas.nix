@@ -19,9 +19,6 @@
           }
         ];
       };
-
-      # TODO: move this to apposite files
-      polkit.enable = true;
     };
   };
 }

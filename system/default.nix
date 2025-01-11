@@ -44,9 +44,6 @@
     gparted
     gnupg
 
-    # Authentication
-    lxde.lxsession
-
     # Language
     gcc # c lang
     libclang
