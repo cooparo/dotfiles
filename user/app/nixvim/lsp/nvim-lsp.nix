@@ -39,6 +39,8 @@
 
       servers = {
         # Python
+        # TODO: fix overlapping functions between pyright and ruff
+        # use a specific config file
         pyright.enable = true;
         ruff.enable = true;
         # typescript
