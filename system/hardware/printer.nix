@@ -1,5 +1,8 @@
 { config, lib, ... }:
 {
+  # NOTE: cups is using port 631, see
+  # http://127.0.0.1:631
+
   options = {
     printer.enable = lib.mkEnableOption "Enables printer";
   };
@@ -10,6 +13,7 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
+    # Enables autodiscovery of network printers
     services.avahi = {
       enable = true;
       nssmdns4 = true;
