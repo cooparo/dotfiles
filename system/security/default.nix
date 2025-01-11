@@ -1,10 +1,10 @@
 { lib, ... }:
 {
   imports = [
-    ./security.nix
+    ./doas.nix
     ./ssh.nix
   ];
 
-  security.enable = lib.mkDefault true;
+  doas.enable = lib.mkDefault true;
   ssh.enable = lib.mkDefault true;
 }
