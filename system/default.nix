@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./bootloader.nix
+    ./grub.nix
     ./locale.nix
     ./users.nix
     ./virtualization.nix
@@ -17,7 +17,7 @@
 
   audio.enable = lib.mkDefault true;
   bluetooth.enable = lib.mkDefault true;
-  bootloader.enable = lib.mkDefault true;
+  grub.enable = lib.mkDefault true;
   docker.enable = lib.mkDefault true;
   networking.enable = lib.mkDefault true;
   openvpn.enable = lib.mkDefault true;
