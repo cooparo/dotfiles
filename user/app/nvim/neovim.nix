@@ -34,7 +34,6 @@
 					p.c p.java p.nix p.python p.vim p.lua p.javascript p.html
 				]))
 
-
         {
           plugin = telescope-nvim;
           type = "lua";
@@ -46,6 +45,11 @@
           config = builtins.readFile ./lua/plugins/neo-tree.lua;
         }
         {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/lualine.lua;
+        }
+        {
           plugin = nvim-lspconfig;
           type = "lua";
           config =
@@ -55,7 +59,7 @@
 						# FIX: formatting not working
             ''
               					require("lspconfig").nixd.setup({
-              						 cmd = { "nixd" },
+              						 cmd = { "${pkgs.nixd}/bin/nixd" },
               						 settings = {
               								nixd = {
               									 nixpkgs = {
