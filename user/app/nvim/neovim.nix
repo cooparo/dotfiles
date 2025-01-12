@@ -29,6 +29,12 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
+				# Treesitter
+			 (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ 
+					p.c p.java p.nix p.python p.vim p.lua p.javascript p.html
+				]))
+
+
         {
           plugin = telescope-nvim;
           type = "lua";
@@ -46,7 +52,7 @@
             let
               flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
             in
-# FIX: formatting not working
+						# FIX: formatting not working
             ''
               					require("lspconfig").nixd.setup({
               						 cmd = { "nixd" },
@@ -71,9 +77,18 @@
               					})
               				'';
         }
+        {
+          plugin = bufferline-nvim;
+          type = "lua";
+          config = ''require("bufferline").setup{}'';
+        }
+
+			# Git
       lazygit-nvim
+# UI
         nvim-web-devicons
-        nvim-treesitter
+        
+# Completion
 				nvim-cmp
 				cmp-nvim-lsp
 
