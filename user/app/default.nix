@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   imports = [
     ./alacritty.nix
@@ -7,9 +7,10 @@
     ./redshift.nix
     ./ssh.nix
     ./tmux.nix
+    ./zsh.nix
+    ./nvim/neovim.nix
     ./nixvim/nixvim.nix
     ./vim/vim.nix
-    ./zsh.nix
   ];
 
   alacritty.enable = lib.mkDefault true;
@@ -18,7 +19,9 @@
   redshift.enable = lib.mkDefault true;
   ssh.enable = lib.mkDefault true;
   tmux.enable = lib.mkDefault true;
-  nixvim.enable = lib.mkDefault true;
   vim.enable = lib.mkDefault true;
   zsh.enable = lib.mkDefault true;
+
+  nixvim.enable = lib.mkDefault false;
+  neovim.enable = if config.nixvim.enable then false else true;
 }
