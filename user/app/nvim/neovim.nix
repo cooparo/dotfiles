@@ -61,6 +61,7 @@
             in
             # FIX: formatting not working
             ''
+
               					require("lspconfig").nixd.setup({
               						 cmd = { "${pkgs.nixd}/bin/nixd" },
               						 settings = {
@@ -109,6 +110,12 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/cmp.lua;
         }
+        {
+          plugin = lsp-format-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/lsp-format.lua;
+        }
+
       ];
 
       extraLuaConfig = ''
