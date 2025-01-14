@@ -23,7 +23,7 @@
   openvpn.enable = lib.mkDefault true;
   printer.enable = lib.mkDefault true;
   tailscale.enable = lib.mkDefault true;
-  thunar.enable = lib.mkDefault true;
+  thunar.enable = lib.mkDefault false;
   virtualization.enable = lib.mkDefault true;
   wireshark.enable = lib.mkDefault true;
   locale.enable = lib.mkDefault true;
