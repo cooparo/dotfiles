@@ -29,25 +29,28 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
-				# Treesitter
-			 (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [ 
-					p.c p.java p.nix p.python p.vim p.lua p.javascript p.html
-				]))
+        # Treesitter
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+          p.c
+          p.java
+          p.nix
+          p.python
+          p.vim
+          p.lua
+          p.javascript
+          p.html
+        ]))
 
         {
           plugin = telescope-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/telescope.lua;
         }
+        # File explorer
         {
           plugin = neo-tree-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/neo-tree.lua;
-        }
-        {
-          plugin = lualine-nvim;
-          type = "lua";
-          config = builtins.readFile ./lua/plugins/lualine.lua;
         }
         {
           plugin = nvim-lspconfig;
@@ -56,7 +59,7 @@
             let
               flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
             in
-						# FIX: formatting not working
+            # FIX: formatting not working
             ''
               					require("lspconfig").nixd.setup({
               						 cmd = { "${pkgs.nixd}/bin/nixd" },
@@ -87,15 +90,25 @@
           config = ''require("bufferline").setup{}'';
         }
 
-			# Git
-      lazygit-nvim
-# UI
+        # Git
+        lazygit-nvim
+        # UI
         nvim-web-devicons
-        
-# Completion
-				nvim-cmp
-				cmp-nvim-lsp
+        {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/lualine.lua;
+        }
 
+        # Completion
+        luasnip
+        cmp-nvim-lsp
+
+        {
+          plugin = nvim-cmp;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/cmp.lua;
+        }
       ];
 
       extraLuaConfig = ''
