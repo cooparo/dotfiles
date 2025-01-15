@@ -49,7 +49,12 @@
           config = builtins.readFile ./lua/plugins/telescope.lua;
         }
         # File explorer
-        oil-nvim
+        {
+          plugin = oil-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/oil.lua;
+
+        }
         {
           plugin = neo-tree-nvim;
           type = "lua";
