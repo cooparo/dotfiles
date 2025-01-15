@@ -49,6 +49,7 @@
           config = builtins.readFile ./lua/plugins/telescope.lua;
         }
         # File explorer
+        oil-nvim
         {
           plugin = neo-tree-nvim;
           type = "lua";
@@ -61,7 +62,6 @@
             let
               flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
             in
-            # FIX: formatting not working
             ''
                             							require("lspconfig").nixd.setup({
                             								 cmd = { "${pkgs.nixd}/bin/nixd" },
@@ -99,7 +99,7 @@
         {
           plugin = gitsigns-nvim;
           type = "lua";
-          config = ''require("gitsigns").setup()'';
+          config = builtins.readFile ./lua/plugins/gitsigns.lua;
         }
 
         # UI
