@@ -26,6 +26,7 @@
       extraPackages = with pkgs; [
         xclip
         ripgrep
+        lua-language-server
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -61,29 +62,29 @@
             in
             # FIX: formatting not working
             ''
-
-              					require("lspconfig").nixd.setup({
-              						 cmd = { "${pkgs.nixd}/bin/nixd" },
-              						 settings = {
-              								nixd = {
-              									 nixpkgs = {
-              											expr = "import <nixpkgs> { }",
-              									 },
-              									 formatting = {
-              											command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
-              									 },
-              									 options = {
-              											nixos = {
-              												 expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
-              											},
-              											home_manager = {
-              												 expr = '${flake}.homeConfigurations.${userSettings.username}.options',
-              											},
-              									 },
-              								},
-              						 },
-              					})
-              				'';
+                            							require("lspconfig").nixd.setup({
+                            								 cmd = { "${pkgs.nixd}/bin/nixd" },
+                            								 settings = {
+                            										nixd = {
+                            											 nixpkgs = {
+                            													expr = "import <nixpkgs> { }",
+                            											 },
+                            											 formatting = {
+                            													command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
+                            											 },
+                            											 options = {
+                            													nixos = {
+                            														 expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
+                            													},
+                            													home_manager = {
+                            														 expr = '${flake}.homeConfigurations.${userSettings.username}.options',
+                            													},
+                            											 },
+                            										},
+                            								 },
+                            							})
+              														${builtins.readFile ./lua/plugins/lspconfig.lua}
+              														'';
         }
         {
           plugin = bufferline-nvim;
@@ -100,10 +101,16 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/lualine.lua;
         }
+        {
+          plugin = alpha-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/lualine.lua;
+        }
 
         # Completion
         luasnip
         cmp-nvim-lsp
+        cmp-path
 
         {
           plugin = nvim-cmp;
