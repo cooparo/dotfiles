@@ -5,7 +5,7 @@ keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files
 keymap.set('n', '<leader><leader>', builtin.git_files, { desc = 'Telescope git files' })
 keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
--- TODO: add TODO/FIX search 
+keymap.set('n', '<leader>tt', "<cmd>TodoTelescope keywords=TODO,FIX<CR>", { desc = 'Telescope buffers' })
 
 local actions = require('telescope.actions')
 require('telescope').setup({

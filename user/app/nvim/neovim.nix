@@ -27,6 +27,7 @@
         xclip
         ripgrep
         lua-language-server
+
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -104,7 +105,7 @@
         {
           plugin = alpha-nvim;
           type = "lua";
-          config = builtins.readFile ./lua/plugins/lualine.lua;
+          config = builtins.readFile ./lua/plugins/alpha.lua;
         }
 
         # Completion
@@ -128,6 +129,11 @@
         # Extra tools
         which-key-nvim
 
+        {
+          plugin = todo-comments-nvim;
+          type = "lua";
+          config = ''require("todo-comments").setup()'';
+        }
       ];
 
       extraLuaConfig = ''
