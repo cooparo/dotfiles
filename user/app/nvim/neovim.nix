@@ -112,6 +112,7 @@
         cmp-nvim-lsp
         cmp-async-path
         cmp_luasnip
+        cmp-cmdline
 
         {
           plugin = nvim-cmp;
