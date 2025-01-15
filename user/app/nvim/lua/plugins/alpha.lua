@@ -25,11 +25,12 @@ dashboard.section.header.val = {
 
 -- Set menu (keybindings)
 dashboard.section.buttons.val = {
-    dashboard.button("r", "󰶦  Recents", ":Telescope oldfiles<CR>"),
-    dashboard.button("f", "  Explore", ":Telescope find_files<CR>"),
-    dashboard.button("G", "  Ripgrep", ":Telescope live_grep<CR>"),
-    dashboard.button("l", "  LazyGit", ":LazyGit<CR>"),
-    dashboard.button("t", "  TODOs", ":TodoTelescope keywords=TODO,FIX<CR>"),
+    dashboard.button("r", "󰶦  Recents", "<cmd>Telescope oldfiles<CR>"),
+    dashboard.button("f", "  Explore", "<cmd>Telescope find_files<CR>"),
+    dashboard.button("G", "  Ripgrep", "<cmd>Telescope live_grep<CR>"),
+    dashboard.button("l", "  LazyGit", "<cmd>LazyGit<CR>"),
+    dashboard.button("t", "  TODOs", "<cmd>TodoTelescope keywords=TODO,FIX<CR>"),
+    dashboard.button("q", "󰈆  Quit", "<cmd>q<CR>"),
 }
 
 alpha.setup(dashboard.opts)

@@ -1,4 +1,6 @@
-require'lspconfig'.lua_ls.setup {
+local lsp = require("lspconfig")
+
+lsp.lua_ls.setup {
   on_init = function(client)
     if client.workspace_folders then
       local path = client.workspace_folders[1].name
@@ -30,4 +32,22 @@ require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {}
   }
+}
+
+-- Python
+lsp.ruff.setup {}
+
+lsp.pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
 }

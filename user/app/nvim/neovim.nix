@@ -27,7 +27,8 @@
         xclip
         ripgrep
         lua-language-server
-
+        ruff-lsp
+        pyright
       ];
 
       plugins = with pkgs.vimPlugins; [
