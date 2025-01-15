@@ -95,8 +95,16 @@
 
         # Git
         lazygit-nvim
+
+        {
+          plugin = gitsigns-nvim;
+          type = "lua";
+          config = ''require("gitsigns").setup()'';
+        }
+
         # UI
         nvim-web-devicons
+
         {
           plugin = lualine-nvim;
           type = "lua";
@@ -133,6 +141,11 @@
           plugin = todo-comments-nvim;
           type = "lua";
           config = ''require("todo-comments").setup()'';
+        }
+        {
+          plugin = nvim-autopairs;
+          type = "lua";
+          config = ''require("nvim-autopairs").setup()'';
         }
       ];
 
