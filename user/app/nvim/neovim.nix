@@ -125,6 +125,9 @@
           config = builtins.readFile ./lua/plugins/lsp-format.lua;
         }
 
+        # Extra tools
+        which-key-nvim
+
       ];
 
       extraLuaConfig = ''
