@@ -11,6 +11,7 @@
     neovim.enable = lib.mkEnableOption "Enables neovim";
   };
 
+  # TODO: constant has to be in bold font
   config = lib.mkIf config.neovim.enable {
 
     home.packages = with pkgs; [
