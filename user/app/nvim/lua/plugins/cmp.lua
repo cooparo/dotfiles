@@ -31,6 +31,7 @@ cmp.setup({
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {
 		{ name = 'buffer' },
+		{ name = 'async_path' },
 	})
 })
 
@@ -68,5 +69,8 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['nixd'].setup {
+	capabilities = capabilities
+}
+require('lspconfig')['lua_ls'].setup {
 	capabilities = capabilities
 }

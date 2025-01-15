@@ -110,7 +110,8 @@
         # Completion
         luasnip
         cmp-nvim-lsp
-        cmp-path
+        cmp-async-path
+        cmp_luasnip
 
         {
           plugin = nvim-cmp;
