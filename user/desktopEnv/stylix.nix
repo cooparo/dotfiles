@@ -32,6 +32,7 @@ in
         rofi.enable = false;
         i3.enable = false;
         nixvim.enable = false;
+        neovim.enable = false;
         alacritty.enable = false;
       };
 
