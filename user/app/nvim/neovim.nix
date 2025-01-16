@@ -11,7 +11,6 @@
     neovim.enable = lib.mkEnableOption "Enables neovim";
   };
 
-  # TODO: constant has to be in bold font
   config = lib.mkIf config.neovim.enable {
 
     home.packages = with pkgs; [
@@ -22,6 +21,7 @@
       pyright
     ];
 
+    # FIX: color (barbecue and buffer tabs)
     programs.neovim = {
       enable = true;
 
@@ -112,6 +112,11 @@
         # UI
         nvim-web-devicons
 
+        {
+          plugin = barbecue-nvim;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/barbecue.lua;
+        }
         {
           plugin = lualine-nvim;
           type = "lua";
