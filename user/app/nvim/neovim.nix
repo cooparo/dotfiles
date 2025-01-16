@@ -21,7 +21,6 @@
       pyright
     ];
 
-    # FIX: color (barbecue and buffer tabs)
     programs.neovim = {
       enable = true;
 
@@ -45,7 +44,8 @@
           p.html
         ]))
 
-        { # NOTE: this has to be one of the first, so other plugins can use colorscheme here defined
+        {
+          # NOTE: this has to be one of the first, so other plugins can use colorscheme here defined
           plugin = base16-nvim;
           type = "lua";
           config = with config.colorscheme.palette; ''
@@ -109,7 +109,7 @@
         {
           plugin = bufferline-nvim;
           type = "lua";
-          config = ''require("bufferline").setup{}'';
+          config = builtins.readFile ./lua/plugins/bufferline.lua;
         }
 
         # Git
