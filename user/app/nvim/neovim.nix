@@ -18,6 +18,8 @@
       lazygit
       nixfmt-rfc-style
       nixd
+      ruff
+      pyright
     ];
 
     programs.neovim = {
@@ -28,8 +30,6 @@
         xclip
         ripgrep
         lua-language-server
-        ruff-lsp
-        pyright
       ];
 
       plugins = with pkgs.vimPlugins; [
