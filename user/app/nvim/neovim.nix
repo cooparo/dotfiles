@@ -122,6 +122,11 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/alpha.lua;
         }
+        {
+          plugin = fidget-nvim;
+          type = "lua";
+          config = ''require("fidget").setup {}'';
+        }
 
         # Completion
         luasnip
