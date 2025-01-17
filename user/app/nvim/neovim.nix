@@ -32,17 +32,22 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
-        # Treesitter
-        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
-          p.c
-          p.java
-          p.nix
-          p.python
-          p.vim
-          p.lua
-          p.javascript
-          p.html
-        ]))
+        {
+          plugin = (
+            pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+              p.c
+              p.java
+              p.nix
+              p.python
+              p.vim
+              p.lua
+              p.javascript
+              p.html
+            ])
+          );
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/treesitter.lua;
+        }
 
         {
           # NOTE: this has to be one of the first, so other plugins can use colorscheme here defined
