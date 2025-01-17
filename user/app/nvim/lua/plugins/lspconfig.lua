@@ -55,3 +55,6 @@ lsp.pyright.setup {
 		},
 	},
 }
+
+-- YAML
+lsp.yamlls.setup {}

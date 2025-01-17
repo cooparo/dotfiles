@@ -19,6 +19,7 @@
       nixd
       ruff
       pyright
+      yaml-language-server
     ];
 
     programs.neovim = {
@@ -43,6 +44,7 @@
               p.lua
               p.javascript
               p.html
+              p.yaml
             ])
           );
           type = "lua";
