@@ -32,7 +32,9 @@ lsp.lua_ls.setup {
 		})
 	end,
 	settings = {
-		Lua = {}
+		Lua = {
+			semantic = { keyword = true, },
+		}
 	}
 }
 
