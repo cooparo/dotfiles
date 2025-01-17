@@ -37,7 +37,7 @@ lsp.lua_ls.setup {
 }
 
 -- Python
-lsp.ruff.setup {}
+-- lsp.ruff.setup {}
 
 lsp.pyright.setup {
 	settings = {
