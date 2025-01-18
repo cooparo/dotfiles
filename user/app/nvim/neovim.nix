@@ -89,29 +89,29 @@
               flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
             in
             ''
-                            							require("lspconfig").nixd.setup({
-                            								 cmd = { "${pkgs.nixd}/bin/nixd" },
-                            								 settings = {
-                            										nixd = {
-                            											 nixpkgs = {
-                            													expr = "import <nixpkgs> { }",
-                            											 },
-                            											 formatting = {
-                            													command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
-                            											 },
-                            											 options = {
-                            													nixos = {
-                            														 expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
-                            													},
-                            													home_manager = {
-                            														 expr = '${flake}.homeConfigurations.${userSettings.username}.options',
-                            													},
-                            											 },
-                            										},
-                            								 },
-                            							})
-              														${builtins.readFile ./lua/plugins/lspconfig.lua}
-              														'';
+              require("lspconfig").nixd.setup({
+              	cmd = { "${pkgs.nixd}/bin/nixd" },
+              	settings = {
+              		nixd = {
+              			nixpkgs = {
+              				expr = "import <nixpkgs> { }",
+              			},
+              			formatting = {
+              				command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
+              			},
+              			options = {
+              				nixos = {
+              					expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
+              				},
+              				home_manager = {
+              					expr = '${flake}.homeConfigurations.${userSettings.username}.options',
+              				},
+              			},
+              		},
+              	},
+              })
+                                          ${builtins.readFile ./lua/plugins/lspconfig.lua}
+            '';
         }
         {
           plugin = bufferline-nvim;
@@ -131,6 +131,11 @@
         # UI
         nvim-web-devicons
 
+        {
+          plugin = indent-blankline-nvim;
+          type = "lua";
+          config = ''require("ibl").setup()'';
+        }
         {
           plugin = nvim-notify;
           type = "lua";
