@@ -10,7 +10,7 @@ require("neo-tree").setup({
 		use_libuv_file_watcher = true,          -- Automatically refresh the tree when files change
 	},
 	window = {
-		width = "40",
+		width = "30",
 		auto_expand_width = true, -- Automatically resize the width of the Neo-tree window
 	},
 	default_component_configs = {

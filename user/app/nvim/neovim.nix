@@ -30,6 +30,7 @@
         xclip
         ripgrep
         lua-language-server
+        python312Packages.pylatexenc
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -44,6 +45,8 @@
               p.lua
               p.javascript
               p.html
+              p.markdown
+              p.latex
               p.yaml
             ])
           );
@@ -132,9 +135,9 @@
         nvim-web-devicons
 
         {
-          plugin = indent-blankline-nvim;
+          plugin = render-markdown-nvim;
           type = "lua";
-          config = ''require("ibl").setup()'';
+          config = ''require("render-markdown").setup()'';
         }
         {
           plugin = nvim-notify;
