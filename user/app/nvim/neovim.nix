@@ -147,11 +147,6 @@
           config = ''require("render-markdown").setup()'';
         }
         {
-          plugin = nvim-notify;
-          type = "lua";
-          config = ''require("notify").setup()'';
-        }
-        {
           plugin = nvim-colorizer-lua;
           type = "lua";
           config = ''require("colorizer").setup()'';
