@@ -133,6 +133,7 @@
 
         # UI
         nvim-web-devicons
+        # TODO: dressing.nvim
 
         {
           plugin = render-markdown-nvim;
@@ -187,6 +188,7 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/lsp-format.lua;
         }
+        # TODO: lsp_signature
 
         # Extra tools
         which-key-nvim
