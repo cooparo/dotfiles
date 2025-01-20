@@ -31,6 +31,8 @@
         ripgrep
         lua-language-server
         python312Packages.pylatexenc
+        tree-sitter
+        nodejs
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -52,6 +54,11 @@
           );
           type = "lua";
           config = builtins.readFile ./lua/plugins/treesitter.lua;
+        }
+        {
+          plugin = nvim-treesitter-context;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/treesitter-context.lua;
         }
 
         {
