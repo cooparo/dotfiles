@@ -192,6 +192,7 @@
 
         # Extra tools
         which-key-nvim
+        lsp_signature-nvim # FIX: doesn't work
 
         {
           plugin = todo-comments-nvim;
