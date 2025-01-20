@@ -140,6 +140,7 @@
 
         # UI
         nvim-web-devicons
+        lspkind-nvim
 
         {
           plugin = render-markdown-nvim;
@@ -187,7 +188,7 @@
         {
           plugin = lsp-format-nvim;
           type = "lua";
-          config = builtins.readFile ./lua/plugins/lsp-format.lua;
+          config = ''require('lsp-format').setup {}'';
         }
 
         # Extra tools
@@ -209,6 +210,11 @@
       extraLuaConfig = ''
         				${builtins.readFile ./lua/options.lua}
         			${builtins.readFile ./lua/remap.lua}
+
+        			${builtins.readFile ./lua/plugins/languages/lua.lua}
+        			${builtins.readFile ./lua/plugins/languages/python.lua}
+        			${builtins.readFile ./lua/plugins/languages/nixd.lua}
+        			${builtins.readFile ./lua/plugins/languages/yaml.lua}
         			'';
     };
   };
