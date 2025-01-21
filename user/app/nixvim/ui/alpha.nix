@@ -65,7 +65,7 @@
           type = "button";
           val = "󰈚  Recent Files";
           on_press = {
-            __raw = "function() require('telescope.builtin').oldfiles() end"; # FIX:: only show oldfiles from current working directory (cwd)
+            __raw = "function() require('telescope.builtin').oldfiles() end";
           };
           opts = {
             # hl = "comment";
