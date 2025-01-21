@@ -22,6 +22,6 @@
   vim.enable = lib.mkDefault true;
   zsh.enable = lib.mkDefault true;
 
-  nixvim.enable = lib.mkDefault false;
-  neovim.enable = if config.nixvim.enable then false else true;
+  nixvim.enable = lib.mkDefault false; # WARN: use neovim setup it is better configured
+  neovim.enable = lib.mkDefault true;
 }
