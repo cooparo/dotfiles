@@ -174,12 +174,17 @@
         }
 
         # Completion
-        luasnip
+				friendly-snippets
         cmp-nvim-lsp
         cmp-async-path
         cmp_luasnip
         cmp-cmdline
 
+        {
+          plugin = luasnip;
+          type = "lua";
+					config = ''require("luasnip.loaders.from_vscode").lazy_load()'';
+        }
         {
           plugin = nvim-cmp;
           type = "lua";
