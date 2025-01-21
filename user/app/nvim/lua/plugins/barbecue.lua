@@ -1,5 +1,7 @@
 local color = require("base16-colorscheme").colors
 
+-- TODO: smaller > sign
+
 require("barbecue").setup({
 	create_autocmd = false, -- prevent barbecue from updating itself automatically
 

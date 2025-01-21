@@ -1,6 +1,7 @@
 local map = vim.keymap
 
 map.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
+map.set("v", "jk", "<Esc>", { desc = "Exit visual mode" })
 map.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 map.set("n", "<leader>q", "<cmd>wq<CR>", { desc = "Save & quit file" })
 

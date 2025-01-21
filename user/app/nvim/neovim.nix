@@ -205,6 +205,7 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/ts-autotag.lua;
         }
+        # TODO: lsp_signature
 
         # Extra tools
         which-key-nvim
