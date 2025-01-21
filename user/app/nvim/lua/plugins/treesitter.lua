@@ -12,16 +12,16 @@ require 'nvim-treesitter.configs'.setup {
 		-- Using this option may slow down your editor, and you may see some duplicate highlights.
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
+	},
 
-		incremental_selection = {
-			enable = true,
-			-- FIX: doesn't work as expected
-			keymaps = {
-				init_selection = "<C-space>", -- set to `false` to disable one of the mappings
-				node_incremental = "<C-space>",
-				node_decremental = "<bs>",
-				scope_incremental = false,
-			},
+	incremental_selection = {
+		enable = true,
+
+		keymaps = {
+			init_selection = "<C-space>", -- set to `false` to disable one of the mappings
+			node_incremental = "<C-space>",
+			node_decremental = "<bs>",
+			scope_incremental = false,
 		},
 	},
 }
