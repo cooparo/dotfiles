@@ -195,6 +195,11 @@
           type = "lua";
           config = ''require('lsp-format').setup {}'';
         }
+        {
+          plugin = 	nvim-ts-autotag;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/ts-autotag.lua;
+        }
 
         # Extra tools
         which-key-nvim

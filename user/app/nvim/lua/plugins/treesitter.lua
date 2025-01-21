@@ -15,7 +15,6 @@ require 'nvim-treesitter.configs'.setup {
 
 		incremental_selection = {
 			enable = true,
-
 			-- FIX: doesn't work as expected
 			keymaps = {
 				init_selection = "<C-space>", -- set to `false` to disable one of the mappings
