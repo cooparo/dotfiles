@@ -172,9 +172,14 @@
           type = "lua";
           config = ''require("fidget").setup {}'';
         }
+        {
+          plugin = indent-blankline-nvim;
+          type = "lua";
+          config = ''require("ibl").setup {}'';
+        }
 
         # Completion
-				friendly-snippets
+        friendly-snippets
         cmp-nvim-lsp
         cmp-async-path
         cmp_luasnip
@@ -183,7 +188,7 @@
         {
           plugin = luasnip;
           type = "lua";
-					config = ''require("luasnip.loaders.from_vscode").lazy_load()'';
+          config = ''require("luasnip.loaders.from_vscode").lazy_load()'';
         }
         {
           plugin = nvim-cmp;
@@ -196,14 +201,13 @@
           config = ''require('lsp-format').setup {}'';
         }
         {
-          plugin = 	nvim-ts-autotag;
+          plugin = nvim-ts-autotag;
           type = "lua";
           config = builtins.readFile ./lua/plugins/ts-autotag.lua;
         }
 
         # Extra tools
         which-key-nvim
-        
 
         {
           plugin = lsp_signature-nvim;
@@ -225,6 +229,7 @@
       extraLuaConfig = ''
         				${builtins.readFile ./lua/options.lua}
         			${builtins.readFile ./lua/remap.lua}
+        			${builtins.readFile ./lua/autocmd.lua}
 
         			${builtins.readFile ./lua/plugins/languages/lua.lua}
         			${builtins.readFile ./lua/plugins/languages/python.lua}
