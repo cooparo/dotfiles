@@ -20,7 +20,7 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 vim.o.scrolloff = 8
 
-vim.o.updatetime = 300
+vim.o.updatetime = 200
 
 vim.o.undofile = true
 vim.o.cursorline = true

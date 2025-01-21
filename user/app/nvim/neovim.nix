@@ -153,9 +153,9 @@
           config = ''require("colorizer").setup()'';
         }
         {
-          plugin = barbecue-nvim;
+          plugin = dropbar-nvim;
           type = "lua";
-          config = builtins.readFile ./lua/plugins/barbecue.lua;
+          config = builtins.readFile ./lua/plugins/dropbar.lua;
         }
         {
           plugin = lualine-nvim;
@@ -205,7 +205,6 @@
           type = "lua";
           config = builtins.readFile ./lua/plugins/ts-autotag.lua;
         }
-        # TODO: lsp_signature
 
         # Extra tools
         which-key-nvim
