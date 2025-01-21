@@ -203,8 +203,13 @@
 
         # Extra tools
         which-key-nvim
-        lsp_signature-nvim # FIX: doesn't work
+        
 
+        {
+          plugin = lsp_signature-nvim;
+          type = "lua";
+          config = ''require("lsp_signature").setup()'';
+        }
         {
           plugin = todo-comments-nvim;
           type = "lua";
