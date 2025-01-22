@@ -1,6 +1,6 @@
 local lsp = require("lspconfig")
 
---  TODO: constant has to be in bold font
+vim.cmd.highlight("TSConstant gui=bold")
 
 lsp.lua_ls.setup {
 	on_init = function(client)
