@@ -6,6 +6,40 @@
   systemSettings,
   ...
 }:
+let
+  flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
+  lspconfig-config = ''
+    		require("lspconfig").nixd.setup({
+    			cmd = { "${pkgs.nixd}/bin/nixd" },
+    			settings = {
+    				nixd = {
+    					nixpkgs = {
+    						expr = "import <nixpkgs> { }",
+    					},
+    					formatting = {
+    						command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
+    					},
+    					options = {
+    						nixos = {
+    							expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
+    						},
+    						home_manager = {
+    							expr = '${flake}.homeConfigurations.${userSettings.username}.options',
+    						},
+    					},
+    				},
+    			},
+    		})
+    		${builtins.readFile ./lua/plugins/lspconfig.lua}
+    	'';
+
+  jdtls-config = ''
+    			require("lspconfig").jdtls.setup {
+    				cmd = { "${pkgs.jdt-language-server}/bin/jdtls" }
+    			}
+        	'';
+
+in
 {
   options = {
     neovim.enable = lib.mkEnableOption "Enables neovim";
@@ -94,39 +128,17 @@
         {
           plugin = nvim-lspconfig;
           type = "lua";
-          config =
-            let
-              flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
-            in
-            ''
-              require("lspconfig").nixd.setup({
-              	cmd = { "${pkgs.nixd}/bin/nixd" },
-              	settings = {
-              		nixd = {
-              			nixpkgs = {
-              				expr = "import <nixpkgs> { }",
-              			},
-              			formatting = {
-              				command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
-              			},
-              			options = {
-              				nixos = {
-              					expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
-              				},
-              				home_manager = {
-              					expr = '${flake}.homeConfigurations.${userSettings.username}.options',
-              				},
-              			},
-              		},
-              	},
-              })
-                                          ${builtins.readFile ./lua/plugins/lspconfig.lua}
-            '';
+          config = lspconfig-config;
         }
         {
           plugin = bufferline-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/bufferline.lua;
+        }
+        {
+          plugin = nvim-jdtls;
+          type = "lua";
+          config = jdtls-config;
         }
 
         # Git
