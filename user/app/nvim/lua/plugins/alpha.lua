@@ -25,7 +25,9 @@ dashboard.section.header.val = {
 
 -- Set menu (keybindings)
 dashboard.section.buttons.val = {
-	dashboard.button("r", "  Recents", "<cmd>Telescope oldfiles<CR>"),
+	dashboard.button("r", "  Recents", function()
+		require("telescope.builtin").oldfiles({ cwd_only = true })
+	end),
 	dashboard.button("f", "  Explore", "<cmd>Telescope find_files<CR>"),
 	dashboard.button("G", "  Ripgrep", "<cmd>Telescope live_grep<CR>"),
 	dashboard.button("l", "  LazyGit", "<cmd>LazyGit<CR>"),
