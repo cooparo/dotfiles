@@ -57,6 +57,9 @@ in
       pyright
       yaml-language-server
       ruff
+      latexrun
+      texlab
+      texliveTeTeX
     ];
 
     programs.neovim = {
@@ -265,6 +268,13 @@ in
               								virtual_text = false,
               							})
               						'';
+        }
+
+        # LaTex
+        {
+          plugin = vimtex;
+          type = "lua";
+          config = builtins.readFile ./lua/plugins/languages/latex.lua;
         }
 
         # Extra tools
