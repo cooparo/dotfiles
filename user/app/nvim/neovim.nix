@@ -8,36 +8,38 @@
 }:
 let
   flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
-  lspconfig-config = ''
-    		require("lspconfig").nixd.setup({
-    			cmd = { "${pkgs.nixd}/bin/nixd" },
-    			settings = {
-    				nixd = {
-    					nixpkgs = {
-    						expr = "import <nixpkgs> { }",
-    					},
-    					formatting = {
-    						command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
-    					},
-    					options = {
-    						nixos = {
-    							expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
-    						},
-    						home_manager = {
-    							expr = '${flake}.homeConfigurations.${userSettings.username}.options',
-    						},
-    					},
-    				},
-    			},
-    		})
-    		${builtins.readFile ./lua/plugins/lspconfig.lua}
-    	'';
+  lspconfig-config = # lua
+    ''
+      		require("lspconfig").nixd.setup({
+      			cmd = { "${pkgs.nixd}/bin/nixd" },
+      			settings = {
+      				nixd = {
+      					nixpkgs = {
+      						expr = "import <nixpkgs> { }",
+      					},
+      					formatting = {
+      						command = { "${pkgs.nixfmt-rfc-style}/bin/nixfmt" },
+      					},
+      					options = {
+      						nixos = {
+      							expr = '${flake}.nixosConfigurations.${systemSettings.host}.options',
+      						},
+      						home_manager = {
+      							expr = '${flake}.homeConfigurations.${userSettings.username}.options',
+      						},
+      					},
+      				},
+      			},
+      		})
+      		${builtins.readFile ./lua/plugins/lspconfig.lua}
+      	'';
 
-  jdtls-config = ''
-    			require("lspconfig").jdtls.setup {
-    				cmd = { "${pkgs.jdt-language-server}/bin/jdtls" }
-    			}
-        	'';
+  jdtls-config = # lua
+    ''
+      			require("lspconfig").jdtls.setup {
+      				cmd = { "${pkgs.jdt-language-server}/bin/jdtls" }
+      			}
+          	'';
 
 in
 {
@@ -99,13 +101,15 @@ in
           # NOTE: this has to be one of the first, so other plugins can use colorscheme here defined
           plugin = base16-nvim;
           type = "lua";
-          config = with config.colorscheme.palette; ''
-            						require('base16-colorscheme').setup({
-                base00 = '#${base00}', base01 = '#${base01}', base02 = '#${base02}', base03 = '#${base03}',
-                base04 = '#${base04}', base05 = '#${base05}', base06 = '#${base06}', base07 = '#${base07}',
-                base08 = '#${base08}', base09 = '#${base09}', base0A = '#${base0A}', base0B = '#${base0B}',
-                base0C = '#${base0C}', base0D = '#${base0D}', base0E = '#${base0E}', base0F = '#${base0F}',
-            })'';
+          config =
+            with config.colorscheme.palette; # lua
+            ''
+              						require('base16-colorscheme').setup({
+                  base00 = '#${base00}', base01 = '#${base01}', base02 = '#${base02}', base03 = '#${base03}',
+                  base04 = '#${base04}', base05 = '#${base05}', base06 = '#${base06}', base07 = '#${base07}',
+                  base08 = '#${base08}', base09 = '#${base09}', base0A = '#${base0A}', base0B = '#${base0B}',
+                  base0C = '#${base0C}', base0D = '#${base0D}', base0E = '#${base0E}', base0F = '#${base0F}',
+              })'';
         }
 
         {
@@ -157,12 +161,14 @@ in
         {
           plugin = render-markdown-nvim;
           type = "lua";
-          config = ''require("render-markdown").setup()'';
+          config = # lua
+            ''require("render-markdown").setup()'';
         }
         {
           plugin = nvim-colorizer-lua;
           type = "lua";
-          config = ''require("colorizer").setup()'';
+          config = # lua
+            ''require("colorizer").setup()'';
         }
         {
           plugin = dropbar-nvim;
@@ -182,12 +188,14 @@ in
         {
           plugin = fidget-nvim;
           type = "lua";
-          config = ''require("fidget").setup {}'';
+          config = # lua
+            ''require("fidget").setup {}'';
         }
         {
           plugin = indent-blankline-nvim;
           type = "lua";
-          config = ''require("ibl").setup {}'';
+          config = # lua
+            ''require("ibl").setup {}'';
         }
 
         # Completion
@@ -200,7 +208,8 @@ in
         {
           plugin = luasnip;
           type = "lua";
-          config = ''require("luasnip.loaders.from_vscode").lazy_load()'';
+          config = # lua
+            ''require("luasnip.loaders.from_vscode").lazy_load()'';
         }
         {
           plugin = nvim-cmp;
@@ -210,12 +219,27 @@ in
         {
           plugin = lsp-format-nvim;
           type = "lua";
-          config = ''require('lsp-format').setup {}'';
+          config = # lua
+            ''require('lsp-format').setup {}'';
         }
         {
           plugin = nvim-ts-autotag;
           type = "lua";
           config = builtins.readFile ./lua/plugins/ts-autotag.lua;
+        }
+
+        # Diagnostic
+
+        {
+          plugin = lsp_lines-nvim;
+          type = "lua";
+          config = # lua
+            ''
+              							require("lsp_lines").setup()
+              							vim.diagnostic.config({
+              								virtual_text = false,
+              							})
+              						'';
         }
 
         # Extra tools
@@ -224,17 +248,20 @@ in
         {
           plugin = lsp_signature-nvim;
           type = "lua";
-          config = ''require("lsp_signature").setup()'';
+          config = # lua
+            ''require("lsp_signature").setup()'';
         }
         {
           plugin = todo-comments-nvim;
           type = "lua";
-          config = ''require("todo-comments").setup()'';
+          config = # lua
+            ''require("todo-comments").setup()'';
         }
         {
           plugin = nvim-autopairs;
           type = "lua";
-          config = ''require("nvim-autopairs").setup()'';
+          config = # lua
+            ''require("nvim-autopairs").setup()'';
         }
       ];
 
