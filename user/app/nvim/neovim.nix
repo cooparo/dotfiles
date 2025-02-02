@@ -56,6 +56,7 @@ in
       ruff
       pyright
       yaml-language-server
+      ruff
     ];
 
     programs.neovim = {
