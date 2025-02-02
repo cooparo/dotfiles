@@ -45,6 +45,7 @@
       vscode
       tmux
       electrum
+      zathura
 
       # Language
       python3
