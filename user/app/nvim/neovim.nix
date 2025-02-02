@@ -216,6 +216,12 @@ in
           config = # lua
             ''require("ibl").setup {}'';
         }
+        {
+          plugin = satellite-nvim;
+          type = "lua";
+          config = # lua
+            ''require("satellite").setup {}'';
+        }
 
         # Completion
         friendly-snippets
