@@ -73,6 +73,7 @@ in
       ];
 
       plugins = with pkgs.vimPlugins; [
+        # Treesitter
         {
           plugin = (
             pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
@@ -113,12 +114,12 @@ in
               })'';
         }
 
+        # File explorer and fz-finder
         {
           plugin = telescope-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/telescope.lua;
         }
-        # File explorer
         {
           plugin = oil-nvim;
           type = "lua";
@@ -129,11 +130,6 @@ in
           plugin = neo-tree-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/neo-tree.lua;
-        }
-        {
-          plugin = nvim-lspconfig;
-          type = "lua";
-          config = lspconfig-config;
         }
         {
           plugin = bufferline-nvim;
@@ -155,10 +151,32 @@ in
           config = builtins.readFile ./lua/plugins/gitsigns.lua;
         }
 
+        # LSP
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = lspconfig-config;
+        }
+        {
+          plugin = nvim-lightbulb;
+          type = "lua";
+          config = # lua
+            ''
+              require("nvim-lightbulb").setup {
+              								autocmd = { enabled = true }	
+              					}'';
+        }
+
         # UI
         nvim-web-devicons
         lspkind-nvim
 
+        {
+          plugin = telescope-ui-select-nvim;
+          type = "lua";
+          config = # lua
+            ''require("telescope").load_extension("ui-select")'';
+        }
         {
           plugin = render-markdown-nvim;
           type = "lua";

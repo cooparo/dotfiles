@@ -33,6 +33,8 @@ map.set("n", "<C-j>", "<C-w>j", { desc = "Move to down pane" })
 map.set("n", "<C-k>", "<C-w>k", { desc = "Move to up pane" })
 map.set("n", "<C-l>", "<C-w>l", { desc = "Move to right pane" })
 
-
 -- Lazygit
 map.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open LazyGit" })
+
+-- Code action
+map.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Open code_action" })
