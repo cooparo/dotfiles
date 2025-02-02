@@ -15,7 +15,7 @@
 
     #TODO: add some infos.
     # Why pulseaudio is disabled?
-    hardware.pulseaudio.enable = false;
-    hardware.pulseaudio.support32Bit = true;
+    services.pulseaudio.enable = false;
+    services.pulseaudio.support32Bit = true;
   };
 }
