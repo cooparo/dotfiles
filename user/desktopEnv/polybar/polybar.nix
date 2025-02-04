@@ -10,6 +10,7 @@
     polybar.enable = lib.mkEnableOption "Enables polybar";
   };
 
+  # TODO: setup spotify module
   config = lib.mkIf config.polybar.enable {
     # kill polybar: polybar-msg cmd quit
     services.polybar = with config.colorScheme.palette; {

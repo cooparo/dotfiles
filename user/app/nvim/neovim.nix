@@ -6,6 +6,7 @@
   systemSettings,
   ...
 }:
+# TODO: add telescope-frequency
 let
   flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
   lspconfig-config = # lua
