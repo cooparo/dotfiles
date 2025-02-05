@@ -1,7 +1,4 @@
 {
-  # TODO:
-  # - setup default application (use zethura as default pdf viewer)
-
   description = "Paro's flake";
 
   outputs =
