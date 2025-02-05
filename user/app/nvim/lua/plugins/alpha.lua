@@ -28,7 +28,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("r", "  Recents", function()
 		require("telescope.builtin").oldfiles({ cwd_only = true })
 	end),
-	dashboard.button("f", "  Explore", "<cmd>Telescope find_files<CR>"),
+	dashboard.button("f", "  Explore", "<cmd>Telescope frecency workspace=CWD<CR>"),
 	dashboard.button("G", "  Ripgrep", "<cmd>Telescope live_grep<CR>"),
 	dashboard.button("l", "  LazyGit", "<cmd>LazyGit<CR>"),
 	dashboard.button("t", "  TODOs", "<cmd>TodoTelescope keywords=TODO,FIX<CR>"),

@@ -6,7 +6,6 @@
   systemSettings,
   ...
 }:
-# TODO: add telescope-frequency
 let
   flake = ''(builtins.getFlake "${userSettings.dotfilesDir}")'';
   lspconfig-config = # lua
@@ -123,6 +122,11 @@ in
           plugin = telescope-nvim;
           type = "lua";
           config = builtins.readFile ./lua/plugins/telescope.lua;
+        }
+        {
+          plugin = telescope-frecency-nvim;
+          type = "lua";
+          config = ''require("telescope").load_extension "frecency"'';
         }
         {
           plugin = oil-nvim;
