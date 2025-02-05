@@ -1,6 +1,7 @@
-{ lib, config, ... }:
+{ lib, ... }:
 {
   imports = [
+    ./mime-app.nix
     ./alacritty.nix
     ./git.nix
     ./megasync.nix
@@ -13,6 +14,7 @@
     ./vim/vim.nix
   ];
 
+  mime-app.enable = lib.mkDefault true;
   alacritty.enable = lib.mkDefault true;
   git.enable = lib.mkDefault true;
   megasync.enable = lib.mkDefault true;
