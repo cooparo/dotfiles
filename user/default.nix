@@ -46,6 +46,7 @@
       tmux
       electrum
       zathura
+      zoom-us
 
       # Language
       python3
