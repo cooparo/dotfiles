@@ -6,6 +6,18 @@
   ...
 }:
 let
+  scroll_spotify_status = ''
+    		#!/usr/bin/env ${pkgs.bash}/bin/bash
+    		# see man zscroll for documentation of the following parameters
+    					${pkgs.zscroll}/bin/zscroll -l 30 \
+    						--delay 0.1 \
+    						--scroll-padding "  " \
+    						--match-command "/home/${userSettings.username}/.local/bin/get_spotify_status.sh --status" \
+    						--match-text "Playing" "--scroll 1" \
+    						--match-text "Paused" "--scroll 0" \
+    						--update-check true "/home/${userSettings.username}/.local/bin/get_spotify_status.sh" &
+    		wait
+    	'';
   get_spotify_status = # bash
     ''
       #!/usr/bin/env ${pkgs.bash}/bin/bash
@@ -119,6 +131,11 @@ in
 
       ".local/bin/get_spotify_status.sh" = {
         text = get_spotify_status;
+        executable = true;
+      };
+
+      ".local/bin/scroll_spotify_status.sh" = {
+        text = scroll_spotify_status;
         executable = true;
       };
     };
