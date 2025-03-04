@@ -39,7 +39,7 @@
         ];
 
         kbLayout = "it";
-        fontSize = 11;
+        fontSize = 12;
         theme = "everforest";
       };
 
