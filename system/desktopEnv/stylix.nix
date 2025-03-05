@@ -55,10 +55,10 @@ in
         };
 
         sizes = {
-          applications = 11;
-          desktop = 10;
-          popups = 10;
-          terminal = 11;
+          applications = userSettings.fontSize;
+          desktop = userSettings.fontSize;
+          terminal = userSettings.fontSize;
+          popups = userSettings.fontSize - 1;
         };
       };
 
