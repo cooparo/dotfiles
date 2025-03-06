@@ -45,7 +45,7 @@ in
       iconTheme = {
         enable = true;
         package = pkgs.qogir-icon-theme;
-        dark = "Qogir-dark";
+        dark = "Qogir";
         light = "Qogir";
       };
 
