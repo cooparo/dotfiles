@@ -57,9 +57,6 @@ in
       pyright
       yaml-language-server
       ruff
-      latexrun
-      texlab
-      texliveTeTeX
     ];
 
     programs.neovim = {
@@ -70,7 +67,6 @@ in
         xclip
         ripgrep
         lua-language-server
-        python312Packages.pylatexenc
         tree-sitter
         nodejs
       ];
@@ -89,7 +85,6 @@ in
               p.javascript
               p.html
               p.markdown
-              p.latex
               p.yaml
             ])
           );
@@ -273,13 +268,6 @@ in
               								virtual_text = false,
               							})
               						'';
-        }
-
-        # LaTex
-        {
-          plugin = vimtex;
-          type = "lua";
-          config = builtins.readFile ./lua/plugins/languages/latex.lua;
         }
 
         # Extra tools
