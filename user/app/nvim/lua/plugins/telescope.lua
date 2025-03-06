@@ -4,6 +4,7 @@ local keymap = vim.keymap
 keymap.set('n', '<leader><leader>', "<cmd>Telescope frecency workspace=CWD<CR>", { desc = 'Telescope find files' })
 keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+keymap.set('n', '<leader>ht', "<cmd>Telescope help_tags<CR>", { desc = 'Telescope help_tags' })
 keymap.set('n', '<leader>fr', function() builtin.oldfiles({ cwd_only = true }) end,
 	{ desc = 'Telescope oldfiles in cwd' })
 keymap.set('n', '<leader>tt', "<cmd>TodoTelescope keywords=TODO,FIX<CR>", { desc = 'Telescope buffers' })
