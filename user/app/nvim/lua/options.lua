@@ -27,3 +27,9 @@ vim.o.cursorline = true
 
 vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
+
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = true,
+	float = false
+})

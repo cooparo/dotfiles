@@ -256,20 +256,6 @@ in
           config = builtins.readFile ./lua/plugins/ts-autotag.lua;
         }
 
-        # Diagnostic
-
-        {
-          plugin = lsp_lines-nvim;
-          type = "lua";
-          config = # lua
-            ''
-              							require("lsp_lines").setup()
-              							vim.diagnostic.config({
-              								virtual_text = false,
-              							})
-              						'';
-        }
-
         # Extra tools
         which-key-nvim
 
