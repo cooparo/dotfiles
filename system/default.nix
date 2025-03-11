@@ -29,6 +29,7 @@
   locale.enable = lib.mkDefault true;
   users.enable = lib.mkDefault true;
   zsh.enable = lib.mkDefault true;
+  geolocation.enable = lib.mkDefault true;
 
   powermanagement.enable = lib.mkDefault false;
   nvidia.enable = lib.mkDefault false;

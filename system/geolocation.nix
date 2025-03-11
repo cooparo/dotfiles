@@ -1,9 +1,25 @@
+{ lib, config, ... }:
 {
   #FIX: not working
-  services.geoclue2 = {
-    enable = false;
+  options = {
+    geolocation.enable = lib.mkEnableOption "Enables geoclue2";
+  };
 
-    enableWifi = true;
-    geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+  config = lib.mkIf config.geolocation.enable {
+    location.provider = "geoclue2";
+
+    services.geoclue2 = {
+      enable = true;
+
+      enableWifi = true;
+      geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+
+      appConfig = {
+        "redshift" = {
+          isAllowed = true;
+          isSystem = true;
+        };
+      };
+    };
   };
 }
