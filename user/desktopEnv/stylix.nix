@@ -16,7 +16,6 @@ let
       "${pkgs.base16-schemes}/share/themes/${userSettings.theme}.yaml";
 in
 {
-  # FIX: GTK icons Qogir not working
   options = {
     stylix-conf.enable = lib.mkEnableOption "Enables stylix configuration";
   };
