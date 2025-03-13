@@ -91,6 +91,8 @@
       seclists
       exiftool
       file
+      macchanger
+      airgeddon
     ];
 
     sessionVariables = with userSettings; {
