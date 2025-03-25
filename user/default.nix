@@ -91,6 +91,7 @@
       exiftool
       file
       macchanger
+      hashcat
     ];
 
     sessionVariables = with userSettings; {
