@@ -88,7 +88,6 @@
       # CyberSec tools
       nmap
       burpsuite
-      seclists
       exiftool
       file
       macchanger
