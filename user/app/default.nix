@@ -11,7 +11,6 @@
     ./zsh.nix
     ./seclists.nix
     ./nvim/neovim.nix
-    ./nixvim/nixvim.nix
     ./vim/vim.nix
   ];
 
@@ -26,6 +25,5 @@
   zsh.enable = lib.mkDefault true;
   seclists.enable = lib.mkDefault true;
 
-  nixvim.enable = lib.mkDefault false; # WARN: use neovim setup it is better configured
   neovim.enable = lib.mkDefault true;
 }
