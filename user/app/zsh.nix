@@ -37,6 +37,7 @@
           cd = "z";
           cdi = "zi";
           cat = "bat";
+          mv = "mv -v";
         };
 
         oh-my-zsh = {
