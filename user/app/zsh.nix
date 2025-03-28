@@ -38,6 +38,7 @@
           cdi = "zi";
           cat = "bat";
           mv = "mv -v";
+          htop = "btop";
         };
 
         oh-my-zsh = {

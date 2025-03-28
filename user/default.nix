@@ -54,7 +54,7 @@
       gdb # GNU project debugger
 
       # Tools
-      htop
+      btop
       playerctl # Media player manager (eg. spotify)
       pulseaudioFull
       pavucontrol # Manage audio
