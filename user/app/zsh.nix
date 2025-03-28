@@ -25,7 +25,8 @@
         syntaxHighlighting.enable = true;
         enableCompletion = true;
         shellAliases = {
-          v = "nvim";
+          v = "nix run github:cooparo/nvim --";
+          nvim = "nix run github:cooparo/nvim --";
           gs = "git status";
           ls = "exa -TlL 1 --color-scale --icons --sort=type --no-time";
           la = "exa -aTlL1 --color-scale --icons --sort=type --no-time";

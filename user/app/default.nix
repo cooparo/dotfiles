@@ -25,5 +25,6 @@
   zsh.enable = lib.mkDefault true;
   seclists.enable = lib.mkDefault true;
 
-  neovim.enable = lib.mkDefault true;
+  # Now using my Neovim flake: https://github.com/cooparo/nvim
+  neovim.enable = lib.mkDefault false;
 }
