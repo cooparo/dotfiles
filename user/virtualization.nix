@@ -5,7 +5,7 @@
   };
 
   config = lib.mkIf config.virtualization.enable {
-    # NOTE: enable autoconnections fro qemu
+    # NOTE: enables autoconnections from qemu
     dconf.settings = {
       "org/virt-manager/virt-manager/connections" = {
         autoconnect = [ "qemu:///system" ];
